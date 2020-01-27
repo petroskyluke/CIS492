@@ -1,0 +1,4 @@
+This file can be used to explain any complexities of the css files
+
+
+Luke Petrosky 1/27/2020

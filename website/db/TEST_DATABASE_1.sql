@@ -58,3 +58,7 @@ CREATE TABLE services_provided_and_scheduled	(
 	FOREIGN KEY (agent_ID) REFERENCES agent(agent_ID),
 	FOREIGN KEY (service_ID) REFERENCES services_available(service_ID)
 );
+
+
+INSERT INTO agent (agent_fname, agent_lname, agent_phone, agent_email, agent_address) VALUES
+('Kris', 'Stewart', '7246892416', 'ste1145@calu.edu', '250 University AVE');

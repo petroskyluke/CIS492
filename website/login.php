@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+require_once('inc/db_connect.php');
+session_start(); 
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Yencik Photography</title>
@@ -54,7 +58,7 @@
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
 
-                        <button type="submit">Login</button>
+                        <input type="submit" name="login" value="login"/>
                     </div>
 
                     <div class="container" style="background-color:#f1f1f1">

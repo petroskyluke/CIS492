@@ -23,7 +23,7 @@
         <div class="w3-bar w3-black w3-card">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <a href="#" class="w3-bar-item w3-button w3-padding-large">YENCIK PHOTOGRAPHY</a>
-            <a href="login.html" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">LOG IN</a>
+            <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">LOG IN</a>
             <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">CONTACT</a>
             <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">ABOUT</a>
             <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">PORTFOLIO</a>
@@ -38,7 +38,7 @@
         <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PORTFOLIO</a>
         <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-        <a href="#login" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
+        <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     </div>
 
 

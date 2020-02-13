@@ -48,10 +48,10 @@
 
     <!-- Page content -->
     <div class="w3-content" style="max-width:2000px; margin-top:46px">
+	
         <div class="w3-container">
-            <div class="w3-third w3-container"></div>
-            <div class="w3-third w3-container">
-                <form action="action_page.php" method="post">
+				<div class="w3-container center" m>
+                <form action="admin.php" method="post">
 
                     <div class="container">
                         <label for="uname"><b>Username</b></label>
@@ -71,8 +71,7 @@
                         <span class="psw">Forgot <a href="#">password?</a></span>
                     </div>
                 </form>
-            </div>
-            <div class="w3-third w3-container"></div>
+				</div>
         </div>
 	</div>
         

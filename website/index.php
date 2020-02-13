@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿
+<?php
+
+
+
+ ?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Yencik Photography</title>

@@ -12,12 +12,6 @@
 		body {
 			font-family: "Lato", sans-serif
 		}
-
-		.mySlides img{
-			width: auto;
-			height: 800px;
-			max-height: 800px;
-		}
 </style>
 </head>
 

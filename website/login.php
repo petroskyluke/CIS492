@@ -45,7 +45,7 @@
 	
         <div class="w3-container">
 				<div class="w3-container center" m>
-                <form action="admin.php" method="post">
+                <form action="admin/admin.php" method="post">
 
                     <div class="container">
                         <label for="uname"><b>Username</b></label>

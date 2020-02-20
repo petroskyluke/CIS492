@@ -1,4 +1,66 @@
-﻿
+﻿<?php
+require_once('../inc/db_connect.php');
+session_start();
+
+if(!isset($username))
+	{
+	$username = filter_input(INPUT_POST,'username');
+	}
+
+if(!isset($password))
+	{
+	$password = filter_input(INPUT_POST,'password');
+	}
+
+$login = filter_input(INPUT_POST, 'login');
+
+if(isset($login))  
+      {  
+           if(empty($username) || empty($password))  
+           {  
+                $message = '<label>All fields are required</label>';  
+           }  
+		   
+		   else
+		   {
+		     // Get the userName and passWord
+				$query = 'SELECT emailAddress, password
+						  FROM employees
+						  WHERE emailAddress =:emailAddress';
+				$statement = $db1->prepare($query);
+				$statement->bindValue(':emailAddress', $username);
+			    $statement->execute();
+				$login= $statement->fetch();
+				$count = $statement->rowCount();
+				$statement->closeCursor();
+				
+				if($count > 0){
+                 
+				 $validPassword = password_verify($password , $login['password']);
+				 if($validPassword){
+				 $_SESSION["username"] = $username;
+			      header("location:inc/searchScreen.php");
+				  }
+				else{
+					$message='<label>Wrong Password</label>';
+				}
+				}
+				
+				else{
+				   $message = '<label>Wrong Data</label>'; 
+				}
+		   }
+		   
+	 }	   
+if(isset($_SESSION["username"]))  
+	{  
+	echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';
+	}  
+else  
+	{
+	header("location:../login.php");  
+	}
+?>
 
 <!DOCTYPE html>
 <html lang="en">

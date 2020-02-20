@@ -36,7 +36,7 @@ if(isset($login))
 				
 				if($count > 0){
                  
-				 $validPassword = password_verify($password , $login['password']);
+				 $validPassword = password_verify($password , $login['password_']);
 				 if($validPassword){
 				 $_SESSION["username"] = $username;
 			      header("location:inc/searchScreen.php");

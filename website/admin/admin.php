@@ -24,11 +24,11 @@ if(isset($login))
 		   else
 		   {
 		     // Get the userName and passWord
-				$query = 'SELECT emailAddress, password
-						  FROM employees
-						  WHERE emailAddress =:emailAddress';
+				$query = 'SELECT username, password_
+						  FROM login
+						  WHERE username =:username';
 				$statement = $db1->prepare($query);
-				$statement->bindValue(':emailAddress', $username);
+				$statement->bindValue(':username', $username);
 			    $statement->execute();
 				$login= $statement->fetch();
 				$count = $statement->rowCount();

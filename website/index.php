@@ -348,31 +348,13 @@
 			var w = window.innerWidth;
 			var h = window.innerHeight;
 			document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
-			//document.getElementById("picturesize").style.width=w+"px";
-			//document.getElementById("picturesize").style.height=h+"px";
-			//document.getElementById("picturesize").style.objectFit="cover";
-			//document.getElementById("picturesize2").style.width=w+"px";
-			//document.getElementById("picturesize2").style.height=h+"px";
-			//document.getElementById("picturesize2").style.objectFit="cover";
-			//document.getElementById("picturesize3").style.width=w+"px";
-			//document.getElementById("picturesize3").style.height=h+"px";
-			//document.getElementById("picturesize3").style.objectFit="cover";
-
 			var i;
             var x = document.getElementsByClassName("mySlides");
-			//var y = getElementsByClassName("picturesizz")[0];
             for (i = 0; i < x.length; i++) {
 				x[i].getElementsByClassName("picturesizz")[0].style.width=w+"px";
 				x[i].getElementsByClassName("picturesizz")[0].style.height=h+"px";
 				x[i].getElementsByClassName("picturesizz")[0].style.objectFit="cover";
             }
-			//var list=document.getElementsByClassName("mySlides")[0];
-			//list.getElementsByClassName("picturesizz")[0].style.width=w+"px";
-			//list.getElementsByClassName("picturesizz")[0].style.height=h+"px";
-			//list.getElementsByClassName("picturesizz")[0].style.objectFit="cover";
-			//document.getElementsByClassName("picturesize").style.width=w+"px";
-			//document.getElementsByClassName("picturesize").style.height=h+"px";
-			//document.getElementsByClassName("picturesize").style.objectFit="cover";
 		}
 
         //Project Gallery Looping

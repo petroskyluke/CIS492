@@ -51,8 +51,8 @@ CREATE TABLE services_provided_and_scheduled	(
 );
 
 CREATE TABLE login (
-	username	VARCHAR(32)	NOT NULL,
-    password_	VARCHAR(32) NOT NULL,
+	username	VARCHAR(255)	NOT NULL,
+    password_	VARCHAR(255) NOT NULL,
     PRIMARY KEY (username)
 );
 

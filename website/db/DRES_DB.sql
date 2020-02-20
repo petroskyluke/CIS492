@@ -30,16 +30,8 @@ CREATE TABLE services_available	(
 	service_description		VARCHAR(50)		NOT NULL,
 	service_price			DOUBLE			NOT NULL,
 	service_time			TIME			NOT NULL,
-<<<<<<< HEAD:website/db/DRES_DB.sql
-<<<<<<< HEAD:website/db/TEST_DATABASE_1.sql
 	media_type				VARCHAR(25)		NOT NULL,
-=======
-	media_type_ID			INT				NOT NULL,/*why does services available need this?*/
->>>>>>> e5a5c4a7835c9556836b794d299e574afef3bbc7:website/db/DRES_DB.sql
-=======
-	media_type_ID			INT				NOT NULL,/*why does services available need this?*/
->>>>>>> e1bf07a3dc8b392624818bf2fc51f97a535f45eb:website/db/TEST_DATABASE_1.sql
-	PRIMARY KEY (service_ID),
+	media_type_ID			INT				NOT NULL,	PRIMARY KEY (service_ID),
 	UNIQUE INDEX service_ID (service_ID)
 );
 
@@ -58,7 +50,6 @@ CREATE TABLE services_provided_and_scheduled	(
 	FOREIGN KEY (service_ID) REFERENCES services_available(service_ID)
 );
 
-<<<<<<< HEAD:website/db/DRES_DB.sql
 CREATE TABLE login (
 	username	VARCHAR(32)	NOT NULL,
     password_	VARCHAR(32) NOT NULL,

@@ -53,7 +53,10 @@ if(isset($login))
 	 }	   
 if(isset($_SESSION["username"]))  
 	{  
-	echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';
+    echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';
+    echo'<aside>
+	<a href="../inc/logout.php"<p>Logout</p></a>
+    </aside><br style="line-height:0px;" />';
 	}  
 else  
 	{

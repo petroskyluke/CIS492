@@ -55,7 +55,6 @@ CREATE TABLE login (
     password_	VARCHAR(32) NOT NULL,
     PRIMARY KEY (username)
 );
-=======
 
 INSERT INTO login (username, password_) VALUES
 ('Josh', 'Password123');

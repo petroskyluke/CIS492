@@ -66,18 +66,5 @@ CREATE TABLE login (
 );
 =======
 
-INSERT INTO agent (agent_fname, agent_lname, agent_phone, agent_email, agent_address) VALUES
-('Kris', 'Stewart', '7246892416', 'ste1145@calu.edu', '250 University AVE');
-
-INSERT INTO media_type (media_type_ID, media_type_description) VALUES
-(1, 'photo');
-
-INSERT INTO portfolio (group_ID, media_ID, media_name, media_location, media_fil_location, media_type_ID, media_upload_datetime) VALUES
-(1, 1, 'Test', 'put a location here', 'im not sure what this is', 1, '2020-02-13 11:45:00');
-
-INSERT INTO services_available(service_ID, service_name, service_description, service_price, service_time, media_type_ID) VALUES
-(1, 'Photography', 'i took pictures', 100.00, '11:45:00', 1);
-
-INSERT INTO services_provided_and_scheduled (project_ID, project_status, project_schedule_date, project_confirmation_date, project_start_datetime, project_end_datetime, agent_ID, service_ID) VALUES
-(1, 'false', '2020-02-10 11:45:00', '2020-02-11 11:45:00', '2020-02-12 11:45:00', '2020-02-13 11:45:00', 1, 1);
->>>>>>> e1bf07a3dc8b392624818bf2fc51f97a535f45eb:website/db/TEST_DATABASE_1.sql
+INSERT INTO login (username, password_) VALUES
+('Josh', 'Password123');

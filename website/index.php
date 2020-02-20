@@ -1,4 +1,4 @@
-﻿
+
 <?php
 
 
@@ -59,22 +59,22 @@
 		<!--test image with resolution of 6014x4000-->
 		<img class="picturesizz" src="img/nikon.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>Los Angeles</h3>
-		  <p><b>We had the best time playing at Venice Beach!</b></p>   
+		  <h3>YENCIK PHOTOGRAPHY</h3>
+		  <p><b>Insert Your Slogan Here!</b></p>   
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/header-bg2.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>New York</h3>
-		  <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
+		  <h3>YENCIK PHOTOGRAPHY</h3>
+		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/test2.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>Chicago</h3>
-		  <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
+		  <h3>YENCIK PHOTOGRAPHY</h3>
+		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
 		</div>
 	  </div>
 
@@ -227,7 +227,7 @@
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-dark-grey w3-center w3-padding-32">
                 <span onclick="document.getElementById('ticketModal').style.display='none'"
-                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">×</span>
+                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">�</span>
                 <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Services</h2>
             </header>
             <div class="w3-container">

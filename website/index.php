@@ -79,7 +79,7 @@
 	  </div>
 
         <!-- The Services Section -->
-		</br></br><p id="demoo"></p>
+		<!--</br></br><p id="demoo"></p>-->
 
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
             <h2 class="w3-wide">SERVICES</h2>
@@ -273,9 +273,9 @@
         <!--<p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>-->
         <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
-                <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
-                <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
-                <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+                <i class="fa fa-map-marker" style="width:30px"></i> Greensburg, US<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: (724) 970-9235<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: joshyencikphotography@gmail.com<br>
             </div>
             <div class="w3-col m6">
                 <form action="/action_page.php" target="_blank">
@@ -347,7 +347,7 @@
 		function resize(){
 			var w = window.innerWidth;
 			var h = window.innerHeight;
-			document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
+			//document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
 			var i;
             var x = document.getElementsByClassName("mySlides");
             for (i = 0; i < x.length; i++) {

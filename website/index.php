@@ -24,7 +24,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="resize()" onresize="resize()">
     <!-- Navbar -->
     <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
@@ -50,33 +50,37 @@
 
 
 
-    <!-- Page content -->
-    <div id="picturewidth" class="w3-content">
+	<!-- Page content -->
+	<div class="w3-content" style="max-width:3000px;">
 
-        <!-- Automatic Slideshow Images -->
-        <div class="mySlides w3-display-container w3-center">
-            <img id="pictureheight" src="img/header-bg.jpg">
-            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-                <h3>YENCIK PHOTOGRAPHY</h3>
-                <p><b>Your Business Slogan Here</b></p>
-            </div>
-        </div>
-        <div class="mySlides w3-display-container w3-center">
-            <img id="pictureheightt" src="img/test2.jpg">
-            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-                <h3>New York</h3>
-                <p><b>The atmosphere in New York is lorem ipsum.</b></p>
-            </div>
-        </div>
-        <div class="mySlides w3-display-container w3-center">
-            <img id="pictureheighttt" src="img/header-bg2.jpg">
-            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-                <h3>Chicago</h3>
-                <p><b>Thank you, Chicago - A night we won't forget.</b></p>
-            </div>
-        </div>
+	  <!-- Automatic Slideshow Images -->
+	  <div class="mySlides w3-display-container w3-center">
+		<!--<img src="img/nikon.jpg" style="width:100%; height:100%; object-fit:cover">-->
+		<!--test image with resolution of 6014x4000-->
+		<img class="picturesizz" src="img/nikon.jpg">
+		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+		  <h3>Los Angeles</h3>
+		  <p><b>We had the best time playing at Venice Beach!</b></p>   
+		</div>
+	  </div>
+	  <div class="mySlides w3-display-container w3-center">
+		<img class="picturesizz" src="img/header-bg2.jpg">
+		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+		  <h3>New York</h3>
+		  <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
+		</div>
+	  </div>
+	  <div class="mySlides w3-display-container w3-center">
+		<img class="picturesizz" src="img/test2.jpg">
+		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+		  <h3>Chicago</h3>
+		  <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
+		</div>
+	  </div>
 
         <!-- The Services Section -->
+		</br></br><p id="demoo"></p>
+
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
             <h2 class="w3-wide">SERVICES</h2>
             <p class="w3-opacity"><i>Select a requested service and date to set up our service.</i></p>
@@ -119,8 +123,8 @@
             </div>
             <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule</button>
         </div>
+
     </div>
-    <br /><br /><p id="demo"></p>
 
     <!-- The Portfolio Section -->
     <div class="w3-black" id="portfolio">
@@ -337,14 +341,21 @@
                 gallery.style.display = "none";
             }
         }
-        //testing picture stuff
-        var w = window.innerWidth;
-        var h = window.innerHeight;
-		//not sure what this does. but if you remove it the carousel doesnt work
-        document.getElementById("picturewidth").style.maxWidth = w + "px";
-        document.getElementById("pictureheight").style.maxHeight = h + "px";
-        document.getElementById("pictureheightt").style.maxHeight = h + "px";
-        document.getElementById("pictureheighttt").style.maxHeight = h + "px";
+
+
+		//figure out how to do this by class instead of id, consider loading towards beginning of page instead of end
+		function resize(){
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
+			var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+				x[i].getElementsByClassName("picturesizz")[0].style.width=w+"px";
+				x[i].getElementsByClassName("picturesizz")[0].style.height=h+"px";
+				x[i].getElementsByClassName("picturesizz")[0].style.objectFit="cover";
+            }
+		}
 
         //Project Gallery Looping
         var slideIndex = 1;

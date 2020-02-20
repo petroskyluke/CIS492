@@ -57,4 +57,4 @@ CREATE TABLE login (
 );
 
 INSERT INTO login (username, password_) VALUES
-('Josh', 'Password123');
+('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');

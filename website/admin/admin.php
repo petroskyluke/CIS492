@@ -24,11 +24,11 @@ if(isset($login))
 		   else
 		   {
 		     // Get the userName and passWord
-				$query = 'SELECT emailAddress, password
-						  FROM employees
-						  WHERE emailAddress =:emailAddress';
+				$query = 'SELECT username, password_
+						  FROM login
+						  WHERE username =:username';
 				$statement = $db1->prepare($query);
-				$statement->bindValue(':emailAddress', $username);
+				$statement->bindValue(':username', $username);
 			    $statement->execute();
 				$login= $statement->fetch();
 				$count = $statement->rowCount();
@@ -36,10 +36,9 @@ if(isset($login))
 				
 				if($count > 0){
                  
-				 $validPassword = password_verify($password , $login['password']);
+				 $validPassword = password_verify($password , $login['password_']);
 				 if($validPassword){
 				 $_SESSION["username"] = $username;
-			      header("location:inc/searchScreen.php");
 				  }
 				else{
 					$message='<label>Wrong Password</label>';

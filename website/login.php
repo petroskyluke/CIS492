@@ -58,7 +58,7 @@ session_start();
                         <label for="password"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="password" required>
 
-                        <input type="submit" name="log" value="log"/>
+                        <input type="submit" name="login" value="login"/>
                     </div>
 
                     <div class="container" style="background-color:#f1f1f1">

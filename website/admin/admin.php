@@ -39,7 +39,6 @@ if(isset($login))
 				 $validPassword = password_verify($password , $login['password_']);
 				 if($validPassword){
 				 $_SESSION["username"] = $username;
-			      header("location:inc/searchScreen.php");
 				  }
 				else{
 					$message='<label>Wrong Password</label>';

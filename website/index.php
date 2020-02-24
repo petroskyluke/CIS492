@@ -1,4 +1,4 @@
-﻿
+
 <?php
 
 
@@ -59,27 +59,27 @@
 		<!--test image with resolution of 6014x4000-->
 		<img class="picturesizz" src="img/nikon.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>Los Angeles</h3>
-		  <p><b>We had the best time playing at Venice Beach!</b></p>   
+		  <h3>YENCIK PHOTOGRAPHY</h3>
+		  <p><b>Insert Your Slogan Here!</b></p>   
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/header-bg2.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>New York</h3>
-		  <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
+		  <h3>YENCIK PHOTOGRAPHY</h3>
+		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/test2.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>Chicago</h3>
-		  <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
+		  <h3>YENCIK PHOTOGRAPHY</h3>
+		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
 		</div>
 	  </div>
 
         <!-- The Services Section -->
-		</br></br><p id="demoo"></p>
+		<!--</br></br><p id="demoo"></p>-->
 
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
             <h2 class="w3-wide">SERVICES</h2>
@@ -227,7 +227,7 @@
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-dark-grey w3-center w3-padding-32">
                 <span onclick="document.getElementById('ticketModal').style.display='none'"
-                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">×</span>
+                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">�</span>
                 <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Services</h2>
             </header>
             <div class="w3-container">
@@ -273,9 +273,9 @@
         <!--<p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>-->
         <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
-                <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
-                <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
-                <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+                <i class="fa fa-map-marker" style="width:30px"></i> Greensburg, US<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: (724) 970-9235<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: joshyencikphotography@gmail.com<br>
             </div>
             <div class="w3-col m6">
                 <form action="/action_page.php" target="_blank">
@@ -347,7 +347,7 @@
 		function resize(){
 			var w = window.innerWidth;
 			var h = window.innerHeight;
-			document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
+			//document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
 			var i;
             var x = document.getElementsByClassName("mySlides");
             for (i = 0; i < x.length; i++) {

@@ -40,19 +40,19 @@ if(isset($login))
 				 $validPassword = password_verify($password , $login['password_']);
 				 if($validPassword){
                  $_SESSION["username"] = $username;
-                 $message ='<h3>Login Success, Welcome '.$_SESSION["username"].'</h3';
-                 include_once('../admin/admin.php');
+				 $message ='<h3>Login Success, Welcome '.$_SESSION["username"].'</h3';
+                 header("Location: ../admin/admin.php");
 				  }
 				else{
                     $message='<label>Wrong Password</label>';
-                    include_once('../login.php');
+                    header("Location: ../login.php");
                     
 				}
 				}
 				
 				else{
                    $message = '<label>Wrong Username</label>'; 
-                   include_once('../login.php');
+                   header("Location: ../login.php");
 				}
 		   }
 		   

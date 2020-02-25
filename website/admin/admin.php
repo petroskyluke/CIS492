@@ -23,7 +23,6 @@
 </head>
 
 <body>
-    <?php echo $message;?>
     </br>
     <a href='../inc/logout.php'>Logout</a>
     </br>

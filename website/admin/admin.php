@@ -1,66 +1,33 @@
 ﻿<?php
-require_once('../inc/db_connect.php');
+//BEGIN USER VERIFICATION
+//BEGIN SESSION CODE
+//get current time
+$time = $_SERVER['REQUEST_TIME'];
+//set the amount of time a session should live
+$timeout_duration = 60;
+//set parameters for session cookie storage
+ini_set('session.gc_maxlifetime', $timeout_duration);
+ini_set('session.cookie_lifetime', $timeout_duration);
 session_start();
+if(isset($_SESSION['LAST_ACTIVITY']) && 
+	(($_SESSION['LAST_ACTIVITY'] + $timeout_duration) < $time))
+{
+	session_unset();
+    session_destroy();
+    session_start(); 
+}
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); 
+  }
 
-if(!isset($username))
-	{
-	$username = filter_input(INPUT_POST,'username');
-	}
-
-if(!isset($password))
-	{
-	$password = filter_input(INPUT_POST,'password');
-	}
-
-$login = filter_input(INPUT_POST, 'login');
-
-if(isset($login))  
-      {  
-           if(empty($username) || empty($password))  
-           {  
-                $message = '<label>All fields are required</label>';  
-           }  
-		   
-		   else
-		   {
-		     // Get the userName and passWord
-				$query = 'SELECT username, password_
-						  FROM login
-						  WHERE username =:username';
-				$statement = $db1->prepare($query);
-				$statement->bindValue(':username', $username);
-			    $statement->execute();
-				$login= $statement->fetch();
-				$count = $statement->rowCount();
-				$statement->closeCursor();
-				
-				if($count > 0){
-                 
-				 $validPassword = password_verify($password , $login['password_']);
-				 if($validPassword){
-				 $_SESSION["username"] = $username;
-				  }
-				else{
-					$message='<label>Wrong Password</label>';
-				}
-				}
-				
-				else{
-				   $message = '<label>Wrong Data</label>'; 
-				}
-		   }
-		   
-	 }	   
-if(isset($_SESSION["username"]))  
-	{  
-	echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';
-	}  
-else  
-	{
-	header("location:../login.php");  
-	}
+$_SESSION['LAST_ACTIVITY'] = $time;
+//END SESSION CODE
+if(!isset($_SESSION["username"]))  
+{  
+	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  
+}
+//END USER VERIFICATION
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,7 +52,6 @@ else
 
 <body>
 
-
     <!-- Page content -->
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
@@ -93,6 +59,8 @@ else
         <a href="#" class="w3-bar-item w3-button">Services</a>
         <a href="#" class="w3-bar-item w3-button">Portfolio</a>
         <a href="#" class="w3-bar-item w3-button">Reporting</a>
+        <a href="../inc/logout.php" class="w3-bar-item w3-button">Logout</a>
+        <a href="changepassword.php" class="w3-bar-item w3-button">Change Password</a>
     </div>
 
     <!-- Page Content -->

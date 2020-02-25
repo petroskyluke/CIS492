@@ -15,7 +15,6 @@ if(isset($_SESSION['LAST_ACTIVITY']) &&
 	session_unset();
     session_destroy();
     session_start();
-    $_SESSION['msg'] = 'YOU HAVE BEEN LOGGED OUT DUE TO INACTIVITY';
 }
 $_SESSION['LAST_ACTIVITY'] = $time;
 //END SESSION CODE

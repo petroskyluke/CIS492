@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$time = $_SERVER['REQUEST_TIME'];
+$_SESSION['LAST_ACTIVITY'] = $time;
 if(!isset($username))
 	{
 	$username = filter_input(INPUT_POST,'username');

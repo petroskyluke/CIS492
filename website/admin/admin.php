@@ -14,11 +14,14 @@ if(isset($_SESSION['LAST_ACTIVITY']) &&
 {
 	session_unset();
     session_destroy();
+    session_start(); 
 }
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); 
+  }
 
-//END SESSION CODE
-session_start(); 
 $_SESSION['LAST_ACTIVITY'] = $time;
+//END SESSION CODE
 if(!isset($_SESSION["username"]))  
 {  
 	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  

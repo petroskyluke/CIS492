@@ -45,14 +45,14 @@ if(isset($login))
 				  }
 				else{
                     $message='<label>Wrong Password</label>';
-                    header("Location: ../login.php");
+                    header("Location: ../login.php?msg=Incorrect+password");
                     
 				}
 				}
 				
 				else{
                    $message = '<label>Wrong Username</label>'; 
-                   header("Location: ../login.php");
+                   header("Location: ../login.php?msg=Incorrect+username");
 				}
 		   }
 		   

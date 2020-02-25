@@ -44,13 +44,14 @@
     <!-- Page content -->
     <div class="w3-content" style="max-width:2000px; margin-top:46px">
 
-    <?php if(isset($message)){
-        echo $message;
-    }?>
     </br>
 	
         <div class="w3-container">
-				<div class="w3-container center" m>
+				<div class="w3-container center">
+                <?php
+                if(!isset($msg)){$msg = filter_input(INPUT_GET,'msg');}
+                if(isset($msg)){echo $msg;}
+                ?>
                 <form action="inc/checklogin.php" method="post">
 
                     <div class="container">

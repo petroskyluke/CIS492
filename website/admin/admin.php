@@ -1,68 +1,4 @@
-﻿<?php
-require_once('../inc/db_connect.php');
-session_start();
-
-if(!isset($username))
-	{
-	$username = filter_input(INPUT_POST,'username');
-	}
-
-if(!isset($password))
-	{
-	$password = filter_input(INPUT_POST,'password');
-	}
-
-$login = filter_input(INPUT_POST, 'login');
-
-if(isset($login))  
-      {  
-           if(empty($username) || empty($password))  
-           {  
-                $message = '<label>All fields are required</label>';  
-           }  
-		   
-		   else
-		   {
-		     // Get the userName and passWord
-				$query = 'SELECT username, password_
-						  FROM login
-						  WHERE username =:username';
-				$statement = $db1->prepare($query);
-				$statement->bindValue(':username', $username);
-			    $statement->execute();
-				$login= $statement->fetch();
-				$count = $statement->rowCount();
-				$statement->closeCursor();
-				
-				if($count > 0){
-                 
-				 $validPassword = password_verify($password , $login['password_']);
-				 if($validPassword){
-				 $_SESSION["username"] = $username;
-				  }
-				else{
-					$message='<label>Wrong Password</label>';
-				}
-				}
-				
-				else{
-				   $message = '<label>Wrong Data</label>'; 
-				}
-		   }
-		   
-	 }	   
-if(isset($_SESSION["username"]))  
-	{  
-    echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';
-    echo'<aside>
-	<a href="../inc/logout.php"<p>Logout</p></a>
-    </aside><br style="line-height:0px;" />';
-	}  
-else  
-	{
-	header("location:../login.php");  
-	}
-?>
+﻿
 
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +23,11 @@ else
 </head>
 
 <body>
-
+    <?php echo $message;?>
+    </br>
+    <a href='../inc/logout.php'>Logout</a>
+    </br>
+    <a href="changepassword.php">Change Password</a>
 
     <!-- Page content -->
     <!-- Sidebar -->

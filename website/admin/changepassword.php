@@ -1,9 +1,28 @@
 <?php
+//BEGIN SESSION CODE
+//get current time
+$time = $_SERVER['REQUEST_TIME'];
+//set the amount of time a session should live
+$timeout_duration = 20;
+//set parameters for session cookie storage
+ini_set('session.gc_maxlifetime', $timeout_duration);
+ini_set('session.cookie_lifetime', $timeout_duration);
+session_start();
+if(isset($_SESSION['LAST_ACTIVITY']) && 
+	(($_SESSION['LAST_ACTIVITY'] + $timeout_duration) < $time))
+{
+	session_unset();
+    session_destroy();
+    session_start();
+    $_SESSION['msg'] = 'YOU HAVE BEEN LOGGED OUT DUE TO INACTIVITY';
+}
+$_SESSION['LAST_ACTIVITY'] = $time;
+//END SESSION CODE
 session_start(); 
 
 if(!isset($_SESSION["username"]))  
 {  
-	header("location:../index.php");  
+	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  
 }
 ?>
 

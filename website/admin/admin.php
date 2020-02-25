@@ -50,10 +50,6 @@ if(!isset($_SESSION["username"]))
 </head>
 
 <body>
-    </br>
-    <a href='../inc/logout.php'>Logout</a>
-    </br>
-    <a href="changepassword.php">Change Password</a>
 
     <!-- Page content -->
     <!-- Sidebar -->
@@ -62,6 +58,8 @@ if(!isset($_SESSION["username"]))
         <a href="#" class="w3-bar-item w3-button">Services</a>
         <a href="#" class="w3-bar-item w3-button">Portfolio</a>
         <a href="#" class="w3-bar-item w3-button">Reporting</a>
+        <a href="../inc/logout.php" class="w3-bar-item w3-button">Logout</a>
+        <a href="changepassword.php" class="w3-bar-item w3-button">Change Password</a>
     </div>
 
     <!-- Page Content -->

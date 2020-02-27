@@ -57,7 +57,7 @@ if(!isset($_SESSION["username"]))
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
         <h3 class="w3-bar-item">Menu</h3>
         <a href="#" class="w3-bar-item w3-button">Services</a>
-        <a href="#" class="w3-bar-item w3-button">Portfolio</a>
+        <a href="editportfolio.php" class="w3-bar-item w3-button">Portfolio</a>
         <a href="#" class="w3-bar-item w3-button">Reporting</a>
         <a href="../inc/logout.php" class="w3-bar-item w3-button">Logout</a>
         <a href="changepassword.php" class="w3-bar-item w3-button">Change Password</a>

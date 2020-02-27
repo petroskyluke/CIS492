@@ -139,7 +139,7 @@
                         <p><b>Project 1</b></p>
                         <p class="w3-opacity">Fri 27 Nov 2016</p>
                         <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        <button class="w3-button w3-black w3-margin-bottom" id="Project1" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>
                 <div class="w3-third w3-margin-bottom">
@@ -227,7 +227,7 @@
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-dark-grey w3-center w3-padding-32">
                 <span onclick="document.getElementById('ticketModal').style.display='none'"
-                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">×</span>
+                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">ï¿½</span>
                 <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Services</h2>
             </header>
             <div class="w3-container">

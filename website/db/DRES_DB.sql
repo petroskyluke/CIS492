@@ -14,11 +14,11 @@ CREATE TABLE agent (
 );
 
 CREATE TABLE portfolio  (
-  group_ID					INT			   	NOT NULL	  AUTO_INCREMENT,
+  group_ID					INT			   	NOT NULL,
   media_ID					INT			   	NOT NULL,
   media_name				VARCHAR(50)	   	NOT NULL,
-  media_location			VARCHAR(50)	   	NOT NULL,
-  media_file_location		VARCHAR(100)	NOT NULL, 
+  media_location			VARCHAR(50)	   	NULL,
+  media_file_location		VARCHAR(255)	NOT NULL, 
   media_type				VARCHAR(25)	 	NOT NULL,
   media_upload_datetime		DATETIME	   	NOT NULL,
   PRIMARY KEY (group_ID, media_ID)
@@ -58,3 +58,7 @@ CREATE TABLE login (
 
 INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
+
+INSERT INTO portfolio (group_ID, media_ID, media_name, media_location, media_file_location, media_type, media_upload_datetime) VALUES
+('1', '1', 'cover.jpg', 'Greensburg', 'img/portfolio/project1', 'image', '1900-01-01 00:00:00');
+

@@ -60,7 +60,8 @@
 		<img class="picturesizz" src="img/nikon.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
 		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>Insert Your Slogan Here!</b></p>   
+		  <p><b>Insert Your Slogan Here!</b></p> 
+echo '<a href="http://www.website.com/page.html">Click here</a>';		  
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">

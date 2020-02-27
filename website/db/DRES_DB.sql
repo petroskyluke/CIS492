@@ -60,28 +60,33 @@ CREATE TABLE login (
 CREATE TABLE packages (
 	package_ID			INT			NOT NULL	AUTO_INCREMENT,
 	package_name		VARCHAR(25)	NOT NULL,
-	package_price		VARCHAR(10)	NOT NULL,
+	package_price		DOUBLE	NOT NULL,
 	package_features	VARCHAR(255),
 	PRIMARY KEY (package_ID)
 );
 
 CREATE TABLE add_ons (
-	addon_ID	
-	addon_name
-	addon_price
-	addon_description
+	addon_ID			INT				NOT NULL	AUTO_INCREMENT,
+	addon_name			VARCHAR(25)		NOT NULL,
+	addon_price			DOUBLE			NOT NULL,
+	addon_description	VARCHAR(255)	NOT NULL,
+	PRIMARY KEY (addon_ID)
 );
 
-
 CREATE TABLE orderform (
-	form_ID	
-	package_chosen
-	add_on1	BOOLEAN
-	add_on2	BOOLEAN
-	....  
-	a_la_carte
-
-
+	form_ID				INT			NOT NULL	AUTO_INCREMENT,
+	package_chosen		VARCHAR(16)	NOT NULL,
+	add_on1				BOOLEAN		NOT NULL,
+	add_on2				BOOLEAN		NOT NULL,
+	a_la_carte1			BOOLEAN		NOT NULL,			
+	a_la_carte2			BOOLEAN		NOT NULL,			
+	a_la_carte3			BOOLEAN		NOT NULL,			
+	a_la_carte4			BOOLEAN		NOT NULL,			
+	a_la_carte5			BOOLEAN		NOT NULL,			
+	a_la_carte6			BOOLEAN		NOT NULL,			
+	a_la_carte7			BOOLEAN		NOT NULL,			
+	a_la_carte8			BOOLEAN		NOT NULL,			
+	PRIMARY KEY (form_ID)
 );
 
 INSERT INTO login (username, password_) VALUES

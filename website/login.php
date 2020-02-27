@@ -1,8 +1,4 @@
-﻿<?php
-require_once('inc/db_connect.php');
-session_start(); 
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Yencik Photography</title>
@@ -20,7 +16,6 @@ session_start();
 </head>
 
 <body>
-
     <!-- Navbar -->
     <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
@@ -44,12 +39,20 @@ session_start();
         <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     </div>
 
+    
+
     <!-- Page content -->
     <div class="w3-content" style="max-width:2000px; margin-top:46px">
+
+    </br>
 	
         <div class="w3-container">
-				<div class="w3-container center" m>
-                <form action="admin/admin.php" method="post">
+				<div class="w3-container center">
+                <?php
+                if(!isset($msg)){$msg = filter_input(INPUT_GET,'msg');}
+                if(isset($msg)){echo $msg;}
+                ?>
+                <form action="inc/checklogin.php" method="post">
 
                     <div class="container">
                         <label for="username"><b>Username</b></label>

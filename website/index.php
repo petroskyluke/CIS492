@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/index.css">
     <style>
         body {
             font-family: "Lato", sans-serif
@@ -47,8 +48,6 @@
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
         <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     </div>
-
-
 
 	<!-- Page content -->
 	<div class="w3-content" style="max-width:3000px;">
@@ -224,18 +223,61 @@
             <form>
                 <p><label><i class="fa fa-box-open"></i></label></p>
                 <p>Choose one of our packages!</p>
-                <div>
-                    <input type="radio" id="Package 1" name="Package" value="Package_1">
-                    <label for="Package_1">Package 1</label>
-                </div>
-                <div>
-                    <input type="radio" id="Package 2" name="Package" value="Package_2">
-                    <label for="Package_2">Package 2</label>
-                </div>
-                <div>
-                    <input type="radio" id="Package 3" name="Package" value="Package_3">
-                    <label for="Package_3">Package 3</label><br>
-                </div>
+                <div class="w3-panel w3-white w3-third">
+  <h1>Package 1</h1>
+    <ul>
+    	<li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+    </ul>
+  </div>
+  <div class="w3-panel w3-white w3-third">
+  <h1>Package 2</h1>
+    <ul>
+    	<li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+    </ul>
+  </div>
+  <div class="w3-panel w3-white w3-third">
+  <h1>Package 3</h1>
+    <ul>
+    	<li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+        <li>ahhhhhhh</li>
+    </ul>
+  </div>
+  <div class="w3-panel w3-white w3-third">
+    <div class="w3-center">
+        <label class="container w3-center">
+        <input type="radio" name="package_sel" value="package_1">
+        <span class="checkmark"></span>
+        </label>
+    </div>
+  </div>
+  <div class="w3-panel w3-white w3-third">
+  	<div class="w3-center">
+        <label class="container w3-center">
+        <input type="radio" name="package_sel" value="package_2" style="display:block; margin : 0 auto;">
+        <span class="checkmark"></span>
+        </label>
+  	</div>
+  </div>
+  <div class="w3-panel w3-white w3-third">
+  	<div class="w3-center">
+        <label class="container">
+        <input type="radio" name="package_sel" value="package_3">
+        <span class="checkmark"></span>
+        </label>
+  	</div>
+  </div>
                 <input class="w3-input w3-border" type="text" placeholder="Name/Company Name*">
                 <p><label><i class="fa fa-user"></i> Contact Info</label></p>
                 <input class="w3-input w3-border" type="text" placeholder="Email*">

@@ -1,10 +1,6 @@
-.newdiv {
-  width: 100vw;
-  position: relative;
-
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
+td {
+  vertical-align:middle;
+  text-align:center;
 }
 /* Customize the label (the container) */
 .container {

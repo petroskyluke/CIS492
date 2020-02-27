@@ -223,63 +223,80 @@
             <form>
                 <p><label><i class="fa fa-box-open"></i></label></p>
                 <p>Choose one of our packages!</p>
-                <div class="w3-panel w3-white w3-third">
-  <h1>Package 1</h1>
-    <ul>
-    	<li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-    </ul>
-  </div>
-  <div class="w3-panel w3-white w3-third">
-  <h1>Package 2</h1>
-    <ul>
-    	<li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-    </ul>
-  </div>
-  <div class="w3-panel w3-white w3-third">
-  <h1>Package 3</h1>
-    <ul>
-    	<li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-        <li>ahhhhhhh</li>
-    </ul>
-  </div>
-  <div class="w3-panel w3-white w3-third">
-    <div class="w3-center">
-        <label class="container w3-center">
-        <input type="radio" name="package_sel" value="package_1">
-        <span class="checkmark"></span>
-        </label>
-    </div>
-  </div>
-  <div class="w3-panel w3-white w3-third">
-  	<div class="w3-center">
-        <label class="container w3-center">
-        <input type="radio" name="package_sel" value="package_2" style="display:block; margin : 0 auto;">
-        <span class="checkmark"></span>
-        </label>
-  	</div>
-  </div>
-  <div class="w3-panel w3-white w3-third">
-  	<div class="w3-center">
-        <label class="container">
-        <input type="radio" name="package_sel" value="package_3">
-        <span class="checkmark"></span>
-        </label>
-  	</div>
-  </div>
-                <input class="w3-input w3-border" type="text" placeholder="Name/Company Name*">
-                <p><label><i class="fa fa-user"></i> Contact Info</label></p>
+                    <div class="w3-panel w3-white w3-third">
+                    <h1>Package 1</h1>
+                        <ul>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                        </ul>
+                    </div>
+                    <div class="w3-panel w3-white w3-third">
+                    <h1>Package 2</h1>
+                        <ul>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                        </ul>
+                    </div>
+                    <div class="w3-panel w3-white w3-third">
+                    <h1>Package 3</h1>
+                        <ul>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                            <li>ahhhhhhh</li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="w3-container">  
+                    <div class="w3-panel w3-white w3-third">
+                        <label class="container w3-center">
+                        <input type="radio" name="package_sel" value="package_1">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="w3-panel w3-white w3-third">
+                        <label class="container w3-center">
+                        <input type="radio" name="package_sel" value="package_2" style="display:block; margin : 0 auto;">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="w3-panel w3-white w3-third">
+                        <label class="container">
+                        <input type="radio" name="package_sel" value="package_3">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                <table>
+                    <p>Add On:</p>
+                    <tr>
+                    <td><input type="checkbox" name="options" value="option1"></td>
+                    <td>OPTION 1</td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox" name="options" value="option2"></td>
+                    <td>OPTION 2</td>
+                    </tr>
+                </table>
+                <table>
+                    <p>A La Carte:</p>
+                    <tr>
+                    <td><input type="checkbox" name="options" value="option1"></td>
+                    <td>OPTION 1</td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox" name="options" value="option2"></td>
+                    <td>OPTION 2</td>
+                    </tr>
+                </table>
+
                 <input class="w3-input w3-border" type="text" placeholder="Email*">
                 <input class="w3-input w3-border" type="text" placeholder="Phone #*">
                 <p><label><i class="fa fa-camera"></i> Service Info</label></p>

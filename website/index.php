@@ -247,12 +247,10 @@
                             <li>ahhhhhhh</li>
                             <li>ahhhhhhh</li>
                         </ul>
-                        <div class="button-boy">
-                            <label class="btn-container">
-                            <input type="radio" name="package_sel" value="package_1">
-                            <span class="checkmark flex-col"></span>
-                            </label>
-                        </div>
+                        <label class="btn-container">
+                        <input type="radio" name="package_sel" value="package_1">
+                        <span class="checkmark flex-col"></span>
+                        </label>
                     </div>
                     <div class="flex-col">
                         <h1>Package 3</h1>
@@ -266,26 +264,6 @@
                         </ul>
                         <label class="btn-container">
                         <input type="radio" name="package_sel" value="package_1">
-                        <span class="checkmark flex-col"></span>
-                        </label>
-                    </div>
-                </div>
-                <div class="flex-form">  
-                    <div class="flex-col  flex-form">
-                        <label class="btn-container">
-                        <input type="radio" name="package_sel" value="package_1">
-                        <span class="checkmark flex-col"></span>
-                        </label>
-                    </div>
-                    <div class="flex-col  flex-form">
-                        <label class="btn-container">
-                        <input type="radio" name="package_sel" value="package_2" style="display:block; margin : 0 auto;">
-                        <span class="checkmark flex-col"></span>
-                        </label>
-                    </div>
-                    <div class="flex-col  flex-form">
-                        <label class="btn-container">
-                        <input type="radio" name="package_sel" value="package_3">
                         <span class="checkmark flex-col"></span>
                         </label>
                     </div>

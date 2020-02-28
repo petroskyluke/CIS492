@@ -16,7 +16,7 @@
 .btn-container {
   text-align: center;
   display: block;
-  position: relative;
+  position: absolute;
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
@@ -26,13 +26,9 @@
   -ms-user-select: none;
   user-select: none;
 }
-.button-boy {
-  margin-top: auto;
-}
 
 /* Hide the browser's default radio button */
 .btn-container input {
-  position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
@@ -47,8 +43,9 @@
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  background-color: rgb(207, 207, 207);
   border-radius: 50%;
+  box-shadow: 0 0 1pt 1pt rgb(39, 39, 39);
 }
 
 /* On mouse-over, add a grey background color */
@@ -64,7 +61,7 @@
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
-  position: absolute;
+  position: relative;
   display: none;
 }
 

@@ -224,47 +224,69 @@
                 <p><label><i class="fa fa-box-open"></i></label></p>
                 <p>Choose one of our packages!</p>
                 <div class="flex-form">
-                    <div class="flex-col">
-                        <h1>Package 1</h1>
-                        <ul>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                        </ul>
+                    <div class="flex-col flex-card">
+                        <div class="flex-item-top">
+                            <h1>Package 1</h1>
+                        </div>
+                        <div class="flex-item">
+                            <ul>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                            </ul>
+                        </div>
                         <label class="btn-container">
-                        <input type="radio" name="package_sel" value="package_1">
-                        <span class="checkmark flex-col"></span>
+                        <div class="flex-item-end">
+                            <input type="radio" name="package_sel" value="package_1">
+                            <span class="checkmark flex-col"></span>
+                        </div>
                         </label>
                     </div>
-                    <div class="flex-col">
-                        <h1>Package 2</h1>
-                        <ul>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                        </ul>
+                    <div class="flex-col flex-card">
+                        <div class="flex-item-top">
+                            <h1>Package 2</h1>
+                        </div>
+                        <div class="flex-item">
+                            <ul>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                            </ul>
+                        </div>
                         <label class="btn-container">
-                        <input type="radio" name="package_sel" value="package_1">
-                        <span class="checkmark flex-col"></span>
+                        <div class="flex-item-end">
+                            <input type="radio" name="package_sel" value="package_1">
+                            <span class="checkmark"></span>
+                        </div>
                         </label>
                     </div>
-                    <div class="flex-col">
-                        <h1>Package 3</h1>
-                        <ul>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                            <li>ahhhhhhh</li>
-                        </ul>
+                    <div class="flex-col flex-card">
+                        <div class="flex-item-top">
+                            <h1>Package 3</h1>
+                        </div>
+                        <div class="flex-item">
+                            <ul>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                                <li>ahhhhhhh</li>
+                            </ul>
+                        </div>
                         <label class="btn-container">
-                        <input type="radio" name="package_sel" value="package_1">
-                        <span class="checkmark flex-col"></span>
+                        <div class="flex-item-end">
+                            <input type="radio" name="package_sel" value="package_1">
+                            <span class="checkmark"></span>
+                        </div>
                         </label>
                     </div>
                 </div>

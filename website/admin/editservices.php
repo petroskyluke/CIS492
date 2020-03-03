@@ -4,7 +4,7 @@
 //get current time
 $time = $_SERVER['REQUEST_TIME'];
 //set the amount of time a session should live
-$timeout_duration = 60;
+$timeout_duration = 600;
 //set parameters for session cookie storage
 ini_set('session.gc_maxlifetime', $timeout_duration);
 ini_set('session.cookie_lifetime', $timeout_duration);
@@ -54,31 +54,31 @@ if(!isset($_SESSION["username"]))
 
     <!-- Page content -->
     <!-- Sidebar -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
         <h3 class="w3-bar-item">Menu</h3>
-        <a href="editservices.php" class="w3-bar-item w3-button selected">Services</a>
-        <a href="#" class="w3-bar-item w3-button">Portfolio</a>
-        <a href="#" class="w3-bar-item w3-button">Reporting</a>
+        <a href="#" class="w3-bar-item w3-button">Services</a>
+        <a href="editportfolio.php" class="w3-bar-item w3-button">Portfolio</a>
+        <a href="reporting.php" class="w3-bar-item w3-button">Reporting</a>
         <a href="../inc/logout.php" class="w3-bar-item w3-button">Logout</a>
         <a href="changepassword.php" class="w3-bar-item w3-button">Change Password</a>
     </div>
 
     <!-- Page Content -->
-    <div style="margin-left:25%">
-
+    <div style="margin-left:10%">
         <div class="w3-container w3-teal">
-            <h1>My Page</h1>
+            <h1>Edit Services</h1>
         </div>
-
-        <img src="img_car.jpg" alt="Car" style="width:100%">
-
-        <div class="w3-container">
-            <h2>Sidebar Navigation Example</h2>
-            <p>The sidebar with is set with "style="width:25%".</p>
-            <p>The left margin of the page content is set to the same value.</p>
-        </div>
-
+        <h3>This page can be used to edit the available services</h3>
+        <table>
+            <tr>
+                <th>Service id</th>
+                <th>Name of services</th>
+                <th></th>
+                <th>Name of service</th>
+            </tr>
+        </table>
     </div>
+    
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>

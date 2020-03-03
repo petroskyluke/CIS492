@@ -87,7 +87,7 @@ CREATE TABLE a_la_carte (
 	a_la_carte_ID		INT				NOT NULL	AUTO_INCREMENT,
 	a_la_carte_name		VARCHAR(255)	NOT NULL,
 	a_la_carte_price	VARCHAR(255)	NOT NULL,
-	a_la_carte_desc		VARCHAR(1024)
+	a_la_carte_desc		VARCHAR(1024),
 	PRIMARY KEY (a_la_carte_ID)
 );
 

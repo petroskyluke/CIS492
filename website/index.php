@@ -246,7 +246,7 @@
                         </br>
                         </div>
                         <label class="btn-container">
-                        <div class="flex-item-end">
+                        <div class="flex-item">
                             <input type="radio" name="package_sel" value="package_1">
                             <span class="checkmark flex-col"></span>
                         </div>
@@ -266,7 +266,7 @@
                         </br>
                         </div>
                         <label class="btn-container">
-                        <div class="flex-item-end">
+                        <div class="flex-item">
                             <input type="radio" name="package_sel" value="package_1">
                             <span class="checkmark"></span>
                         </div>
@@ -286,7 +286,7 @@
                         </br>
                         </div>
                         <label class="btn-container">
-                        <div class="flex-item-end">
+                        <div class="flex-item">
                             <input type="radio" name="package_sel" value="package_1">
                             <span class="checkmark"></span>
                         </div>

@@ -17,8 +17,8 @@ CREATE TABLE portfolio  (
   group_ID					INT			   	NOT NULL,
   media_ID					INT			   	NOT NULL	AUTO_INCREMENT,
   media_name				VARCHAR(50)	   	NOT NULL,
-  media_location			VARCHAR(50)	   	NOT NULL,
-  media_file_location		VARCHAR(100)	NOT NULL, 
+  media_location			VARCHAR(50)	   	NULL,
+  media_file_location		VARCHAR(255)	NOT NULL, 
   media_type				VARCHAR(25)	 	NOT NULL,
   media_upload_datetime		DATETIME	   	NOT NULL,
   PRIMARY KEY (group_ID, media_ID)
@@ -86,4 +86,3 @@ CREATE TABLE orderform (
 
 INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
-

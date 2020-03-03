@@ -138,7 +138,7 @@
                         <p><b>Project 1</b></p>
                         <p class="w3-opacity">Fri 27 Nov 2016</p>
                         <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        <button class="w3-button w3-black w3-margin-bottom" id="Project1" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>
                 <div class="w3-third w3-margin-bottom">

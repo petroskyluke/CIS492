@@ -57,12 +57,22 @@ CREATE TABLE login (
     PRIMARY KEY (username)
 );
 
+CREATE TABLE packagesFeatures (
+	package_features_ID			INT	NOT NULL,
+	package_features_ID2		INT NOT NULL,
+	package_featureName			VARCHAR(255),
+	package_featureDESC			VARCHAR(1024),
+	PRIMARY KEY (package_features_ID, package_features_ID2)
+);
+
+
 CREATE TABLE packages (
 	package_ID			INT			NOT NULL	AUTO_INCREMENT,
 	package_name		VARCHAR(25)	NOT NULL,
 	package_price		VARCHAR(10)	NOT NULL,
-	package_features	VARCHAR(255),
-	PRIMARY KEY (package_ID)
+	package_features_ID	INT			NOT NULL,
+	PRIMARY KEY (package_ID),
+	FOREIGN KEY (package_features_ID) REFERENCES packagesFeatures(package_features_ID)
 );
 
 CREATE TABLE add_ons (
@@ -71,6 +81,14 @@ CREATE TABLE add_ons (
 	addon_price			DOUBLE			NOT NULL,
 	addon_description	VARCHAR(255)	NOT NULL,
 	PRIMARY KEY (addon_ID)
+);
+
+CREATE TABLE a_la_carte ( 
+	a_la_carte_ID		INT				NOT NULL	AUTO_INCREMENT,
+	a_la_carte_name		VARCHAR(255)	NOT NULL,
+	a_la_carte_price	VARCHAR(255)	NOT NULL,
+	a_la_carte_desc		VARCHAR(1024)
+	PRIMARY KEY (a_la_carte_ID)
 );
 
 
@@ -90,7 +108,7 @@ CREATE TABLE orderform (
 	PRIMARY KEY (form_ID)
 );
 
+
 INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
-
 

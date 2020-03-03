@@ -27,6 +27,47 @@ if(!isset($_SESSION["username"]))
 	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  
 }
 //END USER VERIFICATION
+include_once('../inc/db_connect.php');
+//Form field is used to select which service needs to be edited
+if(!isset($typeofservice)){$typeofservice = filter_input(INPUT_POST, 'typeofservice');}
+$form_field1 = '';
+$form_field1 .= '<select name="typeofservice" onchange="javascript:this.form.submit()">';
+$options = array();
+$options['Projects'] = 'Projects';
+$options['Add-ons'] = 'Add-ons';
+$options['A_la_carte'] = 'A la carte';
+if (! empty($options)) {
+    foreach ($options as $option) {
+        $selected = ($typeofservice == $option) ? 'selected="selected"' : '';
+        $form_field1 .= '<option value="'.$option.'" ' . $selected . '>'.$option.'</option>';
+    }
+}
+$form_field1 .= '</select>';
+//end form field
+// Get addons
+if($typeofservice==='Add-ons'){
+    $query = 'SELECT addon_ID, addon_name, addon_price, addon_description
+                FROM add_ons';
+    $statement = $db1->prepare($query);
+    $statement->execute();
+    $table = $statement->fetchAll();
+    $statement->closeCursor();
+    
+    $form_field2 = '';
+    $form_field2 .= '<table><tr><th>ID</th><th>add-on name</th><th>add-on price</th><th>add-on description</th></tr>';
+    if(!empty($table)){
+        foreach($table as $addons){
+            $form_field2 .= '<tr>';
+            foreach($addons as $addon){
+                $form_field2 .= '<td>'.$addon.'</td>';
+            }
+            $form_field2 .= '</tr>';
+        }
+    }
+    $form_field2 .='<tr><td>ID</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>';
+
+    $form_field2 .= '</table>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,12 +81,6 @@ if(!isset($_SESSION["username"]))
     <style>
         body {
             font-family: "Lato", sans-serif
-        }
-
-        .mySlides img {
-            width: auto;
-            height: 800px;
-            max-height: 800px;
         }
     </style>
 </head>
@@ -69,14 +104,13 @@ if(!isset($_SESSION["username"]))
             <h1>Edit Services</h1>
         </div>
         <h3>This page can be used to edit the available services</h3>
-        <table>
-            <tr>
-                <th>Service id</th>
-                <th>Name of services</th>
-                <th></th>
-                <th>Name of service</th>
-            </tr>
-        </table>
+        <h4>Please choose which type of service you would like to edit</h4>
+        <form action="" method="post" >
+        <?php echo $form_field1;?>
+        </form>
+        <form action="" method="post">
+            <?php if($typeofservice==="Add-ons"){ echo $form_field2; }?>
+        </form>
     </div>
     
 
@@ -91,14 +125,6 @@ if(!isset($_SESSION["username"]))
                 x.className += " w3-show";
             } else {
                 x.className = x.className.replace(" w3-show", "");
-            }
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        var modal = document.getElementById('ticketModal');
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
             }
         }
     </script>

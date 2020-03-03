@@ -15,7 +15,7 @@ CREATE TABLE agent (
 
 CREATE TABLE portfolio  (
   group_ID					INT			   	NOT NULL,
-  media_ID					INT			   	NOT NULL	AUTO_INCREMENT,
+  media_ID					INT			   	NOT NULL,
   media_name				VARCHAR(50)	   	NOT NULL,
   media_location			VARCHAR(50)	   	NULL,
   media_file_location		VARCHAR(255)	NOT NULL, 

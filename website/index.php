@@ -243,6 +243,7 @@
                                 <li>ahhhhhhh</li>
                                 <li>ahhhhhhh</li>
                             </ul>
+                        </br>
                         </div>
                         <label class="btn-container">
                         <div class="flex-item-end">
@@ -262,6 +263,7 @@
                                 <li>ahhhhhhh</li>
                                 <li>ahhhhhhh</li>
                             </ul>
+                        </br>
                         </div>
                         <label class="btn-container">
                         <div class="flex-item-end">
@@ -281,6 +283,7 @@
                                 <li>ahhhhhhh</li>
                                 <li>ahhhhhhh</li>
                             </ul>
+                        </br>
                         </div>
                         <label class="btn-container">
                         <div class="flex-item-end">
@@ -312,11 +315,11 @@
                         <td><input type="checkbox" name="options" value="option2"></td>
                         <td>OPTION 2</td>
                         </tr>
-                    </table>
+                    </table></br>
 
-                    <input class="w3-input w3-border" type="text" placeholder="Email*">
-                    <input class="w3-input w3-border" type="text" placeholder="Phone #*">
-                    <input class="w3-input w3-border" type="text" placeholder="Date/Date Range*">
+                    <input class="w3-input w3-border" type="text" placeholder="Email*"></br>
+                    <input class="w3-input w3-border" type="text" placeholder="Phone #*"></br>
+                    <input class="w3-input w3-border" type="text" placeholder="Date/Date Range*"></br>
                     <input class="w3-input w3-border" type="text" placeholder="Service Address*">
 
                     <button class="w3-button w3-block w3-dark-grey w3-padding-16 w3-section w3-right">SCHEDULE <i class="fa fa-check"></i></button>

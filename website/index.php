@@ -11,6 +11,7 @@
     <title>Yencik Photography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,8 +48,6 @@
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
         <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     </div>
-
-
 
 	<!-- Page content -->
 	<div class="w3-content" style="max-width:3000px;">
@@ -92,9 +91,6 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
             <div class="w3-row w3-padding-32">
                 <div class="w3-third">
                     <p><b>Photography</b></p>
-                    <!-- if you want a real picture
-                        <img src="/w3img/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-                    -->
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
@@ -103,9 +99,6 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                 </div>
                 <div class="w3-third">
                     <p><b>Videography</b></p>
-                    <!-- if you want a real picture
-                        <img src="/w3img/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-                    -->
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-video fa-stack-1x fa-inverse"></i>
@@ -113,9 +106,6 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                 </div>
                 <div class="w3-third">
                     <p><b>Areial Photography</b></p>
-                    <!-- if you want a real picture
-                        <img src="/w3img/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
-                    -->
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-helicopter fa-stack-1x fa-inverse"></i>
@@ -149,7 +139,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                         <p><b>Project 1</b></p>
                         <p class="w3-opacity">Fri 27 Nov 2016</p>
                         <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        <button class="w3-button w3-black w3-margin-bottom" id="Project1" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>
                 <div class="w3-third w3-margin-bottom">
@@ -223,37 +213,129 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
         </div>
         <div class="w3-third w3-container"></div>
     </div>
-
-    <!-- old code><div class="w3-row-padding w3-grayscale">
-        <div class="w3-col w3-center l3 m6 w3-margin-bottom">
-            <img src="https://scontent.fewr1-6.fna.fbcdn.net/v/t1.0-1/p320x320/84606452_1845874482211653_1591730745506791424_o.jpg?_nc_cat=106&_nc_ohc=8FHq2dh6gEkAX8oLsZu&_nc_ht=scontent.fewr1-6.fna&_nc_tp=6&oh=4986601ae56492e007afa2f4a81eaceb&oe=5EBA5B69" alt="John" style="width:100%">
-            <h3>Josh Yencik</h3>
-            <p class="w3-opacity">CEO & Founder</p>
-            <p></p>
-        </div>
-    </div>-->
-    <!-- Ticket Modal -->
     <div id="ticketModal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-dark-grey w3-center w3-padding-32">
                 <span onclick="document.getElementById('ticketModal').style.display='none'"
-                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">×</span>
+                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">ï¿½</span>
                 <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Services</h2>
             </header>
-            <div class="w3-container">
-                <p><label><i class="fa fa-building"></i> Name</label></p>
-                <input class="w3-input w3-border" type="text" placeholder="Name/Company Name*">
-                <p><label><i class="fa fa-user"></i> Contact Info</label></p>
-                <input class="w3-input w3-border" type="text" placeholder="Email*">
-                <input class="w3-input w3-border" type="text" placeholder="Phone #*">
-                <p><label><i class="fa fa-camera"></i> Service Info</label></p>
-                <input class="w3-input w3-border" type="text" placeholder="Date/Date Range*">
-                <input class="w3-input w3-border" type="text" placeholder="Service(s) Required*">
-                <p><label><i class="fa fa-location-arrow"></i> Location</label></p>
-                <input class="w3-input w3-border" type="text" placeholder="Service Address*">
-
+            <div class="wrap">
+                <form>
+                <p>Choose one of our packages!</p>
+                <div class="grid-box">
+                    <div class="grid-wrapper">
+                        <div class="grid-card flex-card">
+                            <div class="flex-item-top">
+                                <h1>Package 1</h1>
+                                <h2>$150</h2>
+                            </div>
+                            <div class="flex-item">
+                                <ul>
+                                    <li>Matterport 3D showcase</li>
+                                    <li>vr capability</li>
+                                    <li>measuring capability</li>
+                                    <li>tour</li>
+                                    <li>mattertags (up to 10)</li>
+                                </ul>
+                            </br>
+                            </div>
+                            <label class="btn-container">
+                            <div class="">
+                                <input type="radio" name="package_sel" value="package_1">
+                                <span class="checkmark flex-col"></span>
+                            </div>
+                            </label>
+                        </div>
+                        <div class="grid-card flex-card">
+                            <div class="flex-item-top">
+                                <h1>Package 2</h1>
+                                <h2>$200</h2>
+                            </div>
+                            <div class="flex-item">
+                                <ul>
+                                    <li>Matterport 3D showcase</li>
+                                    <li>vr capability</li>
+                                    <li>measuring capability</li>
+                                    <li>tour</li>
+                                    <li>25 professional pictures</li>
+                                    <li>mattertags (up to 15)</li>
+                                </ul>
+                            </br>
+                            </div>
+                            <label class="btn-container">
+                            <div class="">
+                                <input type="radio" name="package_sel" value="package_1">
+                                <span class="checkmark"></span>
+                            </div>
+                            </label>
+                        </div>
+                        <div class="grid-card flex-card">
+                            <div class="flex-item-top">
+                                <h1>Package 3</h1>
+                                <h2>$320</h2>
+                            </div>
+                            <div class="flex-item">
+                                <ul>
+                                    <li>Matterport 3D showcase</li>
+                                    <li>vr capability</li>
+                                    <li>measuring capability</li>
+                                    <li>tour</li>
+                                    <li>25 professional pictures</li>
+                                    <li>Drone video</li>
+                                    <li>intererior video (+$50)</li>
+                                    <li>up to 25 ariel pictures</li>
+                                    <li>2d floor plans</li>
+                                    <li>mattertags (up to 20)</li>
+                                </ul>
+                            </br>
+                            </div>
+                            <label class="btn-container">
+                            <div class="">
+                                <input type="radio" name="package_sel" value="package_1">
+                                <span class="checkmark"></span>
+                            </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-wrapper">
+                    <div class="grid-box">
+                        <table>
+                            <p>Add On:</p>
+                            <tr>
+                            <td><input type="checkbox" name="options" value="option1"></td>
+                            <td>OPTION 1</td>
+                            </tr>
+                            <tr>
+                            <td><input type="checkbox" name="options" value="option2"></td>
+                            <td>OPTION 2</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="grid-box">
+                        <table>
+                            <p>A La Carte:</p>
+                            <tr>
+                            <td><input type="checkbox" name="options" value="option1"></td>
+                            <td>OPTION 1</td>
+                            </tr>
+                            <tr>
+                            <td><input type="checkbox" name="options" value="option2"></td>
+                            <td>OPTION 2</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="grid-box">
+                    <input class="w3-input w3-border" type="text" placeholder="Email*"></br>
+                    <input class="w3-input w3-border" type="text" placeholder="Phone #*"></br>
+                    <input class="w3-input w3-border" type="text" placeholder="Date/Date Range*"></br>
+                    <input class="w3-input w3-border" type="text" placeholder="Service Address*">
+                </div>
                 <button class="w3-button w3-block w3-dark-grey w3-padding-16 w3-section w3-right">SCHEDULE <i class="fa fa-check"></i></button>
                 <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+                </form>
             </div>
         </div>
     </div>

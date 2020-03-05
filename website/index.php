@@ -134,9 +134,12 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
             <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
 
 <div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
-display: inline-block
-<iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe> 
-<iframe width='553' height='480' src='https://my.matterport.com/show/?m=gjqdS14vMja' frameborder='1' allowfullscreen allow='vr'></iframe>
+	<div class="div1">
+		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+	</div>
+	<div class="div2">
+		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=gjqdS14vMja' frameborder='1' allowfullscreen allow='vr'></iframe>
+	</div>
 </div>
 
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">

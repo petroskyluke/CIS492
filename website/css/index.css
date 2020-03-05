@@ -18,6 +18,13 @@
   justify-content: center;
 
 }
+.matterport div {
+    display: inline-block;
+	width: 250px;
+	min-height: 50px;
+	background-color: #eee;
+	height: auto;
+}
 .flex-col{
   flex: 1;
   text-align: center;

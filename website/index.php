@@ -59,7 +59,8 @@
 		<img class="picturesizz" src="img/nikon.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
 		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>Insert Your Slogan Here!</b></p>   
+		  <p><b>Insert Your Slogan Here!</b></p> 
+echo '<a href="http://www.website.com/page.html">Click here</a>';		  
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
@@ -121,6 +122,15 @@
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
             <h2 class="w3-wide w3-center w3-border-bottom w3-border-light-grey">PORTFOLIO</h2>
             <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
+
+<div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
+	<div class="div1">
+		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+	</div>
+	<div class="div2">
+		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=gjqdS14vMja' frameborder='1' allowfullscreen allow='vr'></iframe>
+	</div>
+</div>
 
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
                 <div class="w3-third w3-margin-bottom">

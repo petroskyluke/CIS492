@@ -58,11 +58,12 @@ CREATE TABLE login (
 );
 
 CREATE TABLE packagesFeatures (
-	package_features_ID			INT	NOT NULL,
-	package_features_ID2		INT NOT NULL,
+	package_features_ID			INT	NOT NULL AUTO_INCREMENT,
 	package_featureName			VARCHAR(255),
 	package_featureDESC			VARCHAR(1024),
-	PRIMARY KEY (package_features_ID, package_features_ID2)
+	package_ID					INT	NOT NULL,
+	PRIMARY KEY (package_features_ID),
+	FOREIGN KEY (package_ID) REFERENCES packages(package_ID)
 );
 
 
@@ -71,8 +72,7 @@ CREATE TABLE packages (
 	package_name		VARCHAR(25)	NOT NULL,
 	package_price		VARCHAR(10)	NOT NULL,
 	package_features_ID	INT			NOT NULL,
-	PRIMARY KEY (package_ID),
-	FOREIGN KEY (package_features_ID) REFERENCES packagesFeatures(package_features_ID)
+	PRIMARY KEY (package_ID)
 );
 
 CREATE TABLE add_ons (

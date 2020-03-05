@@ -71,9 +71,10 @@ if($typeofservice==='Add-ons'){
     if(!empty($rows)){
         foreach($rows as $row){
             $form_field2 .= '<tr>';
-            foreach($row as $item){
-                $form_field2 .= '<td>'.$item.'</td>';
-            }
+            $form_field2 .= '<td>'.$row[addon_ID].'</td>
+                            <td><input type="text" name="addon_name" value="'.$row[addon_name].'"</td>
+                            <td><input type="text" name="addon_price" value="'.$row[addon_price].'"</td>
+                            <td><input type="text" name="addon_description" value="'.$row[addon_description].'"</td>';
             $form_field2 .= '</tr>';
         }
     }

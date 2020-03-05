@@ -46,25 +46,46 @@ $form_field1 .= '</select>';
 //end form field
 // Get addons
 if($typeofservice==='Add-ons'){
+    if(filter_input(INPUT_POST, 'submit') === 'insert'){
+        $addon_name = filter_input(INPUT_POST, 'addon_name');
+        $addon_price = filter_input(INPUT_POST, 'addon_price');
+        $addon_description = filter_input(INPUT_POST, 'addon_description');
+
+        $insert = $db1->prepare('INSERT INTO add_ons (addon_name, addon_price, addon_description) VALUES
+        (:addon_name, :addon_price, :addon_description)');
+        $insert->bindParam(':addon_name', $addon_name);
+        $insert->bindParam(':addon_price', $addon_price);
+        $insert->bindParam(':addon_description', $addon_description);
+        $insert->execute();
+
+    }
     $query = 'SELECT addon_ID, addon_name, addon_price, addon_description
                 FROM add_ons';
     $statement = $db1->prepare($query);
     $statement->execute();
-    $table = $statement->fetchAll();
+    $rows = $statement->fetchAll();
     $statement->closeCursor();
     
     $form_field2 = '';
     $form_field2 .= '<table><tr><th>ID</th><th>add-on name</th><th>add-on price</th><th>add-on description</th></tr>';
-    if(!empty($table)){
-        foreach($table as $addons){
+    if(!empty($rows)){
+        foreach($rows as $row){
             $form_field2 .= '<tr>';
-            foreach($addons as $addon){
-                $form_field2 .= '<td>'.$addon.'</td>';
+            foreach($row as $item){
+                $form_field2 .= '<td>'.$item.'</td>';
             }
             $form_field2 .= '</tr>';
         }
     }
-    $form_field2 .='<tr><td>ID</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>';
+    //this adds the row to add a new row of data into the addon table
+    $form_field2 .='<tr><form action="" method="post">
+                        <td>ID<input type="hidden" name="typeofservice" value="Add-ons"></td>
+                        <td><input type="text" name="addon_name"></td>
+                        <td><input type="text" name="addon_price"></td>
+                        <td><input type="text" name="addon_description"></td>
+                        <td><input type="submit" name="submit" value="insert"></td>
+                        </form>
+                    </tr>';
 
     $form_field2 .= '</table>';
 }

@@ -27,6 +27,9 @@ if(!isset($_SESSION["username"]))
 	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  
 }
 //END USER VERIFICATION
+//set variables
+if(!isset($submit)){$submit = filter_input(INPUT_POST,'submit');}
+//end set variables
 include_once('../inc/db_connect.php');
 //Form field is used to select which service needs to be edited
 if(!isset($typeofservice)){$typeofservice = filter_input(INPUT_POST, 'typeofservice');}
@@ -67,15 +70,24 @@ if($typeofservice==='Add-ons'){
     $statement->closeCursor();
     
     $form_field2 = '';
+    //start table and add headers
     $form_field2 .= '<table><tr><th>ID</th><th>add-on name</th><th>add-on price</th><th>add-on description</th></tr>';
     if(!empty($rows)){
         foreach($rows as $row){
-            $form_field2 .= '<tr>';
-            $form_field2 .= '<td>'.$row[addon_ID].'</td>
-                            <td><input type="text" name="addon_name" value="'.$row[addon_name].'"</td>
-                            <td><input type="text" name="addon_price" value="'.$row[addon_price].'"</td>
-                            <td><input type="text" name="addon_description" value="'.$row[addon_description].'"</td>';
-            $form_field2 .= '</tr>';
+            $form_field2 .= '<tr><form action="" method="post">';
+            $form_field2 .= '<td>'.$row['addon_ID'].'</td>
+                            <td>'.$row['addon_name'].'</td>
+                            <td>'.$row['addon_price'].'</td>
+                            <td>'.$row['addon_description'].'</td>
+                            <td>
+                            <input type="submit" name="submit" value="edit">
+                            <input type="hidden" name="typeofservice" value="Add-ons">
+                            <input type="hidden" name="addon_ID" value="Add-ons">
+                            <input type="hidden" name="addon_name" value="Add-ons">
+                            <input type="hidden" name="addon_price" value="Add-ons">
+                            <input type="hidden" name="addon_description" value="Add-ons">
+                            </td>';
+            $form_field2 .= '</form></tr>';
         }
     }
     //this adds the row to add a new row of data into the addon table
@@ -89,7 +101,34 @@ if($typeofservice==='Add-ons'){
                     </tr>';
 
     $form_field2 .= '</table>';
+    if(filter_input(INPUT_POST,'submit') === 'edit'){
+        $form_field3 = '';
+        $addon_ID = filter_input(INPUT_POST, 'addon_ID');
+        //start table and add headers
+        $form_field3 .= '<table><tr><th>ID</th><th>add-on name</th><th>add-on price</th><th>add-on description</th></tr>';
+        foreach($rows as $row){
+            if($row['addon_ID'] === $addon_ID){
+                $form_field3 .= '<tr><form action="" method="post">';
+                $form_field3 .= '<td>'.$row['addon_ID'].'</td>
+                            <td>'.$row['addon_name'].'</td>
+                            <td>'.$row['addon_price'].'</td>
+                            <td>'.$row['addon_description'].'</td>
+                            <td>
+                            <input type="submit" name="submit" value="change">
+                            <input type="hidden" name="typeofservice" value="Add-ons">
+                            <input type="hidden" name="addon_ID" value="Add-ons">
+                            <input type="hidden" name="addon_name" value="Add-ons">
+                            <input type="hidden" name="addon_price" value="Add-ons">
+                            <input type="hidden" name="addon_description" value="Add-ons">
+                            </td>';
+                $form_field3 .= '</form></tr>';
+            }
+            
+        }
+        $form_field3 .= '</table>';
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,9 +169,11 @@ if($typeofservice==='Add-ons'){
         <form action="" method="post" >
         <?php echo $form_field1;?>
         </form>
-        <form action="" method="post">
-            <?php if($typeofservice==="Add-ons"){ echo $form_field2; }?>
-        </form>
+        <?php if($typeofservice==="Add-ons"){ echo $form_field2; }?>
+        </br>
+        <?php if($submit==="edit"){ echo $form_field3; }?>
+        
+
     </div>
     
 

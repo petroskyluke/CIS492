@@ -68,10 +68,13 @@ if(!isset($_SESSION["username"]))
         <div class="w3-container w3-teal">
             <h1>Edit Portfolio</h1>
         </div>
-        <h3>Select which project you would like to work on:</h3>
-        <label for="projects">Select project:</label>
+        
+        <form action="../img/uploads.php" method="post" enctype="multipart/form-data">
 
-        <select id="projects">
+        <h3>Select which project you would like to work on:</h3>
+        <label for="project"></label>
+
+        <select id="project" name="project" required>
             <option disabled selected value> -- select project -- </option>
             <option value="project1">Project 1</option>
             <option value="project2">Project 2</option>
@@ -81,14 +84,23 @@ if(!isset($_SESSION["username"]))
             <option value="project6">Project 6</option>
         </select>
 
+        <h3>What would you like to change?</h3>
+        <input type="button" value="Cover">
+        <input type="button" value="Photos">
         <h3>Select files to upload into this project:</h3>
-        <form action="addfiles.php" method="get">
-            <label for="myfile">Select files:</label>
-            <input type="file" id="myfile" name="myfile" multiple accept="images/*"><br><br>
-            <input type="submit">
+            <label for="filesToUpload"></label>
+            <input type="file" id="filesToUpload" name="filesToUpload[]" multiple accept="image/*" ><br><br>
+            <input type="submit" value="Upload Images" name="submit" formaction="../img/uploads.php">
+            <input type="submit" value="Show Images" name="submit" formaction="../img/showimages.php">
+
+        </form>
+
+        <!--display images-->
+        <form action="../img/showimages.php" method="post">
         </form>
         
-        <!--file upload button-->
+
+        
         
     </div>
     

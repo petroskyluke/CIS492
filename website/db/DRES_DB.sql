@@ -15,7 +15,7 @@ CREATE TABLE agent (
 
 CREATE TABLE portfolio  (
   group_ID					INT			   	NOT NULL,
-  media_ID					INT			   	NOT NULL	AUTO_INCREMENT,
+  media_ID					INT			   	NOT NULL,
   media_name				VARCHAR(50)	   	NOT NULL,
   media_location			VARCHAR(50)	   	NULL,
   media_file_location		VARCHAR(255)	NOT NULL, 
@@ -56,33 +56,46 @@ CREATE TABLE login (
     password_	VARCHAR(255) 	NOT NULL,
     PRIMARY KEY (username)
 );
-
 CREATE TABLE packages (
 	package_ID			INT			NOT NULL	AUTO_INCREMENT,
 	package_name		VARCHAR(25)	NOT NULL,
 	package_price		VARCHAR(10)	NOT NULL,
-	package_features	VARCHAR(255),
+	package_features_ID	INT			NOT NULL,
 	PRIMARY KEY (package_ID)
 );
 
 CREATE TABLE add_ons (
-	addon_ID	
-	addon_name
-	addon_price
-	addon_description
+	addon_ID			INT				NOT NULL	AUTO_INCREMENT,
+	addon_name			VARCHAR(255)	NOT NULL,
+	addon_price			DOUBLE			NOT NULL,
+	addon_description	VARCHAR(255)	NOT NULL,
+	PRIMARY KEY (addon_ID)
+);
+
+CREATE TABLE a_la_carte ( 
+	a_la_carte_ID		INT				NOT NULL	AUTO_INCREMENT,
+	a_la_carte_name		VARCHAR(255)	NOT NULL,
+	a_la_carte_price	VARCHAR(255)	NOT NULL,
+	a_la_carte_desc		VARCHAR(1024),
+	PRIMARY KEY (a_la_carte_ID)
 );
 
 
 CREATE TABLE orderform (
-	form_ID	
-	package_chosen
-	add_on1	BOOLEAN
-	add_on2	BOOLEAN
-	....
-	a_la_carte
-
-
+	form_ID				INT			NOT NULL		AUTO_INCREMENT,
+	package_chosen		INT			NOT NULL,
+	add_on1				BOOLEAN		NOT NULL,
+	add_on2				BOOLEAN		NOT NULL,
+	a_la_carte1			BOOLEAN		NOT NULL,
+	a_la_carte2			BOOLEAN		NOT NULL,
+	a_la_carte3			BOOLEAN		NOT NULL,
+	a_la_carte4			BOOLEAN		NOT NULL,
+	a_la_carte5			BOOLEAN		NOT NULL,	
+	a_la_carte6			BOOLEAN		NOT NULL,	
+	a_la_carte7			BOOLEAN		NOT NULL,
+	a_la_carte8			BOOLEAN		NOT NULL,
+	PRIMARY KEY (form_ID)
 );
-
 INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
+

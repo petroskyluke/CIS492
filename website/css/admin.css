@@ -1,0 +1,17 @@
+.sidebar{
+  height: 100%;
+  width: 150px;
+  background-color: #fff;
+  position: fixed!important;
+  z-index: 1;
+  overflow: auto;
+}
+.content{
+  margin-left: 150px;
+}
+body{
+  font-family: "Lato", sans-serif
+}
+.selected{
+  background-color: #ccc!important;
+}

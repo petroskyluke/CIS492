@@ -1,39 +1,16 @@
 ﻿<?php
-//BEGIN USER VERIFICATION
-//BEGIN SESSION CODE
-//get current time
-$time = $_SERVER['REQUEST_TIME'];
-//set the amount of time a session should live
-$timeout_duration = 600;
-//set parameters for session cookie storage
-ini_set('session.gc_maxlifetime', $timeout_duration);
-ini_set('session.cookie_lifetime', $timeout_duration);
-session_start();
-if(isset($_SESSION['LAST_ACTIVITY']) && 
-	(($_SESSION['LAST_ACTIVITY'] + $timeout_duration) < $time))
-{
-	session_unset();
-    session_destroy();
-    session_start(); 
-}
-if (session_status() == PHP_SESSION_NONE) {
-    session_start(); 
-  }
-
-$_SESSION['LAST_ACTIVITY'] = $time;
-//END SESSION CODE
-if(!isset($_SESSION["username"]))  
-{  
-	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  
-}
-//END USER VERIFICATION
+include('../inc/session.php');
 //set variables
 if(!isset($submit)){$submit = filter_input(INPUT_POST,'submit');}
+if(!isset($addon_ID)){$addon_ID = filter_input(INPUT_POST,'addon_ID');}
+if(!isset($addon_name)){$addon_name = filter_input(INPUT_POST,'addon_name');}
+if(!isset($addon_price)){$addon_price = filter_input(INPUT_POST,'addon_price');}
+if(!isset($addon_description)){$addon_description = filter_input(INPUT_POST,'addon_description');}
 //end set variables
 include_once('../inc/db_connect.php');
 //Form field is used to select which service needs to be edited
 if(!isset($typeofservice)){$typeofservice = filter_input(INPUT_POST, 'typeofservice');}
-$form_field1 = '';
+$form_field1 = '<form action="" method="post">';
 $form_field1 .= '<select name="typeofservice" onchange="javascript:this.form.submit()">';
 $options = array();
 $options['Projects'] = 'Projects';
@@ -45,11 +22,40 @@ if (! empty($options)) {
         $form_field1 .= '<option value="'.$option.'" ' . $selected . '>'.$option.'</option>';
     }
 }
-$form_field1 .= '</select>';
+$form_field1 .= '</select></form>';
 //end form field
 // Get addons
 if($typeofservice==='Add-ons'){
-    if(filter_input(INPUT_POST, 'submit') === 'insert'){
+    //edit an addon row
+    if(filter_input(INPUT_POST,'submit') === 'delete'){
+        echo $addon_ID;
+        echo $addon_name;
+        echo $addon_price;
+        echo $addon_description;
+
+        $alter = $db1->prepare('DELETE FROM add_ons
+                                WHERE addon_ID = :addon_ID');
+        $alter->bindParam(':addon_ID', $addon_ID);
+        $alter->execute();
+    }
+    //delete an addon row
+    if(filter_input(INPUT_POST,'submit') === 'change'){
+        echo $addon_ID;
+        echo $addon_name;
+        echo $addon_price;
+        echo $addon_description;
+
+        $alter = $db1->prepare('UPDATE add_ons
+                                SET addon_name = :addon_name, addon_price = :addon_price, addon_description = :addon_description
+                                WHERE addon_ID = :addon_ID');
+        $alter->bindParam(':addon_ID', $addon_ID);
+        $alter->bindParam(':addon_name', $addon_name);
+        $alter->bindParam(':addon_price', $addon_price);
+        $alter->bindParam(':addon_description', $addon_description);
+        $alter->execute();
+    }
+    //add an addon row
+    if(filter_input(INPUT_POST, 'submit') === 'add'){
         $addon_name = filter_input(INPUT_POST, 'addon_name');
         $addon_price = filter_input(INPUT_POST, 'addon_price');
         $addon_description = filter_input(INPUT_POST, 'addon_description');
@@ -62,6 +68,7 @@ if($typeofservice==='Add-ons'){
         $insert->execute();
 
     }
+    //display all addon rows
     $query = 'SELECT addon_ID, addon_name, addon_price, addon_description
                 FROM add_ons';
     $statement = $db1->prepare($query);
@@ -79,14 +86,14 @@ if($typeofservice==='Add-ons'){
                             <td>'.$row['addon_name'].'</td>
                             <td>'.$row['addon_price'].'</td>
                             <td>'.$row['addon_description'].'</td>
-                            <td>
-                            <input type="submit" name="submit" value="edit">
+                            <td><input type="submit" name="submit" value="edit"></td>
+                            <td><input type="submit" name="submit" value="delete" id="delete_btn"></td>
+
                             <input type="hidden" name="typeofservice" value="Add-ons">
-                            <input type="hidden" name="addon_ID" value="Add-ons">
-                            <input type="hidden" name="addon_name" value="Add-ons">
-                            <input type="hidden" name="addon_price" value="Add-ons">
-                            <input type="hidden" name="addon_description" value="Add-ons">
-                            </td>';
+                            <input type="hidden" name="addon_ID" value="'.$row['addon_ID'].'">
+                            <input type="hidden" name="addon_name" value="'.$row['addon_name'].'">
+                            <input type="hidden" name="addon_price" value="'.$row['addon_price'].'">
+                            <input type="hidden" name="addon_description" value="'.$row['addon_description'].'">';
             $form_field2 .= '</form></tr>';
         }
     }
@@ -96,7 +103,7 @@ if($typeofservice==='Add-ons'){
                         <td><input type="text" name="addon_name"></td>
                         <td><input type="text" name="addon_price"></td>
                         <td><input type="text" name="addon_description"></td>
-                        <td><input type="submit" name="submit" value="insert"></td>
+                        <td><input type="submit" name="submit" value="add"></td>
                         </form>
                     </tr>';
 
@@ -110,16 +117,13 @@ if($typeofservice==='Add-ons'){
             if($row['addon_ID'] === $addon_ID){
                 $form_field3 .= '<tr><form action="" method="post">';
                 $form_field3 .= '<td>'.$row['addon_ID'].'</td>
-                            <td>'.$row['addon_name'].'</td>
-                            <td>'.$row['addon_price'].'</td>
-                            <td>'.$row['addon_description'].'</td>
+                            <td><input type="text" name="addon_name" value="'.$row['addon_name'].'"></td>
+                            <td><input type="text" name="addon_price" value="'.$row['addon_price'].'"></td>
+                            <td><input type="text" name="addon_description" value="'.$row['addon_description'].'"></td>
                             <td>
                             <input type="submit" name="submit" value="change">
                             <input type="hidden" name="typeofservice" value="Add-ons">
-                            <input type="hidden" name="addon_ID" value="Add-ons">
-                            <input type="hidden" name="addon_name" value="Add-ons">
-                            <input type="hidden" name="addon_price" value="Add-ons">
-                            <input type="hidden" name="addon_description" value="Add-ons">
+                            <input type="hidden" name="addon_ID" value="'.$row['addon_ID'].'">
                             </td>';
                 $form_field3 .= '</form></tr>';
             }
@@ -166,12 +170,10 @@ if($typeofservice==='Add-ons'){
         </div>
         <h3>This page can be used to edit the available services</h3>
         <h4>Please choose which type of service you would like to edit</h4>
-        <form action="" method="post" >
         <?php echo $form_field1;?>
-        </form>
         <?php if($typeofservice==="Add-ons"){ echo $form_field2; }?>
         </br>
-        <?php if($submit==="edit"){ echo $form_field3; }?>
+        <?php if($submit==='edit'){ echo $form_field3; }?>
         
 
     </div>

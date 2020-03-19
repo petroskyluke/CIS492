@@ -13,28 +13,6 @@ CREATE TABLE agent (
   UNIQUE INDEX agent_ID (agent_ID)
 );
 
-CREATE TABLE portfolio  (
-  group_ID					INT			   	NOT NULL,
-  media_ID					INT			   	NOT NULL,
-  media_name				VARCHAR(50)	   	NOT NULL,
-  media_location			VARCHAR(50)	   	NULL,
-  media_file_location		VARCHAR(255)	NOT NULL, 
-  media_type				VARCHAR(25)	 	NOT NULL,
-  media_upload_datetime		DATETIME	   	NOT NULL,
-  PRIMARY KEY (group_ID, media_ID)
-);
-
-CREATE TABLE services_available	(
-	service_ID				INT 			NOT NULL	AUTO_INCREMENT,
-	service_name			VARCHAR(50)		NOT NULL,
-	service_description		VARCHAR(50)		NOT NULL,
-	service_price			DOUBLE			NOT NULL,
-	service_time			TIME			NOT NULL,
-	media_type				VARCHAR(25)		NOT NULL,
-	media_type_ID			INT				NOT NULL,	
-	PRIMARY KEY (service_ID),
-	UNIQUE INDEX service_ID (service_ID)
-);
 
 CREATE TABLE services_provided_and_scheduled	(
 	project_ID					INT			NOT NULL AUTO_INCREMENT,
@@ -47,8 +25,7 @@ CREATE TABLE services_provided_and_scheduled	(
 	service_ID					INT			NOT NULL,
 	PRIMARY KEY (project_ID),
 	UNIQUE INDEX project_ID (project_ID),
-	FOREIGN KEY (agent_ID) REFERENCES agent(agent_ID),
-	FOREIGN KEY (service_ID) REFERENCES services_available(service_ID)
+	FOREIGN KEY (agent_ID) REFERENCES agent(agent_ID)
 );
 
 CREATE TABLE login (

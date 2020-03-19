@@ -17,8 +17,8 @@ CREATE TABLE portfolio  (
   group_ID					INT			   	NOT NULL,
   media_ID					INT			   	NOT NULL,
   media_name				VARCHAR(50)	   	NOT NULL,
-  media_location			VARCHAR(50)	   	NULL,
-  media_file_location		VARCHAR(255)	NOT NULL, 
+  media_location			VARCHAR(50)	   	NOT NULL,
+  media_file_location		VARCHAR(100)	NOT NULL, 
   media_type				VARCHAR(25)	 	NOT NULL,
   media_upload_datetime		DATETIME	   	NOT NULL,
   PRIMARY KEY (group_ID, media_ID)
@@ -56,6 +56,17 @@ CREATE TABLE login (
     password_	VARCHAR(255) 	NOT NULL,
     PRIMARY KEY (username)
 );
+
+CREATE TABLE packagesFeatures (
+	package_features_ID			INT	NOT NULL AUTO_INCREMENT,
+	package_featureName			VARCHAR(255),
+	package_featureDESC			VARCHAR(1024),
+	package_ID					INT	NOT NULL,
+	PRIMARY KEY (package_features_ID),
+	FOREIGN KEY (package_ID) REFERENCES packages(package_ID)
+);
+
+
 CREATE TABLE packages (
 	package_ID			INT			NOT NULL	AUTO_INCREMENT,
 	package_name		VARCHAR(25)	NOT NULL,
@@ -96,6 +107,7 @@ CREATE TABLE orderform (
 	a_la_carte8			BOOLEAN		NOT NULL,
 	PRIMARY KEY (form_ID)
 );
+
+
 INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
-

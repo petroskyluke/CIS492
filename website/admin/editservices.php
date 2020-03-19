@@ -258,11 +258,28 @@ if($typeofservice==='projects'){
     $pf_statement->closeCursor();
 
     if(!empty($p_rows)){
+        $show_rows = '';
         foreach($p_rows as $p_row){
             echo $p_row['package_ID']."</br>";
             echo $p_row['package_name']."</br>";
             echo $p_row['package_price']."</br>";
             
+            //build show package form
+            
+            $show_rows .= '<tr><form action="" method="post">';
+            $show_rows .= '<td>'.$row['a_la_carte_ID'].'</td>
+                            <td>'.$row['a_la_carte_name'].'</td>
+                            <td>'.$row['a_la_carte_price'].'</td>
+                            <td>'.$row['a_la_carte_desc'].'</td>
+                            <td><input type="submit" name="submit" value="edit"></td>
+                            <td><input type="submit" name="submit" value="delete" id="delete_btn"></td>
+
+                            <input type="hidden" name="typeofservice" value="a_la_carte">
+                            <input type="hidden" name="alct_ID" value="'.$row['a_la_carte_ID'].'">
+                            <input type="hidden" name="alct_name" value="'.$row['a_la_carte_name'].'">
+                            <input type="hidden" name="alct_price" value="'.$row['a_la_carte_price'].'">
+                            <input type="hidden" name="alct_description" value="'.$row['a_la_carte_desc'].'">';
+            $show_rows .= '</form></tr>';
         }
     }
 }

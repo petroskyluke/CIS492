@@ -144,7 +144,7 @@ if($typeofservice==='add-on'){
         $form_field3 .= '</table>';
     }
 }
-if($typeofservice==="a_la_carte"){
+if($typeofservice==='a_la_carte'){
     //delete an a-la-carte row query
     if(filter_input(INPUT_POST,'submit') === 'delete'){
         $alter = $db1->prepare('DELETE FROM a_la_carte
@@ -236,6 +236,34 @@ if($typeofservice==="a_la_carte"){
             
         }
         $form_field3 .= '</table>';
+    }
+}
+if($typeofservice==='projects'){
+
+    //query all packages
+    $p_query = 'SELECT package_ID, package_name, package_price
+                FROM packages';
+    $p_statement = $db1->prepare($p_query);
+    $p_statement->execute();
+    $p_rows = $p_statement->fetchAll();
+    $p_statement->closeCursor();
+
+    //query all package features including their package_ID
+    $pf_query = 'SELECT package_feature_ID, package_feature_name, package_feature_desc, package_ID
+                FROM packages, package_features
+                WHERE packages.package_ID = package_features.package_ID';
+    $pf_statement = $db1->prepare($pf_query);
+    $pf_statement->execute();
+    $pf_rows = $pf_statement->fetchAll();
+    $pf_statement->closeCursor();
+
+    if(!empty($p_rows)){
+        foreach($p_rows as $p_row){
+            echo $p_row['package_ID']."</br>";
+            echo $p_row['package_name']."</br>";
+            echo $p_row['package_price']."</br>";
+            
+        }
     }
 }
 ?>

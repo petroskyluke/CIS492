@@ -60,10 +60,17 @@ CREATE TABLE packages (
 	package_ID			INT			NOT NULL	AUTO_INCREMENT,
 	package_name		VARCHAR(25)	NOT NULL,
 	package_price		VARCHAR(10)	NOT NULL,
-	package_features_ID	INT			NOT NULL,
 	PRIMARY KEY (package_ID)
 );
 
+CREATE TABLE package_features (
+	package_feature_ID			INT	NOT NULL AUTO_INCREMENT,
+	package_feature_name		VARCHAR(255),
+	package_feature_desc		VARCHAR(1024),
+	package_ID					INT	NOT NULL,
+	PRIMARY KEY (package_feature_ID),
+	FOREIGN KEY (package_ID) REFERENCES packages(package_ID)
+);
 CREATE TABLE add_ons (
 	addon_ID			INT				NOT NULL	AUTO_INCREMENT,
 	addon_name			VARCHAR(255)	NOT NULL,

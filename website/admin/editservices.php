@@ -4,7 +4,7 @@
 //get current time
 $time = $_SERVER['REQUEST_TIME'];
 //set the amount of time a session should live
-$timeout_duration = 600;
+$timeout_duration = 60000;
 //set parameters for session cookie storage
 ini_set('session.gc_maxlifetime', $timeout_duration);
 ini_set('session.cookie_lifetime', $timeout_duration);
@@ -71,10 +71,10 @@ if($typeofservice==='Add-ons'){
     if(!empty($rows)){
         foreach($rows as $row){
             $form_field2 .= '<tr>';
-            $form_field2 .= '<td>'.$row[addon_ID].'</td>
-                            <td><input type="text" name="addon_name" value="'.$row[addon_name].'"</td>
-                            <td><input type="text" name="addon_price" value="'.$row[addon_price].'"</td>
-                            <td><input type="text" name="addon_description" value="'.$row[addon_description].'"</td>';
+            $form_field2 .= '<td>'.$row['addon_ID'].'</td>
+                            <td><input type="text" name="addon_name" value="'.$row['addon_name'].'"</td>
+                            <td><input type="text" name="addon_price" value="'.$row['addon_price'].'"</td>
+                            <td><input type="text" name="addon_description" value="'.$row['addon_description'].'"</td>';
             $form_field2 .= '</tr>';
         }
     }

@@ -27,6 +27,7 @@ if(!isset($_SESSION["username"]))
 	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  
 }
 //END USER VERIFICATION
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,15 +51,14 @@ if(!isset($_SESSION["username"]))
     </style>
 </head>
 
-<body onload="uploadFiles()">
 
     <!-- Page content -->
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
         <h3 class="w3-bar-item">Menu</h3>
-        <a href="#" class="w3-bar-item w3-button">Services</a>
+        <a href="editservices.php" class="w3-bar-item w3-button">Services</a>
         <a href="editportfolio.php" class="w3-bar-item w3-button">Portfolio</a>
-        <a href="reporting.php" class="w3-bar-item w3-button">Reporting</a>
+        <a href="#" class="w3-bar-item w3-button">Reporting</a>
         <a href="../inc/logout.php" class="w3-bar-item w3-button">Logout</a>
         <a href="changepassword.php" class="w3-bar-item w3-button">Change Password</a>
     </div>
@@ -70,6 +70,7 @@ if(!isset($_SESSION["username"]))
         </div>
         
         <form action="../img/uploads.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="action" value="submit">
 
         <h3>Select which project you would like to work on:</h3>
         <label for="project"></label>
@@ -84,24 +85,83 @@ if(!isset($_SESSION["username"]))
             <option value="project6">Project 6</option>
         </select>
 
-        <h3>What would you like to change?</h3>
-        <input type="button" value="Cover">
-        <input type="button" value="Photos">
+        
         <h3>Select files to upload into this project:</h3>
             <label for="filesToUpload"></label>
             <input type="file" id="filesToUpload" name="filesToUpload[]" multiple accept="image/*" ><br><br>
-            <input type="submit" value="Upload Images" name="submit" formaction="../img/uploads.php">
-            <input type="submit" value="Show Images" name="submit" formaction="../img/showimages.php">
+            <input type="submit" value="Upload Images" name="submit" formaction=""><br><br>
+            <input type="submit" value="Show Images" name="submit" formaction="">
 
         </form>
 
         <!--display images-->
-        <form action="../img/showimages.php" method="post">
-        </form>
-        
+        <?php if ((!empty($_POST['project'])) && ($_POST['submit']=='Show Images')){?>
+            <form>
 
+                <h1>Current images in <?php echo $_POST['project'];?>:</h1>
+
+                <div id="imageList" class="w3-row">
+                <?php
+                    $select_project=$_POST['project'];
+                    $files = scandir('../img/portfolio/'.$select_project.'/');
+                    foreach($files as $file) {
+                        if($file !== "." && $file !== "..") { 
+                            echo "<div id='individualPicture' class='w3-quarter w3-container' style='max-height:300px' />";   
+                            echo "<img src='../img/portfolio/$select_project/$file' style='width:100%; height:250px; object-fit:cover' />"; 
+                            echo "<input type='submit' value='Remove' name='submit' />";
+                            echo "<input type='submit' value='Set Cover' name='submit' formaction='' />";
+                            echo "<input type='hidden' value='$file' name='coverset'/>";
+                            echo "</div>";
+                        }
+                    }
+                ?>
+                </div>
+            </form>
+        <?php } ?>
+
+        <!--delete images-->
+        <?php if ((!empty($_POST['coverset'])) && ($_POST['submit']=='Remove')){
+            unlink("../img/portfolio/".$select_project/$_POST['coverset']);
+        }
+        ?>
+
+        <?php //upload images ?>
+        <?php if ((!empty($_POST['submit']))&&($_POST['submit']=='Upload Images')){
         
-        
+            $uploadOk=1;
+            $files = array_filter($_FILES['filesToUpload']['name']);
+
+            $select_option=$_POST['project'];
+            //$target_dir = $select_option."/";
+            $target_dir = "../img/portfolio/".$select_option."/";
+
+            $total=count($_FILES['filesToUpload']['name']);
+            for($i=0; $i<$total; $i++){
+                //get temp file path
+                $tmpFilePath = $_FILES['filesToUpload']['tmp_name'][$i];
+
+                $check = getimagesize($_FILES['filesToUpload']['tmp_name'][$i]);
+                if($check !== false){
+                    $uploadOk = 1;
+                }else{
+                    $uploadOk = 0;
+                    break;
+                }
+
+                //make sure we have file path
+                if($tmpFilePath !=""){
+                    //setup new file path
+                    $newFilePath = $target_dir . basename($_FILES["filesToUpload"]["name"][$i]);
+
+                    //upload the file into temp dir
+                    if(move_uploaded_file($tmpFilePath,$newFilePath)){
+                        echo "yay";
+                    }
+                }
+
+            }
+        }
+        ?>
     </div>
     
 

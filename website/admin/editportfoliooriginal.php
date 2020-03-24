@@ -1,10 +1,10 @@
-﻿<?php
+<?php
 //BEGIN USER VERIFICATION
 //BEGIN SESSION CODE
 //get current time
 $time = $_SERVER['REQUEST_TIME'];
 //set the amount of time a session should live
-$timeout_duration = 60;
+$timeout_duration = 600;
 //set parameters for session cookie storage
 ini_set('session.gc_maxlifetime', $timeout_duration);
 ini_set('session.cookie_lifetime', $timeout_duration);
@@ -50,13 +50,13 @@ if(!isset($_SESSION["username"]))
     </style>
 </head>
 
-<body>
+<body onload="uploadFiles()">
 
     <!-- Page content -->
     <!-- Sidebar -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
         <h3 class="w3-bar-item">Menu</h3>
-        <a href="editservices.php" class="w3-bar-item w3-button selected">Services</a>
+        <a href="editservices.php" class="w3-bar-item w3-button">Services</a>
         <a href="editportfolio.php" class="w3-bar-item w3-button">Portfolio</a>
         <a href="#" class="w3-bar-item w3-button">Reporting</a>
         <a href="../inc/logout.php" class="w3-bar-item w3-button">Logout</a>
@@ -64,21 +64,44 @@ if(!isset($_SESSION["username"]))
     </div>
 
     <!-- Page Content -->
-    <div style="margin-left:25%">
-
+    <div style="margin-left:10%">
         <div class="w3-container w3-teal">
-            <h1>My Page</h1>
+            <h1>Edit Portfolio</h1>
         </div>
+        
+        <form action="../img/uploads.php" method="post" enctype="multipart/form-data">
 
-        <img src="img_car.jpg" alt="Car" style="width:100%">
+        <h3>Select which project you would like to work on:</h3>
+        <label for="project"></label>
 
-        <div class="w3-container">
-            <h2>Sidebar Navigation Example</h2>
-            <p>The sidebar with is set with "style="width:25%".</p>
-            <p>The left margin of the page content is set to the same value.</p>
-        </div>
+        <select id="project" name="project" required>
+            <option disabled selected value> -- select project -- </option>
+            <option value="project1">Project 1</option>
+            <option value="project2">Project 2</option>
+            <option value="project3">Project 3</option>
+            <option value="project4">Project 4</option>
+            <option value="project5">Project 5</option>
+            <option value="project6">Project 6</option>
+        </select>
 
+        
+        <h3>Select files to upload into this project:</h3>
+            <label for="filesToUpload"></label>
+            <input type="file" id="filesToUpload" name="filesToUpload[]" multiple accept="image/*" ><br><br>
+            <input type="submit" value="Upload Images" name="submit" formaction="../img/uploads.php">
+            <input type="submit" value="Show Images" name="submit" formaction="../img/showimages.php">
+
+        </form>
+
+        <!--display images-->
+        <form action="../img/showimages.php" method="post">
+        </form>
+        
+
+        
+        
     </div>
+    
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>

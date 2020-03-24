@@ -24,6 +24,9 @@ if(!isset($typeofservice)){$typeofservice = filter_input(INPUT_POST, 'typeofserv
 $form_field1 = '<form action="" method="post">';
 $form_field1 .= '<select name="typeofservice" onchange="javascript:this.form.submit()">';
 $options = array();
+if($typeofservice === null){
+    $options['blank'] = '';
+}
 $options['projects'] = 'projects';
 $options['add-on'] = 'add-on';
 $options['a_la_carte'] = 'a_la_carte';
@@ -249,7 +252,8 @@ if($typeofservice==='projects'){
     $p_statement->closeCursor();
 
     //query all package features including their package_ID
-    $pf_query = 'SELECT package_feature_ID, package_feature_name, package_feature_desc, package_ID
+    $pf_query = 'SELECT package_features.package_feature_ID, package_features.package_feature_name, 
+                        package_features.package_feature_desc, package_features.package_ID
                 FROM packages, package_features
                 WHERE packages.package_ID = package_features.package_ID';
     $pf_statement = $db1->prepare($pf_query);
@@ -258,29 +262,41 @@ if($typeofservice==='projects'){
     $pf_statement->closeCursor();
 
     if(!empty($p_rows)){
-        $show_rows = '';
+        $show_rows = '<div class="wrap">';
+        $show_rows .= '<div class="grid-box">';
+        $show_rows .= '<div class="grid-wrapper">';
+        
         foreach($p_rows as $p_row){
-            echo $p_row['package_ID']."</br>";
-            echo $p_row['package_name']."</br>";
-            echo $p_row['package_price']."</br>";
-            
-            //build show package form
-            
-            $show_rows .= '<tr><form action="" method="post">';
-            $show_rows .= '<td>'.$row['a_la_carte_ID'].'</td>
-                            <td>'.$row['a_la_carte_name'].'</td>
-                            <td>'.$row['a_la_carte_price'].'</td>
-                            <td>'.$row['a_la_carte_desc'].'</td>
-                            <td><input type="submit" name="submit" value="edit"></td>
-                            <td><input type="submit" name="submit" value="delete" id="delete_btn"></td>
+            $show_rows .= '<div class="grid-card flex-card">';
+            $show_rows .= '<div class="flex-item-top">';
+            $show_rows .= '<h1>'.$p_row[1].'</h1>';
+            $show_rows .= '<h2>'.$p_row[2].'</h2>';
+            $show_rows .= '</div>';
+            $show_rows .= '<p>Package features</p>';
+            $show_rows .= '<div class="flex-item">';
+            $show_rows .= '<ul>';
+            foreach($pf_rows as $pf_row){
+                if($pf_row['package_ID'] === $p_row['package_ID']){
+                    $show_rows .= '<li>'.$pf_row[1].'</li>';
+                }
+            }
+            $show_rows .= '</ul>';
+            $show_rows .= '</div>';
 
-                            <input type="hidden" name="typeofservice" value="a_la_carte">
-                            <input type="hidden" name="alct_ID" value="'.$row['a_la_carte_ID'].'">
-                            <input type="hidden" name="alct_name" value="'.$row['a_la_carte_name'].'">
-                            <input type="hidden" name="alct_price" value="'.$row['a_la_carte_price'].'">
-                            <input type="hidden" name="alct_description" value="'.$row['a_la_carte_desc'].'">';
-            $show_rows .= '</form></tr>';
+            $show_rows .= '<div class="pf">';
+            $show_rows .= '<input type="submit" name="submit" value="edit">';
+            $show_rows .= '</div>';
+            
+            //close flex card/grid card
+            $show_rows .= '</div>';
+            /*
+            $show_rows .= '<div class="flex-item-top">';
+            $show_rows .= '</div>';
+            */
         }
+        $show_rows .= '</div>';
+        $show_rows .= '</div>';
+        $show_rows .= '</div>';
     }
 }
 ?>
@@ -317,7 +333,7 @@ if($typeofservice==='projects'){
         <h3>This page can be used to edit the available services</h3>
         <h4>Please choose which type of service you would like to edit</h4>
         <?php echo $form_field1;?>
-        <?php if($typeofservice==="add-on"||$typeofservice==="a_la_carte"){ echo $show_rows; }?>
+        <?php if($typeofservice==="add-on"||$typeofservice==="a_la_carte"||$typeofservice==="projects"){ echo $show_rows; }?>
         </br>
         <?php if($submit==='edit'){ echo $form_field3; }?>
         

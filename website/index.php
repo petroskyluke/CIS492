@@ -123,11 +123,12 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
             <h2 class="w3-wide w3-center w3-border-bottom w3-border-light-grey">PORTFOLIO</h2>
             <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
 
+		<!-- MATTERPORT -->
 <div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
-	<div class="div1">
+	<div class="matterport1">
 		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
 	</div>
-	<div class="div2">
+	<div class="matterport2">
 		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=gjqdS14vMja' frameborder='1' allowfullscreen allow='vr'></iframe>
 	</div>
 </div>

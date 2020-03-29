@@ -51,7 +51,6 @@ if(!isset($_SESSION["username"]))
     </style>
 </head>
 
-
     <!-- Page content -->
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
@@ -69,7 +68,7 @@ if(!isset($_SESSION["username"]))
             <h1>Edit Portfolio</h1>
         </div>
         
-        <form action="../img/uploads.php" method="post" enctype="multipart/form-data">
+        <form action="/uploadimages.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="action" value="submit">
 
         <h3>Select which project you would like to work on:</h3>
@@ -91,79 +90,54 @@ if(!isset($_SESSION["username"]))
             <input type="file" id="filesToUpload" name="filesToUpload[]" multiple accept="image/*" ><br><br>
             <input type="submit" value="Upload Images" name="submit" formaction=""><br><br>
             <input type="submit" value="Show Images" name="submit" formaction="">
+            <input type="submit" value="Thumb" name="submit" formaction="createthumbnails.php">
+            <input type="submit" value="Remove All" name="submit" formaction="">
 
         </form>
 
+
+
+
+
+       
+
+
         <!--display images-->
-        <?php if ((!empty($_POST['project'])) && ($_POST['submit']=='Show Images')){?>
-            <form>
-
-                <h1>Current images in <?php echo $_POST['project'];?>:</h1>
-
-                <div id="imageList" class="w3-row">
-                <?php
-                    $select_project=$_POST['project'];
-                    $files = scandir('../img/portfolio/'.$select_project.'/');
-                    foreach($files as $file) {
-                        if($file !== "." && $file !== "..") { 
-                            echo "<div id='individualPicture' class='w3-quarter w3-container' style='max-height:300px' />";   
-                            echo "<img src='../img/portfolio/$select_project/$file' style='width:100%; height:250px; object-fit:cover' />"; 
-                            echo "<input type='submit' value='Remove' name='submit' />";
-                            echo "<input type='submit' value='Set Cover' name='submit' formaction='' />";
-                            echo "<input type='hidden' value='$file' name='coverset'/>";
-                            echo "</div>";
-                        }
-                    }
-                ?>
-                </div>
-            </form>
-        <?php } ?>
+        <?php if ((!empty($_POST['project'])) && ($_POST['submit']=='Show Images')){
+            include 'displayimages.php';
+        }
+        ?>
 
         <!--delete images-->
         <?php if ((!empty($_POST['coverset'])) && ($_POST['submit']=='Remove')){
-            unlink("../img/portfolio/".$select_project/$_POST['coverset']);
+            include 'delete.php';
+            //unlink("../img/portfolio/$select_project$_POST['coverset']);
+            //unlink("../img/portfolio/".$select_project/$_POST['coverset']);
         }
         ?>
 
         <?php //upload images ?>
         <?php if ((!empty($_POST['submit']))&&($_POST['submit']=='Upload Images')){
-        
-            $uploadOk=1;
-            $files = array_filter($_FILES['filesToUpload']['name']);
-
-            $select_option=$_POST['project'];
-            //$target_dir = $select_option."/";
-            $target_dir = "../img/portfolio/".$select_option."/";
-
-            $total=count($_FILES['filesToUpload']['name']);
-            for($i=0; $i<$total; $i++){
-                //get temp file path
-                $tmpFilePath = $_FILES['filesToUpload']['tmp_name'][$i];
-
-                $check = getimagesize($_FILES['filesToUpload']['tmp_name'][$i]);
-                if($check !== false){
-                    $uploadOk = 1;
-                }else{
-                    $uploadOk = 0;
-                    break;
-                }
-
-                //make sure we have file path
-                if($tmpFilePath !=""){
-                    //setup new file path
-                    $newFilePath = $target_dir . basename($_FILES["filesToUpload"]["name"][$i]);
-
-                    //upload the file into temp dir
-                    if(move_uploaded_file($tmpFilePath,$newFilePath)){
-                        echo "yay";
-                    }
-                }
-
-            }
+            include 'uploadimages.php';
         }
         ?>
+
     </div>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>

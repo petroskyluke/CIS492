@@ -3,6 +3,15 @@ include('../inc/session.php');
 //set variables
 if(!isset($submit)){$submit = filter_input(INPUT_POST,'submit');}
 
+//package features variables
+if(!isset($package_feature_ID)){$package_feature_ID = filter_input(INPUT_POST,'package_feature_ID');}
+if(!isset($package_feature_name)){$package_feature_name = filter_input(INPUT_POST,'package_feature_name');}
+
+//package variables
+if(!isset($db_action)){$db_action = filter_input(INPUT_POST,'db_action');}
+
+if(!isset($package_ID)){$package_ID = filter_input(INPUT_POST,'package_ID');}
+
 //addon variables
 if(!isset($addon_ID)){$addon_ID = filter_input(INPUT_POST,'addon_ID');}
 if(!isset($addon_name)){$addon_name = filter_input(INPUT_POST,'addon_name');}
@@ -14,6 +23,7 @@ if(!isset($alct_ID)){$alct_ID = filter_input(INPUT_POST,'alct_ID');}
 if(!isset($alct_name)){$alct_name = filter_input(INPUT_POST,'alct_name');}
 if(!isset($alct_price)){$alct_price = filter_input(INPUT_POST,'alct_price');}
 if(!isset($alct_description)){$alct_description = filter_input(INPUT_POST,'alct_description');}
+
 
 //end set variables
 
@@ -27,7 +37,7 @@ $options = array();
 if($typeofservice === null){
     $options['blank'] = '';
 }
-$options['projects'] = 'projects';
+$options['packages'] = 'packages';
 $options['add-on'] = 'add-on';
 $options['a_la_carte'] = 'a_la_carte';
 if (! empty($options)) {
@@ -40,25 +50,15 @@ $form_field1 .= '</select></form>';
 //end form field
 // Get addons
 if($typeofservice==='add-on'){
-    //edit an addon row
-    if(filter_input(INPUT_POST,'submit') === 'delete'){
-        echo $addon_ID;
-        echo $addon_name;
-        echo $addon_price;
-        echo $addon_description;
-
+    //delete an addon row
+    if($submit === 'delete'){
         $alter = $db1->prepare('DELETE FROM add_ons
                                 WHERE addon_ID = :addon_ID');
         $alter->bindParam(':addon_ID', $addon_ID);
         $alter->execute();
     }
-    //delete an addon row
-    if(filter_input(INPUT_POST,'submit') === 'change'){
-        echo $addon_ID;
-        echo $addon_name;
-        echo $addon_price;
-        echo $addon_description;
-
+    //edit an addon row
+    if($submit === 'change'){
         $alter = $db1->prepare('UPDATE add_ons
                                 SET addon_name = :addon_name, addon_price = :addon_price, addon_description = :addon_description
                                 WHERE addon_ID = :addon_ID');
@@ -69,7 +69,7 @@ if($typeofservice==='add-on'){
         $alter->execute();
     }
     //add an addon row
-    if(filter_input(INPUT_POST, 'submit') === 'add'){
+    if($submit === 'add'){
         $addon_name = filter_input(INPUT_POST, 'addon_name');
         $addon_price = filter_input(INPUT_POST, 'addon_price');
         $addon_description = filter_input(INPUT_POST, 'addon_description');
@@ -101,7 +101,7 @@ if($typeofservice==='add-on'){
                             <td>'.$row['addon_price'].'</td>
                             <td>'.$row['addon_description'].'</td>
                             <td><input type="submit" name="submit" value="edit"></td>
-                            <td><input type="submit" name="submit" value="delete" id="delete_btn"></td>
+                            <td><input type="submit" name="submit" value="delete" class="delete" id="delete_btn"></td>
 
                             <input type="hidden" name="typeofservice" value="add-on">
                             <input type="hidden" name="addon_ID" value="'.$row['addon_ID'].'">
@@ -195,7 +195,7 @@ if($typeofservice==='a_la_carte'){
                             <td>'.$row['a_la_carte_price'].'</td>
                             <td>'.$row['a_la_carte_desc'].'</td>
                             <td><input type="submit" name="submit" value="edit"></td>
-                            <td><input type="submit" name="submit" value="delete" id="delete_btn"></td>
+                            <td><input type="submit" name="submit" value="delete" class="delete" id="delete_btn"></td>
 
                             <input type="hidden" name="typeofservice" value="a_la_carte">
                             <input type="hidden" name="alct_ID" value="'.$row['a_la_carte_ID'].'">
@@ -241,8 +241,34 @@ if($typeofservice==='a_la_carte'){
         $form_field3 .= '</table>';
     }
 }
-if($typeofservice==='projects'){
+if($typeofservice==='packages'){
+    
+    //delete package feature if page is told
+    if($db_action==='pf'&&$submit==='delete'){
+        $delete = $db1->prepare('DELETE FROM package_features
+                                WHERE package_feature_ID = :package_feature_ID');
+        $delete->bindParam(':package_feature_ID', $package_feature_ID);
+        $delete->execute();
+    }
 
+    //alter package feature if page is told
+    if($db_action==='pf'&&$submit==='edit'){
+        $alter = $db1->prepare('UPDATE package_features
+                                SET package_feature_name = :package_feature_name
+                                WHERE package_feature_ID = :package_feature_ID');
+        $alter->bindParam(':package_feature_ID', $package_feature_ID);
+        $alter->bindParam(':package_feature_name', $package_feature_name);
+        $alter->execute();
+    }
+    //add a package feature
+    if($db_action==='pf'&&$submit==='add'){
+        $insert = $db1->prepare('INSERT INTO package_features (package_feature_name, package_ID) VALUES
+        (:package_feature_name, :package_ID)');
+        $insert->bindParam(':package_feature_name', $package_feature_name);
+        $insert->bindParam(':package_ID', $package_ID);
+        $insert->execute();
+    }
+    
     //query all packages
     $p_query = 'SELECT package_ID, package_name, package_price
                 FROM packages';
@@ -261,43 +287,113 @@ if($typeofservice==='projects'){
     $pf_rows = $pf_statement->fetchAll();
     $pf_statement->closeCursor();
 
-    if(!empty($p_rows)){
-        $show_rows = '<div class="wrap">';
-        $show_rows .= '<div class="grid-box">';
-        $show_rows .= '<div class="grid-wrapper">';
-        
-        foreach($p_rows as $p_row){
-            $show_rows .= '<div class="grid-card flex-card">';
-            $show_rows .= '<div class="flex-item-top">';
-            $show_rows .= '<h1>'.$p_row[1].'</h1>';
-            $show_rows .= '<h2>'.$p_row[2].'</h2>';
-            $show_rows .= '</div>';
-            $show_rows .= '<p>Package features</p>';
-            $show_rows .= '<div class="flex-item">';
-            $show_rows .= '<ul>';
-            foreach($pf_rows as $pf_row){
-                if($pf_row['package_ID'] === $p_row['package_ID']){
-                    $show_rows .= '<li>'.$pf_row[1].'</li>';
+    $show_rows = '<div class="wrap">';
+    $show_rows .= '<div class="grid-box">';
+    $show_rows .= '<div class="grid-wrapper">';
+    if($submit!=='edit'&&$submit!=='delete'&&$submit!=='add'){
+        if(!empty($p_rows)){
+            foreach($p_rows as $p_row){
+                $show_rows .= '<div class="grid-card flex-card">';
+                $show_rows .= '<div class="flex-item-top">';
+                $show_rows .= '<h1>'.$p_row[1].'</h1>';
+                $show_rows .= '<h2>'.$p_row[2].'</h2>';
+                $show_rows .= '</div>';
+                $show_rows .= '<p>Package features</p>';
+                $show_rows .= '<div class="flex-item">';
+                $show_rows .= '<ul>';
+                foreach($pf_rows as $pf_row){
+                    if($pf_row['package_ID'] === $p_row['package_ID']){
+                        $show_rows .= '<li>'.$pf_row[1].'</li>';
+                    }
                 }
-            }
-            $show_rows .= '</ul>';
-            $show_rows .= '</div>';
+                $show_rows .= '</ul>';
+                $show_rows .= '</div>';
 
-            $show_rows .= '<div class="pf">';
-            $show_rows .= '<input type="submit" name="submit" value="edit">';
-            $show_rows .= '</div>';
-            
-            //close flex card/grid card
-            $show_rows .= '</div>';
-            /*
-            $show_rows .= '<div class="flex-item-top">';
-            $show_rows .= '</div>';
-            */
+                $show_rows .= '<div class="pf">';
+                $show_rows .= '<form action="" method="post">';
+                $show_rows .= '<input type="hidden" name="typeofservice" value="packages">';
+                $show_rows .= '<input type="hidden" name="package_ID" value="'.$p_row[0].'">';
+                $show_rows .= '<input type="submit" name="submit" value="edit">';
+                $show_rows .= '</form>';
+                $show_rows .= '</div>';
+                
+                //close flex card/grid card
+                $show_rows .= '</div>';
+            }
         }
-        $show_rows .= '</div>';
-        $show_rows .= '</div>';
-        $show_rows .= '</div>';
     }
+    if($submit!=='edit'&&$submit!=='add a new card!'&&$submit!=='delete'&&$submit!=='add'){
+        //add the always present add new package div
+        $show_rows .= '<div class="grid-card flex-card">';
+        $show_rows .= '<div class="flex-item">';
+        $show_rows .= '<form action="" method="post">';
+        $show_rows .= '<input type="hidden" name="typeofservice" value="packages">';
+        $show_rows .= '<input type="submit" name="submit" value="add a new card!">';
+        $show_rows .= '</form>';
+        $show_rows .= '</div>';
+        $show_rows .= '</div>';
+        //this is the end of the add new package div
+    }
+    if($submit==='edit'||$submit==='delete'||$submit==='add'){
+        foreach($p_rows as $p_row){
+            if($p_row['package_ID']===$package_ID){
+
+                //show the card as a form to be edited
+                $show_rows .= '<div class="grid-card flex-card">';
+                $show_rows .= '<div class="flex-item-top">';
+                $show_rows .= '<h1><input type="text" name="package_name" value="'.$p_row[1].'"></h1>';
+                $show_rows .= '<h2><input type="text" name="package_price" value="'.$p_row[2].'"></h2>';
+                $show_rows .= '</div>';
+                $show_rows .= '<p>Package features</p>';
+                $show_rows .= '<div class="flex-item">';
+                $show_rows .= '';
+
+                foreach($pf_rows as $pf_row){
+                    if($pf_row['package_ID'] === $p_row['package_ID']){
+                        $show_rows .= '<form action="" method="post">';
+                        $show_rows .= '<input type="text" name="package_feature_name" value="'.$pf_row[1].'">';
+                        $show_rows .= '<input type="hidden" name="package_feature_ID" value="'.$pf_row[0].'">';
+                        $show_rows .= '<input type="hidden" name="package_ID" value="'.$pf_row[3].'">';
+                        $show_rows .= '<input type="hidden" name="typeofservice" value="packages">';
+                        $show_rows .= '<input type="hidden" name="db_action" value="pf">';
+                        $show_rows .= '<input type="submit" name="submit" value="edit">';
+                        $show_rows .= '<input type="submit" name="submit" value="delete">';
+                        $show_rows .= '</form>';
+                    }
+                }
+                //add a new package feature row
+                $show_rows .= '<form action="" method="post">';
+                $show_rows .= '<input type="text" name="package_feature_name" value="">';
+                $show_rows .= '<input type="hidden" name="package_ID" value="'.$package_ID.'">';
+                $show_rows .= '<input type="hidden" name="typeofservice" value="packages">';
+                $show_rows .= '<input type="hidden" name="db_action" value="pf">';
+                $show_rows .= '<input type="submit" name="submit" value="add">';
+                $show_rows .= '</form>';
+                //end new package feature row
+                        
+                $show_rows .= '';
+                $show_rows .= '</div>';
+
+                $show_rows .= '<div class="pf">';
+                $show_rows .= '<input type="hidden" name="typeofservice" value="packages">';
+                $show_rows .= '<input type="hidden" name="package_ID" value="'.$package_ID.'">';
+                $show_rows .= '<input type="submit" name="submit" value="change">';
+                $show_rows .= '</div>';
+                
+                //close flex card/grid card
+                $show_rows .= '</div>';
+            }
+        }
+    }
+
+    $show_rows .= '</div>';
+    $show_rows .= '</div>';
+    $show_rows .= '</div>';
+
+    $back_button ='<form action="" method="post">
+                    <input type="hidden" name="typeofservice" value="packages">
+                    <input type="submit" name="submit" value="back">
+                    </form>';
 }
 ?>
 <!DOCTYPE html>
@@ -332,10 +428,11 @@ if($typeofservice==='projects'){
         </div>
         <h3>This page can be used to edit the available services</h3>
         <h4>Please choose which type of service you would like to edit</h4>
-        <?php echo $form_field1;?>
-        <?php if($typeofservice==="add-on"||$typeofservice==="a_la_carte"||$typeofservice==="projects"){ echo $show_rows; }?>
+        <?php echo $form_field1;
+        if($typeofservice==="packages"&&($submit==="edit"||$submit==="delete"||$submit==="add")){echo $back_button;}
+        if($typeofservice==="add-on"||$typeofservice==="a_la_carte"||$typeofservice==="packages"){ echo $show_rows; }?>
         </br>
-        <?php if($submit==='edit'){ echo $form_field3; }?>
+        <?php if($submit==='edit'&&$typeofservice!=="packages"){ echo $form_field3; }?>
         
 
     </div>

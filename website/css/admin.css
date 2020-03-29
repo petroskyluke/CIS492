@@ -98,7 +98,13 @@ input[type=submit]:hover {
   background-color: rgb(196, 237, 250);
 }
 .delete{
-  background-color: rgb(255, 54, 54);
+  background-color: #e83b3b;
+}
+.add{
+  background-color: rgb(42, 191, 74);
+}
+.edit{
+  background-color: rgb(154, 150, 150);
 }
 table {
   border-collapse: collapse;

@@ -13,7 +13,7 @@
                             echo "<input type='submit' value='Remove' name='submit' formaction='' />";
                             echo "<input type='submit' value='Set Cover' name='submit' formaction='' />";
                             echo "<input type='hidden' value='$file' name='coverset'/>";
-                            echo $file;
+                            //echo $file;
                             echo "<input type='hidden' value='$select_project' name='projectselected'/>";
                             echo "</div>";
 

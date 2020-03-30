@@ -35,8 +35,8 @@ CREATE TABLE login (
 );
 CREATE TABLE packages (
 	package_ID			INT			NOT NULL	AUTO_INCREMENT,
-	package_name		VARCHAR(25)	NOT NULL,
-	package_price		VARCHAR(10)	NOT NULL,
+	package_name		VARCHAR(40)	NOT NULL,
+	package_price		VARCHAR(40)	NOT NULL,
 	PRIMARY KEY (package_ID)
 );
 

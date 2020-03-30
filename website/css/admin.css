@@ -1,0 +1,126 @@
+.sidebar{
+  height: 100%;
+  width: 150px;
+  background-color: #fff;
+  position: fixed!important;
+  z-index: 1;
+  overflow: auto;
+}
+.content{
+  margin-left: 150px;
+}
+body{
+  font-family: "Lato", sans-serif
+}
+.selected{
+  background-color: #ccc!important;
+}
+.grid-wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 2em;
+  justify-content: start;
+}
+.grid-card{
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #EEE;  
+  box-shadow: 10px 10px 5px grey;
+}
+.grid-box{
+  padding: 1em;
+}
+
+.flex-form {
+  display: flex;
+  justify-content: center;
+
+}
+.matterport div {
+    display: inline-block;
+	width: 250px;
+	min-height: 50px;
+	background-color: #eee;
+	height: auto;
+}
+.flex-col{
+  flex: 1;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 10px 10px 5px grey;
+  background-color: rgba(233, 233, 233, 0.739);
+}
+.flex-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.flex-item{
+  flex: 1;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex-item-top{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrap{
+  padding: .1em 16px;
+  text-align: center;
+}
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(95, 95, 95);
+  border-radius: 4px;
+  text-align: center;
+}
+select{
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(95, 95, 95);
+  border-radius: 4px;
+}
+input[type=submit] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(95, 95, 95);
+  border-radius: 4px;
+}
+input[type=file] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(95, 95, 95);
+  border-radius: 4px;
+}
+input[type=submit]:hover {
+  border: 2px solid rgb(63, 63, 63);
+  background-color: rgb(196, 237, 250);
+}
+.delete{
+  background-color: #e83b3b;
+}
+.add{
+  background-color: rgb(42, 191, 74);
+}
+.edit{
+  background-color: rgb(154, 150, 150);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}

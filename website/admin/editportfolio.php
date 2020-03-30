@@ -1,32 +1,5 @@
 <?php
-//BEGIN USER VERIFICATION
-//BEGIN SESSION CODE
-//get current time
-$time = $_SERVER['REQUEST_TIME'];
-//set the amount of time a session should live
-$timeout_duration = 600;
-//set parameters for session cookie storage
-ini_set('session.gc_maxlifetime', $timeout_duration);
-ini_set('session.cookie_lifetime', $timeout_duration);
-session_start();
-if(isset($_SESSION['LAST_ACTIVITY']) && 
-	(($_SESSION['LAST_ACTIVITY'] + $timeout_duration) < $time))
-{
-	session_unset();
-    session_destroy();
-    session_start(); 
-}
-if (session_status() == PHP_SESSION_NONE) {
-    session_start(); 
-  }
-
-$_SESSION['LAST_ACTIVITY'] = $time;
-//END SESSION CODE
-if(!isset($_SESSION["username"]))  
-{  
-	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  
-}
-//END USER VERIFICATION
+include('../inc/session.php');
 
 ?>
 <!DOCTYPE html>
@@ -35,6 +8,7 @@ if(!isset($_SESSION["username"]))
     <title>Yencik Photography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -51,19 +25,11 @@ if(!isset($_SESSION["username"]))
     </style>
 </head>
 
-    <!-- Page content -->
     <!-- Sidebar -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
-        <h3 class="w3-bar-item">Menu</h3>
-        <a href="editservices.php" class="w3-bar-item w3-button">Services</a>
-        <a href="editportfolio.php" class="w3-bar-item w3-button">Portfolio</a>
-        <a href="#" class="w3-bar-item w3-button">Reporting</a>
-        <a href="../inc/logout.php" class="w3-bar-item w3-button">Logout</a>
-        <a href="changepassword.php" class="w3-bar-item w3-button">Change Password</a>
-    </div>
+    <?php include('admin_sidebar.php');?>
 
     <!-- Page Content -->
-    <div style="margin-left:10%">
+    <div class="content">
         <div class="w3-container w3-teal">
             <h1>Edit Portfolio</h1>
         </div>
@@ -90,7 +56,6 @@ if(!isset($_SESSION["username"]))
             <input type="file" id="filesToUpload" name="filesToUpload[]" multiple accept="image/*" ><br><br>
             <input type="submit" value="Upload Images" name="submit" formaction=""><br><br>
             <input type="submit" value="Show Images" name="submit" formaction="">
-            <input type="submit" value="Thumb" name="submit" formaction="createthumbnails.php">
             <input type="submit" value="Remove All" name="submit" formaction="">
 
         </form>

@@ -126,12 +126,11 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
 		<!-- MATTERPORT -->
 <div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
 	<div class="matterport1">
+		<p>Take the 3D Tour for the location below. </p>
+		<p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
 		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
 	</div>
-	<div class="matterport2">
-		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=gjqdS14vMja' frameborder='1' allowfullscreen allow='vr'></iframe>
-	</div>
-</div>
+</div><!-- MATTERPORT -->
 
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
                 <div class="w3-third w3-margin-bottom">
@@ -196,9 +195,8 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
     <div class="w3-container w3-padding-64" id="about">
         <h2 class="w3-center w3-border-bottom w3-border-light-grey w3-padding-16">ABOUT</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat Maybe have image pull from facebook profile?
+           <font size="+2"> This is your one stop Photography shop! <br>I offer a wide variety of services including: Ariel Pictures/ Videos, Interior/Exterior Pictures, Virtual Tours (Matterport), videos of events, Family Portraits, Senior Pictures etc. 
+		   <br>You name it, and I can do it.
         </p>
     </div>
 
@@ -206,7 +204,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
         <div class="w3-third w3-container"></div>
         <div class="w3-third w3-container">
             <div class="w-3-row l3 m6 w3-margin-bottom">
-                <img src="https://scontent.fewr1-6.fna.fbcdn.net/v/t1.0-1/p320x320/84606452_1845874482211653_1591730745506791424_o.jpg?_nc_cat=106&_nc_ohc=8FHq2dh6gEkAX8oLsZu&_nc_ht=scontent.fewr1-6.fna&_nc_tp=6&oh=4986601ae56492e007afa2f4a81eaceb&oe=5EBA5B69" alt="John" style="width:100%">
+                <img src="https://scontent.fagc1-2.fna.fbcdn.net/v/t1.0-9/25399087_268134593716046_9126094635152119454_n.jpg?_nc_cat=108&_nc_sid=7aed08&_nc_ohc=_Aal-AJVskcAX_Xu3xt&_nc_ht=scontent.fagc1-2.fna&oh=b4a8e83ad40e0d09fae267993e0256b6&oe=5EA74E8D" alt="John" style="width:100%">
                 <h3 class="w3-center">Josh Yencik</h3>
                 <p class="w3-opacity w3-center">CEO & Founder</p>
                 <p></p>

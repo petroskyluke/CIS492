@@ -139,7 +139,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                     <div class="w3-container w3-white">
                         <p><b>Project 1</b></p>
                         <p class="w3-opacity">Fri 27 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" id="Project1" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -148,7 +148,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                     <div class="w3-container w3-white">
                         <p><b>Project 2</b></p>
                         <p class="w3-opacity">Sat 28 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -157,7 +157,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                     <div class="w3-container w3-white">
                         <p><b>Project 3</b></p>
                         <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -166,7 +166,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                     <div class="w3-container w3-white">
                         <p><b>Project 4</b></p>
                         <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                     <div class="w3-container w3-white">
                         <p><b>Project 5</b></p>
                         <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -184,7 +184,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                     <div class="w3-container w3-white">
                         <p><b>Project 6</b></p>
                         <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
                     </div>
                 </div>

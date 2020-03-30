@@ -8,7 +8,7 @@
                     $files = scandir('../img/portfolio/'.$select_project.'/thumbnails');
                     foreach($files as $file) {
                         if($file !== "." && $file !== "..") { 
-                            echo "<div id='individualPicture' class='w3-quarter w3-container' style='max-height:300px' />";   
+                            echo "<div id='individualPicture' class='w3-quarter w3-container' style='max-height:315px' />";   
                             echo "<img src='../img/portfolio/$select_project/thumbnails/$file' style='width:100%; height:250px; object-fit:cover' />"; 
                             echo "<input type='submit' value='Remove' name='submit' formaction='' />";
                             echo "<input type='submit' value='Set Cover' name='submit' formaction='' />";

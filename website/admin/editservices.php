@@ -351,7 +351,7 @@ if($typeofservice==='packages'){
                 $show_rows .= '<input type="hidden" name="package_ID" value="'.$p_row[0].'">';
                 $show_rows .= '<input type="hidden" name="db_action" value="p">';
                 $show_rows .= '<input type="submit" name="submit" class="edit" value="edit">';
-                $show_rows .= '<input type="submit" name="submit" value="delete" class="delete" onclick="return confirm(\'Are you sure?\');">';
+                $show_rows .= '<input type="submit" name="submit" value="delete" class="delete" onclick="return confirm(\'are you sure you want to delete package:'.$p_row['package_name'].'?\');">';
                 $show_rows .= '</form>';
                 $show_rows .= '</div>';
                 

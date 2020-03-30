@@ -10,10 +10,11 @@
                         if($file !== "." && $file !== "..") { 
                             echo "<div id='individualPicture' class='w3-quarter w3-container' style='max-height:300px' />";   
                             echo "<img src='../img/portfolio/$select_project/thumbnails/$file' style='width:100%; height:250px; object-fit:cover' />"; 
-                            echo "<input type='submit' value='Remove' name='submit' formaction='' />";
+                            echo "<input type='submit' value='Remove' name='submit' formaction='delete.php' />";
                             echo "<input type='submit' value='Set Cover' name='submit' formaction='' />";
                             echo "<input type='hidden' value='$file' name='coverset'/>";
-                            //echo $file;
+                            echo $file;
+                            $file=0;
                             echo "<input type='hidden' value='$select_project' name='projectselected'/>";
                             echo "</div>";
 

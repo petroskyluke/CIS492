@@ -1,7 +1,7 @@
 <?php 
     $select_project=$_POST['projectselected'];
     //$fname=$_POST['coverset'];
-    $fname="20160916_132849.jpg";
+    $fname=$_POST['coverset'];
     echo $fname;
     $pathToImages='../img/portfolio/'.$select_project.'/';
     $pathToThumbs='../img/portfolio/'.$select_project.'/thumbnails/';

@@ -1,9 +1,4 @@
-
-<?php
-
-
-
- ?>
+<?php?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,22 +51,21 @@
 	  <div class="mySlides w3-display-container w3-center">
 		<!--<img src="img/nikon.jpg" style="width:100%; height:100%; object-fit:cover">-->
 		<!--test image with resolution of 6014x4000-->
-		<img class="picturesizz" src="img/nikon.jpg">
+		<img class="picturesizz" src="img/portfolio/O copy.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
 		  <h3>YENCIK PHOTOGRAPHY</h3>
 		  <p><b>Insert Your Slogan Here!</b></p> 
-echo '<a href="http://www.website.com/page.html">Click here</a>';		  
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
-		<img class="picturesizz" src="img/header-bg2.jpg">
+		<img class="picturesizz" src="img/portfolio/OOOO copy.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
 		  <h3>YENCIK PHOTOGRAPHY</h3>
 		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
-		<img class="picturesizz" src="img/test2.jpg">
+		<img class="picturesizz" src="img/portfolio/OOOOOO copy.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
 		  <h3>YENCIK PHOTOGRAPHY</h3>
 		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
@@ -79,8 +73,6 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
 	  </div>
 
         <!-- The Services Section -->
-		<!--</br></br><p id="demoo"></p>-->
-
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
             <h2 class="w3-wide">SERVICES</h2>
             <p class="w3-opacity"><i>Select a requested service and date to set up our service.</i></p>
@@ -114,7 +106,6 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
             </div>
             <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule</button>
         </div>
-
     </div>
 
     <!-- The Portfolio Section -->
@@ -123,15 +114,16 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
             <h2 class="w3-wide w3-center w3-border-bottom w3-border-light-grey">PORTFOLIO</h2>
             <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
 
-		<!-- MATTERPORT -->
-<div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
-	<div class="matterport1">
-		<p>Take the 3D Tour for the location below. </p>
-		<p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
-		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
-	</div>
-</div><!-- MATTERPORT -->
+            <!-- MATTERPORT -->
+            <div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
+                <div class="matterport1">
+                    <p>Take the 3D Tour for the location below. </p>
+                    <p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
+                    <iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                </div>
+            </div>
 
+            <!--Project Stack 3x2-->
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
                 <div class="w3-third w3-margin-bottom">
                     <img src="img/portfolio/project1.jpg" alt="Project 1" style="width:100%" class="w3-hover-opacity">
@@ -391,8 +383,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
     </div>
 
     <!-- End Page Content -->
-    <!-- Image of location/map
-    <img src="/w3img/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">-->
+
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>
 

@@ -112,7 +112,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                     </span>
                 </div>
             </div>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule</button>
+            <button class="schedulebtn w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule an appointment</button>
         </div>
 
     </div>
@@ -212,130 +212,18 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
         </div>
         <div class="w3-third w3-container"></div>
     </div>
+
+    <!-- modal used to schedule a service -->
     <div id="ticketModal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-dark-grey w3-center w3-padding-32">
                 <span onclick="document.getElementById('ticketModal').style.display='none'"
-                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">�</span>
-                <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Services</h2>
+                      class="w3-button w3-dark-grey w3-xlarge w3-display-topright">
+                      <i class="far fa-window-close"></i>
+                    </span>
+                <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Schedule a service!</h2>
             </header>
-            <div class="wrap">
-                <form>
-                <p>Choose one of our packages!</p>
-                <div class="grid-box">
-                    <div class="grid-wrapper">
-                        <div class="grid-card flex-card">
-                            <div class="flex-item-top">
-                                <h1>Package 1</h1>
-                                <h2>$150</h2>
-                            </div>
-                            <div class="flex-item">
-                                <ul>
-                                    <li>Matterport 3D showcase</li>
-                                    <li>vr capability</li>
-                                    <li>measuring capability</li>
-                                    <li>tour</li>
-                                    <li>mattertags (up to 10)</li>
-                                </ul>
-                            </br>
-                            </div>
-                            <label class="btn-container">
-                            <div class="">
-                                <input type="radio" name="package_sel" value="package_1">
-                                <span class="checkmark flex-col"></span>
-                            </div>
-                            </label>
-                        </div>
-                        <div class="grid-card flex-card">
-                            <div class="flex-item-top">
-                                <h1>Package 2</h1>
-                                <h2>$200</h2>
-                            </div>
-                            <div class="flex-item">
-                                <ul>
-                                    <li>Matterport 3D showcase</li>
-                                    <li>vr capability</li>
-                                    <li>measuring capability</li>
-                                    <li>tour</li>
-                                    <li>25 professional pictures</li>
-                                    <li>mattertags (up to 15)</li>
-                                </ul>
-                            </br>
-                            </div>
-                            <label class="btn-container">
-                            <div class="">
-                                <input type="radio" name="package_sel" value="package_1">
-                                <span class="checkmark"></span>
-                            </div>
-                            </label>
-                        </div>
-                        <div class="grid-card flex-card">
-                            <div class="flex-item-top">
-                                <h1>Package 3</h1>
-                                <h2>$320</h2>
-                            </div>
-                            <div class="flex-item">
-                                <ul>
-                                    <li>Matterport 3D showcase</li>
-                                    <li>vr capability</li>
-                                    <li>measuring capability</li>
-                                    <li>tour</li>
-                                    <li>25 professional pictures</li>
-                                    <li>Drone video</li>
-                                    <li>intererior video (+$50)</li>
-                                    <li>up to 25 ariel pictures</li>
-                                    <li>2d floor plans</li>
-                                    <li>mattertags (up to 20)</li>
-                                </ul>
-                            </br>
-                            </div>
-                            <label class="btn-container">
-                            <div class="">
-                                <input type="radio" name="package_sel" value="package_1">
-                                <span class="checkmark"></span>
-                            </div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-wrapper">
-                    <div class="grid-box">
-                        <table>
-                            <p>Add On:</p>
-                            <tr>
-                            <td><input type="checkbox" name="options" value="option1"></td>
-                            <td>OPTION 1</td>
-                            </tr>
-                            <tr>
-                            <td><input type="checkbox" name="options" value="option2"></td>
-                            <td>OPTION 2</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="grid-box">
-                        <table>
-                            <p>A La Carte:</p>
-                            <tr>
-                            <td><input type="checkbox" name="options" value="option1"></td>
-                            <td>OPTION 1</td>
-                            </tr>
-                            <tr>
-                            <td><input type="checkbox" name="options" value="option2"></td>
-                            <td>OPTION 2</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="grid-box">
-                    <input class="w3-input w3-border" type="text" placeholder="Email*"></br>
-                    <input class="w3-input w3-border" type="text" placeholder="Phone #*"></br>
-                    <input class="w3-input w3-border" type="text" placeholder="Date/Date Range*"></br>
-                    <input class="w3-input w3-border" type="text" placeholder="Service Address*">
-                </div>
-                <button class="w3-button w3-block w3-dark-grey w3-padding-16 w3-section w3-right">SCHEDULE <i class="fa fa-check"></i></button>
-                <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
-                </form>
-            </div>
+            <?php include 'showserviceform.php';?>
         </div>
     </div>
 

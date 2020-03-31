@@ -87,20 +87,32 @@ INSERT INTO packages (package_name,package_price) VALUES
 ('1st Package','$150'),
 ('2nd Package','$200'),
 ('3rd Package','$320');
-/*
-INSERT INTO package_features (package_feature_name,package_feature_desc) VALUES
-('Matterport 3D Showcase','Have a 3D tour created')
-('VR Capability','Use VR to view the 3D tour')
-('Measuring Capability','Measure distances in the 3D tour')
-('Tour','View the 3D tour')
-('Mattertags (10)','Embed the tour')
-('Mattertags (15)','Embed the tour')
-('Mattertags (20)','Embed the tour')
-('25 Professional Pictures','Receive 25 pictures of the property from our expert photographer')
-('Drone Video','Have video taken of the property with our drone')
-('Interior Video (+$50)','Receive video of the interior of the location for an addiontial fee')
-('2D Floor Plans','View the location as a floor plan');
-*/
+
+INSERT INTO package_features (package_feature_name,package_feature_desc, package_ID) VALUES
+('Matterport 3D Showcase','Have a 3D tour created', 1),
+('VR Capability','Use VR to view the 3D tour', 1),
+('Measuring Capability','Measure distances in the 3D tour', 1),
+('Tour','View the 3D tour', 1),
+('Mattertags (10)','Embed the tour', 1),
+
+('Matterport 3D Showcase','Have a 3D tour created', 2),
+('VR Capability','Use VR to view the 3D tour', 2),
+('Measuring Capability','Measure distances in the 3D tour', 2),
+('Tour','View the 3D tour', 2),
+('25 Professional Pictures','Receive 25 pictures of the property from our expert photographer', 2),
+('Mattertags (15)','Embed the tour', 2),
+
+('Matterport 3D Showcase','Have a 3D tour created', 3),
+('VR Capability','Use VR to view the 3D tour', 3),
+('Measuring Capability','Measure distances in the 3D tour', 3),
+('Tour','View the 3D tour', 3),
+('25 Professional Pictures','Receive 25 pictures of the property from our expert photographer', 3),
+('Drone Video','Have video taken of the property with our drone', 3),
+('Interior Video (+$50)','Receive video of the interior of the location for an addiontial fee', 3),
+('2D Floor Plans','View the location as a floor plan', 3),
+('Mattertags (20)','Embed the tour', 3);
+
+
 INSERT INTO add_ons (addon_name,addon_price,addon_description) VALUES
 ('2D Floor Plans','$25','View the location as a floor plan'),
 ('Measurements of Rooms','$10','Receive room measurements/dimensions');

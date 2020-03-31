@@ -3,15 +3,19 @@
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   grid-gap: 2em;
   justify-content: start;
+  padding: 1em;
 }
 .grid-card{
-  border-radius: 15px;
+  border-radius: 2em;
   padding: 1em;
   background-color: #EEE;  
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 7px 7px 7px grey;
+  border: solid 2px #808080;
 }
 .grid-box{
   padding: 1em;
+  border: solid 3px rgb(204, 204, 204);
+  border-radius: 12px;
 }
 .flex-form {
   display: flex;
@@ -131,5 +135,23 @@ ul {
 }
 .wrap{
   padding: .1em 16px;
+  text-align: center;
+  font-size: 15px;
+}
+input[type=submit], button{
+  border-radius: 2em;
+}
+.schedulebtn{
+  height: 3m;
+  width: 80%;
+  font-size: 22px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
   text-align: center;
 }

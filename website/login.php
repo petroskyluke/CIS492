@@ -64,7 +64,7 @@
                         <input type="submit" name="login" value="login"/>
                     </div>
 
-                    <div class="container" style="background-color:#f1f1f1">
+                    <div class="container">
                         <button type="button" class="cancelbtn">Cancel</button>
                     </div>
                 </form>

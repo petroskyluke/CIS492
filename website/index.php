@@ -1,10 +1,4 @@
 
-<?php
-
-
-
- ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,22 +50,21 @@
 	  <div class="mySlides w3-display-container w3-center">
 		<!--<img src="img/nikon.jpg" style="width:100%; height:100%; object-fit:cover">-->
 		<!--test image with resolution of 6014x4000-->
-		<img class="picturesizz" src="img/nikon.jpg">
+		<img class="picturesizz" src="img/portfolio/O copy.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
 		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>Insert Your Slogan Here!</b></p> 
-echo '<a href="http://www.website.com/page.html">Click here</a>';		  
+		  <p><b>INSERT YOUR SLOGAN HERE.</b></p> 
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
-		<img class="picturesizz" src="img/header-bg2.jpg">
+		<img class="picturesizz" src="img/portfolio/OOOO copy.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
 		  <h3>YENCIK PHOTOGRAPHY</h3>
 		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
-		<img class="picturesizz" src="img/test2.jpg">
+		<img class="picturesizz" src="img/portfolio/OOOOOO copy.jpg">
 		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
 		  <h3>YENCIK PHOTOGRAPHY</h3>
 		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
@@ -79,8 +72,6 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
 	  </div>
 
         <!-- The Services Section -->
-		<!--</br></br><p id="demoo"></p>-->
-
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
             <h2 class="w3-wide">SERVICES</h2>
             <p class="w3-opacity"><i>Select a requested service and date to set up our service.</i></p>
@@ -114,7 +105,6 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
             </div>
             <button class="schedulebtn w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule an appointment</button>
         </div>
-
     </div>
 
     <!-- The Portfolio Section -->
@@ -123,71 +113,72 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
             <h2 class="w3-wide w3-center w3-border-bottom w3-border-light-grey">PORTFOLIO</h2>
             <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
 
-		<!-- MATTERPORT -->
-<div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
-	<div class="matterport1">
-		<p>Take the 3D Tour for the location below. </p>
-		<p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
-		<iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
-	</div>
-</div><!-- MATTERPORT -->
-
-            <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-                <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project1.jpg" alt="Project 1" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-white">
-                        <p><b>Project 1</b></p>
-                        <p class="w3-opacity">Fri 27 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" id="Project1" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                    </div>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project2.jpg" alt="Project 2" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-white">
-                        <p><b>Project 2</b></p>
-                        <p class="w3-opacity">Sat 28 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                    </div>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project3.jpg" alt="Project 3" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-white">
-                        <p><b>Project 3</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                    </div>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project4.jpg" alt="Project 4" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-white">
-                        <p><b>Project 4</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                    </div>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project5.jpg" alt="Project 5" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-white">
-                        <p><b>Project 5</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                    </div>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project6.jpg" alt="Project 6" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-white">
-                        <p><b>Project 6</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                    </div>
+            <!-- MATTERPORT -->
+            <div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
+                <div class="matterport1">
+                    <p>Take the 3D Tour for the location below. </p>
+                    <p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
+                    <iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
                 </div>
             </div>
+
+            <!--Project Stack 3x2-->
+                <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="img/portfolio/project1/thumbnails/A copy.jpeg" alt="Project 1" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                            <p><b>Project 1</b></p>
+                            <p class="w3-opacity">Fri 27 Nov 2016</p>
+                            <p>LOCATION, PA.</p>
+                            <button class="w3-button w3-black w3-margin-bottom" name="project" id="project1" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="img/portfolio/project2/thumbnails/B copy.jpeg" alt="Project 2" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                            <p><b>Project 2</b></p>
+                            <p class="w3-opacity">Sat 28 Nov 2016</p>
+                            <p>LOCATION, PA.</p>
+                            <button class="w3-button w3-black w3-margin-bottom" id="project2" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="img/portfolio/project3/thumbnails/C copy.jpeg" alt="Project 3" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                            <p><b>Project 3</b></p>
+                            <p class="w3-opacity">Sun 29 Nov 2016</p>
+                            <p>LOCATION, PA.</p>
+                            <button class="w3-button w3-black w3-margin-bottom" id="project3" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="img/portfolio/project4/thumbnails/D copy.jpeg" alt="Project 4" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                            <p><b>Project 4</b></p>
+                            <p class="w3-opacity">Sun 29 Nov 2016</p>
+                            <p>LOCATION, PA.</p>
+                            <button class="w3-button w3-black w3-margin-bottom" id="project4" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="img/portfolio/project5/thumbnails/F copy.jpeg" alt="Project 5" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                            <p><b>Project 5</b></p>
+                            <p class="w3-opacity">Sun 29 Nov 2016</p>
+                            <p>LOCATION, PA.</p>
+                            <button class="w3-button w3-black w3-margin-bottom" id="project5" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="img/portfolio/project6/thumbnails/G copy.jpeg" alt="Project 6" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                            <p><b>Project 6</b></p>
+                            <p class="w3-opacity">Sun 29 Nov 2016</p>
+                            <p>LOCATION, PA.</p>
+                            <button class="w3-button w3-black w3-margin-bottom" id="project6" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 
@@ -226,16 +217,17 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
             <?php include 'showserviceform.php';?>
         </div>
     </div>
-
-    <!--gallery-->
-    <div id="showProject" class="w3-modal">
-        <span onclick="document.getElementById('showProject').style.display='none'" class="w3-display-container">
-        </span>
+    
+    <?php include 'gallery.php';?>
+    <!--gallery--><!--
+    <div id="showProject" class="w3-modal">-->
+        <!--<span onclick="document.getElementById('project1').style.display='none'" class="w3-display-container">
+        </span>--><!--
         <div class="w3-content w3-display-container" style="max-width:800px">
 
-            <img class="myPortfolio" src="img/portfolio/project6.jpg" style="width:100%">
-            <img class="myPortfolio" src="img/portfolio/project5.jpg" style="width:100%">
-            <img class="myPortfolio" src="img/portfolio/project4.jpg" style="width:100%">
+            <img class="myPortfolio" src="img/portfolio/B copy.jpeg" style="width:100%">
+            <img class="myPortfolio" src="img/portfolio/BB copy.jpeg" style="width:100%">
+            <img class="myPortfolio" src="img/portfolio/E copy.jpeg" style="width:100%">
             <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
                 <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                 <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -244,7 +236,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!-- The Contact Section -->
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
@@ -279,8 +271,7 @@ echo '<a href="http://www.website.com/page.html">Click here</a>';
     </div>
 
     <!-- End Page Content -->
-    <!-- Image of location/map
-    <img src="/w3img/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">-->
+
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>
 

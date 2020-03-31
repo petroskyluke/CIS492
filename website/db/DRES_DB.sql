@@ -51,7 +51,7 @@ CREATE TABLE package_features (
 CREATE TABLE add_ons (
 	addon_ID			INT				NOT NULL	AUTO_INCREMENT,
 	addon_name			VARCHAR(255)	NOT NULL,
-	addon_price			DOUBLE			NOT NULL,
+	addon_price			VARCHAR(255)	NOT NULL,
 	addon_description	VARCHAR(255)	NOT NULL,
 	PRIMARY KEY (addon_ID)
 );
@@ -84,10 +84,10 @@ INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
 
 INSERT INTO packages (package_name,package_price) VALUES
-('1st Package','$150')
-('2nd Package','$200')
+('1st Package','$150'),
+('2nd Package','$200'),
 ('3rd Package','$320');
-
+/*
 INSERT INTO package_features (package_feature_name,package_feature_desc) VALUES
 ('Matterport 3D Showcase','Have a 3D tour created')
 ('VR Capability','Use VR to view the 3D tour')
@@ -100,17 +100,17 @@ INSERT INTO package_features (package_feature_name,package_feature_desc) VALUES
 ('Drone Video','Have video taken of the property with our drone')
 ('Interior Video (+$50)','Receive video of the interior of the location for an addiontial fee')
 ('2D Floor Plans','View the location as a floor plan');
-
+*/
 INSERT INTO add_ons (addon_name,addon_price,addon_description) VALUES
-('2D Floor Plans','$25','View the location as a floor plan')
+('2D Floor Plans','$25','View the location as a floor plan'),
 ('Measurements of Rooms','$10','Receive room measurements/dimensions');
 
 INSERT INTO a_la_carte (a_la_carte_name,a_la_carte_price,a_la_carte_desc) VALUES
-('25 Professional Pictures','$70','Receive 25 pictures of the property from our expert photographer')
-('Drone Video (Outside Only)','$115','Receive video of the property from our drone')
-('Drone Video & Interior Video','$215','Receive video of both the outside and inside of the location')
-('Interior Video','$100','Receive video of the interior of the location')
-('Virtual Staging','$45/picture','Have the interior design edited using digital editing')
-('Sky and/or Grass Replacement','$8/picture','Have the Sky and/or Grass in the pictures replaces with pristine blues and greens using digital editing')
-('Twilight Picture Transformation','$10/picture','Have the pictures digitally edited to look as if they were taken among a beautiful twilight')
+('25 Professional Pictures','$70','Receive 25 pictures of the property from our expert photographer'),
+('Drone Video (Outside Only)','$115','Receive video of the property from our drone'),
+('Drone Video & Interior Video','$215','Receive video of both the outside and inside of the location'),
+('Interior Video','$100','Receive video of the interior of the location'),
+('Virtual Staging','$45/picture','Have the interior design edited using digital editing'),
+('Sky and/or Grass Replacement','$8/picture','Have the Sky and/or Grass in the pictures replaces with pristine blues and greens using digital editing'),
+('Twilight Picture Transformation','$10/picture','Have the pictures digitally edited to look as if they were taken among a beautiful twilight'),
 ('MEasurements of All Rooms','$10','Receive the internal dimensions of each room');

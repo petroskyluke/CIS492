@@ -56,7 +56,7 @@ include('../inc/session.php');
         <input type="file" id="filesToUpload" name="filesToUpload[]" multiple accept="image/*" ><br><br>
         <input type="submit" value="Upload Images" name="submit" formaction=""><br><br>
         <input type="submit" value="Show Images" id="show" name="submit" formaction="">
-        <input type="submit" value="Remove All" name="submit" formaction="">
+        <input type="submit" value="Remove All" name="submit" formaction=""  onclick="return confirm('Are you sure you want to delete all photos in this project?')">
 
     </form>
 

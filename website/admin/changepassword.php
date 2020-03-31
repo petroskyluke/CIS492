@@ -1,26 +1,5 @@
 <?php
-//BEGIN SESSION CODE
-//get current time
-$time = $_SERVER['REQUEST_TIME'];
-//set the amount of time a session should live
-$timeout_duration = 20;
-//set parameters for session cookie storage
-ini_set('session.gc_maxlifetime', $timeout_duration);
-ini_set('session.cookie_lifetime', $timeout_duration);
-session_start();
-if(isset($_SESSION['LAST_ACTIVITY']) && 
-	(($_SESSION['LAST_ACTIVITY'] + $timeout_duration) < $time))
-{
-	session_unset();
-    session_destroy();
-}
-session_start(); 
-$_SESSION['LAST_ACTIVITY'] = $time;
-//END SESSION CODE
-if(!isset($_SESSION["username"]))  
-{  
-	header("location:../login.php?msg=You+have+been+logged+out+due+to+inactivity");  
-}
+include '../inc/session.php';
 ?>
 
 <!DOCTYPE html>
@@ -59,8 +38,8 @@ if(!isset($_SESSION["username"]))
                         <input type="submit" name="changePassword" value="Change Password"/>
                     </div>
 
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" class="cancelbtn">Cancel</button>
+                    <div class="container">
+                        <button type="button" class="cancelbtn" onClick="javascript:history.go(-1)">Cancel</button>
                     </div>
                 </form>
 				</div>

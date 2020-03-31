@@ -78,14 +78,12 @@ include('../inc/session.php');
     <?php //delete all images ?>
     <?php if ((!empty($_POST['submit']))&&($_POST['submit']=='Remove All')){
         include 'removeall.php';
-        include 'displayimages.php';
 
     }
     ?>
     <?php //delete individual images ?>
     <?php if ((!empty($_POST['submit']))&&($_POST['submit']=='Remove')){
         include 'delete.php';
-        include 'displayimages.php';
 
     }
     ?>

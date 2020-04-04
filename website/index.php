@@ -9,15 +9,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <style>
-        body {
-            font-family: "Lato", sans-serif
-        }
-
-        .mySlides {
-            display: none
-        }
-    </style>
+    
 </head>
 <body onload="resize()" onresize="resize()">
     <!-- Navbar -->
@@ -43,68 +35,38 @@
         <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     </div>
 
-	<!-- Page content -->
+	<!-- Slideshow and page introduction -->
 	<div class="w3-content" style="max-width:3000px;">
-
 	  <!-- Automatic Slideshow Images -->
 	  <div class="mySlides w3-display-container w3-center">
-		<!--<img src="img/nikon.jpg" style="width:100%; height:100%; object-fit:cover">-->
-		<!--test image with resolution of 6014x4000-->
 		<img class="picturesizz" src="img/portfolio/O copy.jpg">
-		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>INSERT YOUR SLOGAN HERE.</b></p> 
+		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+            <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOO copy.jpg">
-		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
+		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+            <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOOOO copy.jpg">
-		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
+		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+		    <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
-	  </div>
-
-        <!-- The Services Section -->
-        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
-            <h2 class="w3-wide">SERVICES</h2>
-            <p class="w3-opacity"><i>Select a requested service and date to set up our service.</i></p>
-            <!-- we can put something in here if we want
-              <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
-            <div class="w3-row w3-padding-32">
-                <div class="w3-third">
-                    <p><b>Photography</b></p>
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
-                    </span>
-
-                </div>
-                <div class="w3-third">
-                    <p><b>Videography</b></p>
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-video fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="w3-third">
-                    <p><b>Areial Photography</b></p>
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-helicopter fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-            </div>
-            <button class="schedulebtn w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule an appointment</button>
+      </div>
+      <div class="w3-center grid-wrap w3-margin">
+        <div class="text-wrap grid-item w3-padding-16">
+            <h2>About...</h2>
+            <p>This is your one stop Photography shop!</br>
+                I offer a wide variety of services including:</br>Ariel Pictures/Videos, Interior/Exterior Pictures, 
+                Virtual Tours (Matterport), videos of events, Family Portraits, Senior Pictures etc.</br>
+                You name it, and I can do it.
+            </p>
+            <p>Check out my portfolio, schedule a service, or contact me below!</p>
         </div>
+      </div>
     </div>
 
     <!-- The Portfolio Section -->
@@ -114,11 +76,17 @@
             <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
 
             <!-- MATTERPORT -->
-            <div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
-                <div class="matterport1">
-                    <p>Take the 3D Tour for the location below. </p>
-                    <p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
-                    <iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+            <div class="w3-center w3-margin-bottom w3-padding-16">
+                <h3>Virtual Tour (Matterport)</h3>
+                <p>Take the 3D Tour for the location below. </p>
+                <p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
+                <div class="grid-wrapper-matt">
+                    <div class="grid-item-matt">
+                        <iframe width='500' height='400' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                    </div>
+                    <div class="grid-item-matt">
+                        <iframe width='500' height='400' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                    </div>
                 </div>
             </div>
 
@@ -182,26 +150,51 @@
         </div>
     </div>
 
+    <div class="w3-content">
+        <!-- The Services Section -->
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
+            <h2 class="w3-wide">SERVICES</h2>
+            <p class="w3-opacity"><i>Select a requested service and date to set up our service.</i></p>
+            <!-- we can put something in here if we want
+              <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+            <div class="w3-row w3-padding-32">
+                <div class="w3-third">
+                    <p><b>Photography</b></p>
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+                    </span>
+
+                </div>
+                <div class="w3-third">
+                    <p><b>Videography</b></p>
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-video fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="w3-third">
+                    <p><b>Areial Photography</b></p>
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-helicopter fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+            </div>
+            <button class="schedulebtn w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule an appointment</button>
+        </div>
+    </div>
+
     <!-- The About Section -->
     <div class="w3-container w3-padding-64" id="about">
         <h2 class="w3-center w3-border-bottom w3-border-light-grey w3-padding-16">ABOUT</h2>
-        <p>
-           <font size="+2"> This is your one stop Photography shop! <br>I offer a wide variety of services including: Ariel Pictures/ Videos, Interior/Exterior Pictures, Virtual Tours (Matterport), videos of events, Family Portraits, Senior Pictures etc. 
-		   <br>You name it, and I can do it.
-        </p>
-    </div>
-
-    <div class="w3-row w3-grayscale l3 m6 w3-margin-bottom">
-        <div class="w3-third w3-container"></div>
-        <div class="w3-third w3-container">
-            <div class="w-3-row l3 m6 w3-margin-bottom">
-                <img src="https://scontent.fagc1-2.fna.fbcdn.net/v/t1.0-9/25399087_268134593716046_9126094635152119454_n.jpg?_nc_cat=108&_nc_sid=7aed08&_nc_ohc=_Aal-AJVskcAX_Xu3xt&_nc_ht=scontent.fagc1-2.fna&oh=b4a8e83ad40e0d09fae267993e0256b6&oe=5EA74E8D" alt="John" style="width:100%">
-                <h3 class="w3-center">Josh Yencik</h3>
-                <p class="w3-opacity w3-center">CEO & Founder</p>
-                <p></p>
-            </div>
+        <div class="profile w3-center w3-margin-bottom">
+            <img src="img/profile/joshprofile.jpg" alt="Josh">
+            <h3 class="w3-center">Josh Yencik</h3>
+            <p class=" w3-center">CEO & Founder</p>
         </div>
-        <div class="w3-third w3-container"></div>
     </div>
 
     <!-- modal used to schedule a service -->
@@ -289,7 +282,7 @@
             myIndex++;
             if (myIndex > x.length) { myIndex = 1 }
             x[myIndex - 1].style.display = "block";
-            setTimeout(carousel, 8000);
+            setTimeout(carousel, 7000);
         }
 
         // Used to toggle the menu on small screens when clicking on the menu button
@@ -315,8 +308,8 @@
 
 		//figure out how to do this by class instead of id, consider loading towards beginning of page instead of end
 		function resize(){
-			var w = window.innerWidth;
-			var h = window.innerHeight;
+			var w = window.innerWidth/1.5;
+			var h = window.innerHeight/1.5;
 			//document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
 			var i;
             var x = document.getElementsByClassName("mySlides");

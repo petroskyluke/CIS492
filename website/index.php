@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>$("#theForm").ajaxForm({url:'gallery.php',type:'post'})</script>
     <title>Yencik Photography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,15 +11,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <style>
-        body {
-            font-family: "Lato", sans-serif
-        }
-
-        .mySlides {
-            display: none
-        }
-    </style>
+    
 </head>
 <body onload="resize()" onresize="resize()">
     <!-- Navbar -->
@@ -43,34 +37,125 @@
         <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     </div>
 
-	<!-- Page content -->
+	<!-- Slideshow and page introduction -->
 	<div class="w3-content" style="max-width:3000px;">
-
 	  <!-- Automatic Slideshow Images -->
 	  <div class="mySlides w3-display-container w3-center">
-		<!--<img src="img/nikon.jpg" style="width:100%; height:100%; object-fit:cover">-->
-		<!--test image with resolution of 6014x4000-->
 		<img class="picturesizz" src="img/portfolio/O copy.jpg">
-		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>INSERT YOUR SLOGAN HERE.</b></p> 
+		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+            <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOO copy.jpg">
-		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
+		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+            <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOOOO copy.jpg">
-		<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		  <h3>YENCIK PHOTOGRAPHY</h3>
-		  <p><b>INSERT YOUR SLOGAN HERE.</b></p>    
+		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+		    <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
-	  </div>
+      </div>
+      <div class="w3-center grid-wrap w3-margin">
+        <div class="text-wrap grid-item w3-padding-16">
+            <h2>About...</h2>
+            <p>This is your one stop Photography shop!</br>
+                I offer a wide variety of services including:</br>Ariel Pictures/Videos, Interior/Exterior Pictures, 
+                Virtual Tours (Matterport), videos of events, Family Portraits, Senior Pictures etc.</br>
+                You name it, and I can do it.
+            </p>
+            <p>Check out my portfolio, schedule a service, or contact me below!</p>
+        </div>
+      </div>
+    </div>
 
+    <!-- The Portfolio Section -->
+    <div class="w3-black" id="portfolio">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+            <h2 class="w3-wide w3-center w3-border-bottom w3-border-light-grey">PORTFOLIO</h2>
+            <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
+
+            <!-- MATTERPORT -->
+            <div class="w3-center w3-margin-bottom w3-padding-16">
+                <h3>Virtual Tour (Matterport)</h3>
+                <p>Take the 3D Tour for the location below. </p>
+                <p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
+                <div class="grid-wrapper-matt">
+                    <div class="grid-item-matt">
+                        <iframe width='500' height='400' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                    </div>
+                    <div class="grid-item-matt">
+                        <iframe width='500' height='400' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!--Project gallery Stack 3x2-->
+            <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                <div class="w3-third w3-margin-bottom">
+                    <img src="img/portfolio/project1/thumbnails/!cover.jpg" alt="Project 1" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>Project 1</b></p>
+                        <p class="w3-opacity">Fri 27 Nov 2016</p>
+                        <p>LOCATION, PA.</p>
+                        <button class="w3-button w3-black w3-margin-bottom" id="project1" onclick="document.getElementById('showProject1').style.display='block'">View Photos</button>
+                    </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <img src="img/portfolio/project2/thumbnails/!cover.jpg" alt="Project 2" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>Project 2</b></p>
+                        <p class="w3-opacity">Sat 28 Nov 2016</p>
+                        <p>LOCATION, PA.</p>
+                        <button class="w3-button w3-black w3-margin-bottom" id="project2" onclick="document.getElementById('showProject2').style.display='block'">View Photos</button>
+                    </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <img src="img/portfolio/project3/thumbnails/!cover.jpg" alt="Project 3" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>Project 3</b></p>
+                        <p class="w3-opacity">Sun 29 Nov 2016</p>
+                        <p>LOCATION, PA.</p>
+                        <button class="w3-button w3-black w3-margin-bottom" id="project3" onclick="document.getElementById('showProject3').style.display='block'">View Photos</button>
+                    </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <img src="img/portfolio/project4/thumbnails/!cover.jpg" alt="Project 4" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>Project 4</b></p>
+                        <p class="w3-opacity">Sun 29 Nov 2016</p>
+                        <p>LOCATION, PA.</p>
+                        <button class="w3-button w3-black w3-margin-bottom" id="project4" onclick="document.getElementById('showProject4').style.display='block'">View Photos</button>
+                    </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <img src="img/portfolio/project5/thumbnails/!cover.jpg" alt="Project 5" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>Project 5</b></p>
+                        <p class="w3-opacity">Sun 29 Nov 2016</p>
+                        <p>LOCATION, PA.</p>
+                        <button class="w3-button w3-black w3-margin-bottom" id="project5" onclick="document.getElementById('showProject5').style.display='block'">View Photos</button>
+                    </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <img src="img/portfolio/project6/thumbnails/!cover.jpg" alt="Project 6" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>Project 6</b></p>
+                        <p class="w3-opacity">Sun 29 Nov 2016</p>
+                        <p>LOCATION, PA.</p>
+                        <button class="w3-button w3-black w3-margin-bottom" id="project6" onclick="document.getElementById('showProject6').style.display='block'">View Photos</button>
+                    </div>
+                </div>                
+            </div>
+            <?php include 'gallery.php';?>
+
+                
+        </div>
+    </div>
+
+    <div class="w3-content">
         <!-- The Services Section -->
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
             <h2 class="w3-wide">SERVICES</h2>
@@ -107,101 +192,14 @@
         </div>
     </div>
 
-    <!-- The Portfolio Section -->
-    <div class="w3-black" id="portfolio">
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-            <h2 class="w3-wide w3-center w3-border-bottom w3-border-light-grey">PORTFOLIO</h2>
-            <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
-
-            <!-- MATTERPORT -->
-            <div class="w3-center w3-margin-bottom w3-padding-16 w3-container">
-                <div class="matterport1">
-                    <p>Take the 3D Tour for the location below. </p>
-                    <p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
-                    <iframe width='553' height='480' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
-                </div>
-            </div>
-
-            <!--Project Stack 3x2-->
-                <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-                    <div class="w3-third w3-margin-bottom">
-                        <img src="img/portfolio/project1/thumbnails/A copy.jpeg" alt="Project 1" style="width:100%" class="w3-hover-opacity">
-                        <div class="w3-container w3-white">
-                            <p><b>Project 1</b></p>
-                            <p class="w3-opacity">Fri 27 Nov 2016</p>
-                            <p>LOCATION, PA.</p>
-                            <button class="w3-button w3-black w3-margin-bottom" name="project" id="project1" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                        </div>
-                    </div>
-                    <div class="w3-third w3-margin-bottom">
-                        <img src="img/portfolio/project2/thumbnails/B copy.jpeg" alt="Project 2" style="width:100%" class="w3-hover-opacity">
-                        <div class="w3-container w3-white">
-                            <p><b>Project 2</b></p>
-                            <p class="w3-opacity">Sat 28 Nov 2016</p>
-                            <p>LOCATION, PA.</p>
-                            <button class="w3-button w3-black w3-margin-bottom" id="project2" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                        </div>
-                    </div>
-                    <div class="w3-third w3-margin-bottom">
-                        <img src="img/portfolio/project3/thumbnails/C copy.jpeg" alt="Project 3" style="width:100%" class="w3-hover-opacity">
-                        <div class="w3-container w3-white">
-                            <p><b>Project 3</b></p>
-                            <p class="w3-opacity">Sun 29 Nov 2016</p>
-                            <p>LOCATION, PA.</p>
-                            <button class="w3-button w3-black w3-margin-bottom" id="project3" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                        </div>
-                    </div>
-                    <div class="w3-third w3-margin-bottom">
-                        <img src="img/portfolio/project4/thumbnails/D copy.jpeg" alt="Project 4" style="width:100%" class="w3-hover-opacity">
-                        <div class="w3-container w3-white">
-                            <p><b>Project 4</b></p>
-                            <p class="w3-opacity">Sun 29 Nov 2016</p>
-                            <p>LOCATION, PA.</p>
-                            <button class="w3-button w3-black w3-margin-bottom" id="project4" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                        </div>
-                    </div>
-                    <div class="w3-third w3-margin-bottom">
-                        <img src="img/portfolio/project5/thumbnails/F copy.jpeg" alt="Project 5" style="width:100%" class="w3-hover-opacity">
-                        <div class="w3-container w3-white">
-                            <p><b>Project 5</b></p>
-                            <p class="w3-opacity">Sun 29 Nov 2016</p>
-                            <p>LOCATION, PA.</p>
-                            <button class="w3-button w3-black w3-margin-bottom" id="project5" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                        </div>
-                    </div>
-                    <div class="w3-third w3-margin-bottom">
-                        <img src="img/portfolio/project6/thumbnails/G copy.jpeg" alt="Project 6" style="width:100%" class="w3-hover-opacity">
-                        <div class="w3-container w3-white">
-                            <p><b>Project 6</b></p>
-                            <p class="w3-opacity">Sun 29 Nov 2016</p>
-                            <p>LOCATION, PA.</p>
-                            <button class="w3-button w3-black w3-margin-bottom" id="project6" onclick="document.getElementById('showProject').style.display='block'">View Photos</button>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </div>
-
     <!-- The About Section -->
     <div class="w3-container w3-padding-64" id="about">
         <h2 class="w3-center w3-border-bottom w3-border-light-grey w3-padding-16">ABOUT</h2>
-        <p>
-           <font size="+2"> This is your one stop Photography shop! <br>I offer a wide variety of services including: Ariel Pictures/ Videos, Interior/Exterior Pictures, Virtual Tours (Matterport), videos of events, Family Portraits, Senior Pictures etc. 
-		   <br>You name it, and I can do it.
-        </p>
-    </div>
-
-    <div class="w3-row w3-grayscale l3 m6 w3-margin-bottom">
-        <div class="w3-third w3-container"></div>
-        <div class="w3-third w3-container">
-            <div class="w-3-row l3 m6 w3-margin-bottom">
-                <img src="https://scontent.fagc1-2.fna.fbcdn.net/v/t1.0-9/25399087_268134593716046_9126094635152119454_n.jpg?_nc_cat=108&_nc_sid=7aed08&_nc_ohc=_Aal-AJVskcAX_Xu3xt&_nc_ht=scontent.fagc1-2.fna&oh=b4a8e83ad40e0d09fae267993e0256b6&oe=5EA74E8D" alt="John" style="width:100%">
-                <h3 class="w3-center">Josh Yencik</h3>
-                <p class="w3-opacity w3-center">CEO & Founder</p>
-                <p></p>
-            </div>
+        <div class="profile w3-center w3-margin-bottom">
+            <img src="img/profile/joshprofile.jpg" alt="Josh">
+            <h3 class="w3-center">Josh Yencik</h3>
+            <p class=" w3-center">CEO & Founder</p>
         </div>
-        <div class="w3-third w3-container"></div>
     </div>
 
     <!-- modal used to schedule a service -->
@@ -218,7 +216,6 @@
         </div>
     </div>
     
-    <?php include 'gallery.php';?>
     <!--gallery--><!--
     <div id="showProject" class="w3-modal">-->
         <!--<span onclick="document.getElementById('project1').style.display='none'" class="w3-display-container">
@@ -279,7 +276,6 @@
         // Automatic Slideshow - change image every 4 seconds
         var myIndex = 0;
         carousel();
-
         function carousel() {
             var i;
             var x = document.getElementsByClassName("mySlides");
@@ -289,7 +285,7 @@
             myIndex++;
             if (myIndex > x.length) { myIndex = 1 }
             x[myIndex - 1].style.display = "block";
-            setTimeout(carousel, 8000);
+            setTimeout(carousel, 7000);
         }
 
         // Used to toggle the menu on small screens when clicking on the menu button
@@ -304,19 +300,30 @@
 
         // When the user clicks anywhere outside of the modal, close it
         var modal = document.getElementById('ticketModal');
-        var gallery = document.getElementById('showProject');
+        var gallery = document.getElementById('showProject1');
+        var gallery2 = document.getElementById('showProject2');
+        var gallery3 = document.getElementById('showProject3');
+        var gallery4 = document.getElementById('showProject4');
+        var gallery5 = document.getElementById('showProject5');
+        var gallery6 = document.getElementById('showProject6');
         window.onclick = function (event) {
-            if (event.target == modal || event.target == gallery) {
+            if (event.target == modal || event.target == gallery|| event.target == gallery2
+            || event.target == gallery3|| event.target == gallery4|| event.target == gallery5|| event.target == gallery6) {
                 modal.style.display = "none";
                 gallery.style.display = "none";
+                gallery2.style.display = "none";
+                gallery3.style.display = "none";
+                gallery4.style.display = "none";
+                gallery5.style.display = "none";
+                gallery6.style.display = "none";
             }
         }
 
 
 		//figure out how to do this by class instead of id, consider loading towards beginning of page instead of end
 		function resize(){
-			var w = window.innerWidth;
-			var h = window.innerHeight;
+			var w = window.innerWidth/1.5;
+			var h = window.innerHeight/1.5;
 			//document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
 			var i;
             var x = document.getElementsByClassName("mySlides");
@@ -331,28 +338,20 @@
         var slideIndex = 1;
         showDivs(slideIndex);
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
+        function plusDivs(n,g) {
+            showDivs(slideIndex += n,g);
         }
 
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
-
-        function showDivs(n) {
+        function showDivs(n,g) {
+            var omg="myPortfolio"+g;
             var i;
-            var x = document.getElementsByClassName("myPortfolio");
-            var dots = document.getElementsByClassName("demo");
+            var x = document.getElementsByClassName(omg);
             if (n > x.length) { slideIndex = 1 }
             if (n < 1) { slideIndex = x.length }
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" w3-white", "");
-            }
             x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " w3-white";
         }
     </script>
 

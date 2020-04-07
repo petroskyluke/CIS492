@@ -1,7 +1,7 @@
 <?php
 	$dsn1='mysql:host=localhost;dbname=dres_db';
 	$username1='root';
-	$password1='';
+	$password1='root';
 
 
 	try{

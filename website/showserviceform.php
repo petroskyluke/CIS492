@@ -93,7 +93,7 @@ $show_rows .= '<p>Add On:</p>';
 foreach($addon_rows as $addon_row){
     $show_rows .= '<tr>';
     $show_rows .= '<td><input type="checkbox" name="addons" value="'.$addon_row['addon_name'].'"></td>';
-    $show_rows .= '<td>'.$addon_row['addon_name'].' $'.$addon_row['addon_price'].'</td>';
+    $show_rows .= '<td>'.$addon_row['addon_name'].'</td><td>'.$addon_row['addon_price'].'</td>';
     $show_rows .= '</tr>';
 }
 $show_rows .= '</table>';
@@ -108,7 +108,7 @@ $show_rows .= '<p>A LA Carte:</p>';
 foreach($alc_rows as $alc_row){
     $show_rows .= '<tr>';
     $show_rows .= '<td><input type="checkbox" name="alacartez" value="'.$alc_row['a_la_carte_name'].'"></td>';
-    $show_rows .= '<td>'.$alc_row['a_la_carte_name'].' $'.$alc_row['a_la_carte_price'].'</td>';
+    $show_rows .= '<td>'.$alc_row['a_la_carte_name'].'</td><td>'.$alc_row['a_la_carte_price'].'</td>';
     $show_rows .= '</tr>';
 }
 $show_rows .= '</table>';
@@ -120,9 +120,10 @@ $show_rows .= '</div>';
 $show_rows .= '</div>';
 
 $show_rows .= '<div class="grid-box">
+<p>Contact Information</p>
 <input class="w3-input w3-border" type="text" placeholder="Email*" required></br>
 <input class="w3-input w3-border" type="text" placeholder="Phone #*" required></br>
-<input class="w3-input w3-border" type="text" placeholder="Date/Date Range*" required></br>
+<input class="w3-input w3-border" type="date" placeholder="Date" required></br>
 <input class="w3-input w3-border" type="text" placeholder="Service Address*" required>
 </div>
 <input type="submit" name="submit" class="w3-button w3-block w3-dark-grey w3-padding-16 w3-section w3-right">

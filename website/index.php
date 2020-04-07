@@ -275,7 +275,7 @@
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-opacity w3-light-grey">
-    <p>This website was designed, developed, and implemented as a senior project by Brian Kaufman, Luke Petrosky, and Kristopher Stewart as part of a senior project at California University of Pennsylvania </p>
+    <p>This website was designed, developed, and implemented by Brian Kaufman, Luke Petrosky, and Kristopher Stewart as part of a senior project at California University of Pennsylvania </p>
     </footer>
 
     <script>

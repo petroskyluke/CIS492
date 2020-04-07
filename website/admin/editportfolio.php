@@ -87,6 +87,12 @@ include('../inc/session.php');
 
     }
     ?>
+    <?php //set cover image?>
+    <?php if ((!empty($_POST['submit']))&&($_POST['submit']=='Cover')){
+        include 'cover.php';
+
+    }
+    ?>
     <script>
         document.getElementById("<?php echo $select_project?>").selected="true";
     </script>

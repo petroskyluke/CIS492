@@ -27,7 +27,6 @@
     unlink($fname);
     chdir($old);
             
-            
             //unlink("../img/portfolio/$select_project$_POST['coverset']);
             //unlink("../img/portfolio/".$select_project/$_POST['coverset']);
         

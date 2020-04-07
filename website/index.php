@@ -61,11 +61,12 @@
       <div class="w3-center grid-wrap w3-margin">
         <div class="text-wrap grid-item w3-padding-16">
             <h2>About...</h2>
-            <p>This is your one stop Photography shop!</br>
+            <p>The Company: </br>This is your one stop Photography shop!</br>
                 I offer a wide variety of services including:</br>Ariel Pictures/Videos, Interior/Exterior Pictures, 
                 Virtual Tours (Matterport), videos of events, Family Portraits, Senior Pictures etc.</br>
                 You name it, and I can do it.
             </p>
+			<p>The Website: </br>This website was designed as a senior project by three students from California Univserity of Pennsylvania:</br> Brian Kaufman, Luke Petrosky, and Kristopher Stewart</p>
             <p>Check out my portfolio, schedule a service, or contact me below!</p>
         </div>
       </div>
@@ -84,10 +85,10 @@
                 <p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
                 <div class="grid-wrapper-matt">
                     <div class="grid-item-matt">
-                        <iframe width='500' height='400' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                        <iframe width='853' height='480' src='https://my.matterport.com/show/?m=yHHEPdGzESB' frameborder='1' allowfullscreen allow='vr'></iframe>
                     </div>
                     <div class="grid-item-matt">
-                        <iframe width='500' height='400' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                        <iframe width='853' height='480' src='https://my.matterport.com/show/?m=LjUHekPstAt' frameborder='1' allowfullscreen allow='vr'></iframe>
                     </div>
                 </div>
             </div>

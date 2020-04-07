@@ -3,6 +3,7 @@
     $fname=$_POST['filevalue'];
     $fparts = pathinfo($fname);
     $fextension = $fparts['extension'];
+    $fextension='jpg';
     $cname='!cover.'.$fextension;
     $allowed_extensions = array("!cover.gif", "!cover.png", "!cover.jpg", "!cover.JPG", "!cover.jpeg");
     //(pathinfo($file, PATHINFO_FILENAME) == "!cover")

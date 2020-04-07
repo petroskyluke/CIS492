@@ -95,7 +95,7 @@
             <!--Project gallery Stack 3x2-->
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
                 <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project1/thumbnails/!cover.jpg" alt="Project 1" style="width:100%" class="w3-hover-opacity">
+                    <img src="img/portfolio/project1/thumbnails/!cover.jpg" alt="Project 1" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 1</b></p>
                         <p class="w3-opacity">Fri 27 Nov 2016</p>
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project2/thumbnails/!cover.jpg" alt="Project 2" style="width:100%" class="w3-hover-opacity">
+                    <img src="img/portfolio/project2/thumbnails/!cover.jpg" alt="Project 2" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 2</b></p>
                         <p class="w3-opacity">Sat 28 Nov 2016</p>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project3/thumbnails/!cover.jpg" alt="Project 3" style="width:100%" class="w3-hover-opacity">
+                    <img src="img/portfolio/project3/thumbnails/!cover.jpg" alt="Project 3" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 3</b></p>
                         <p class="w3-opacity">Sun 29 Nov 2016</p>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
                 <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project4/thumbnails/!cover.jpg" alt="Project 4" style="width:100%" class="w3-hover-opacity">
+                    <img src="img/portfolio/project4/thumbnails/!cover.jpg" alt="Project 4" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 4</b></p>
                         <p class="w3-opacity">Sun 29 Nov 2016</p>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project5/thumbnails/!cover.jpg" alt="Project 5" style="width:100%" class="w3-hover-opacity">
+                    <img src="img/portfolio/project5/thumbnails/!cover.jpg" alt="Project 5" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 5</b></p>
                         <p class="w3-opacity">Sun 29 Nov 2016</p>
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="w3-third w3-margin-bottom">
-                    <img src="img/portfolio/project6/thumbnails/!cover.jpg" alt="Project 6" style="width:100%" class="w3-hover-opacity">
+                    <img src="img/portfolio/project6/thumbnails/!cover.jpg" alt="Project 6" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 6</b></p>
                         <p class="w3-opacity">Sun 29 Nov 2016</p>

@@ -61,12 +61,11 @@
       <div class="w3-center grid-wrap w3-margin">
         <div class="text-wrap grid-item w3-padding-16">
             <h2>About...</h2>
-            <p>The Company: </br>This is your one stop Photography shop!</br>
+            <p>This is your one stop Photography shop!</br>
                 I offer a wide variety of services including:</br>Ariel Pictures/Videos, Interior/Exterior Pictures, 
                 Virtual Tours (Matterport), videos of events, Family Portraits, Senior Pictures etc.</br>
                 You name it, and I can do it.
             </p>
-			<p>The Website: </br>This website was designed as a senior project by three students from California Univserity of Pennsylvania:</br> Brian Kaufman, Luke Petrosky, and Kristopher Stewart</p>
             <p>Check out my portfolio, schedule a service, or contact me below!</p>
         </div>
       </div>
@@ -95,6 +94,10 @@
 
             <!--Project gallery Stack 3x2-->
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                <div class="w3-center">
+                    <h3>My Projects</h3>
+                    <p>Check out some of my previous projects!</p>
+                </div>
                 <div class="w3-third w3-margin-bottom">
                     <img src="img/portfolio/project1/thumbnails/!cover.jpg" alt="Project 1" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
@@ -271,7 +274,9 @@
     <!-- End Page Content -->
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>
+    <footer class="w3-container w3-padding-64 w3-opacity w3-light-grey">
+    <p>This website was designed, developed, and implemented as a senior project by Brian Kaufman, Luke Petrosky, and Kristopher Stewart as part of a senior project at California University of Pennsylvania </p>
+    </footer>
 
     <script>
         // Automatic Slideshow - change image every 4 seconds

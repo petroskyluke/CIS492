@@ -125,4 +125,4 @@ INSERT INTO a_la_carte (a_la_carte_name,a_la_carte_price,a_la_carte_desc) VALUES
 ('Virtual Staging','$45/picture','Have the interior design edited using digital editing'),
 ('Sky and/or Grass Replacement','$8/picture','Have the Sky and/or Grass in the pictures replaces with pristine blues and greens using digital editing'),
 ('Twilight Picture Transformation','$10/picture','Have the pictures digitally edited to look as if they were taken among a beautiful twilight'),
-('MEasurements of All Rooms','$10','Receive the internal dimensions of each room');
+('Measurements of All Rooms','$10','Receive the internal dimensions of each room');

@@ -4,9 +4,7 @@ body {
 .mySlides {
   display: none;
   margin-top: 3em;
-  margin-bottom: 3em;
   padding-top: 2em;
-  padding-bottom: 2em;
 }
 .mySlides img {
   border: solid black 5px;

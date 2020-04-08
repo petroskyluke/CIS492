@@ -7,12 +7,13 @@ for($i=1; $i<=6; $i++){?>
         $select_project='project'.$i;
         $select_pro='project'.$i;
         echo $select_pro;
+        echo $i;
         $files = scandir('img/portfolio/'.$select_project.'/thumbnails');
 
         echo "<div class='w3-content w3-display-container' style='max-width:800px'/>";
         foreach($files as $file) {
-            if($file !== "." && $file !== "..") { 
-                echo "<img class='$myPortfolio' src='img/portfolio/$select_project/thumbnails/$file' style='width:100%' />";
+            if($file !== "." && $file !== ".." && $file !=="!cover.jpg") { 
+                echo "<img class='$myPortfolio' src='img/portfolio/$select_project/thumbnails/$file' onload='plusDivs(0,$i)' style='width:100%' />";
 
             }
         }

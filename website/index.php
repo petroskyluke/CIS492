@@ -84,16 +84,20 @@
                 <p>You can view the location as a floor plan, like a doll house, or in a first person perspective! </p>
                 <div class="grid-wrapper-matt">
                     <div class="grid-item-matt">
-                        <iframe width='500' height='400' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                        <iframe width='853' height='480' src='https://my.matterport.com/show/?m=yHHEPdGzESB' frameborder='1' allowfullscreen allow='vr'></iframe>
                     </div>
                     <div class="grid-item-matt">
-                        <iframe width='500' height='400' src='https://my.matterport.com/show/?m=XC3GVzwna7p' frameborder='1' allowfullscreen allow='vr'></iframe>
+                        <iframe width='853' height='480' src='https://my.matterport.com/show/?m=LjUHekPstAt' frameborder='1' allowfullscreen allow='vr'></iframe>
                     </div>
                 </div>
             </div>
 
             <!--Project gallery Stack 3x2-->
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                <div class="w3-center">
+                    <h3>My Projects</h3>
+                    <p>Check out some of my previous projects!</p>
+                </div>
                 <div class="w3-third w3-margin-bottom">
                     <img src="img/portfolio/project1/thumbnails/!cover.jpg" alt="Project 1" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
@@ -270,7 +274,9 @@
     <!-- End Page Content -->
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>
+    <footer class="w3-container w3-padding-64 w3-opacity w3-light-grey">
+    <p>This website was designed, developed, and implemented by Brian Kaufman, Luke Petrosky, and Kristopher Stewart as part of a senior project at California University of Pennsylvania </p>
+    </footer>
 
     <script>
         // Automatic Slideshow - change image every 4 seconds

@@ -41,6 +41,9 @@ $alc_statement->closeCursor();
 
 //start html
 $show_rows = '<div class="wrap">';
+$show_rows .= '<div class="w3-center">';
+$show_rows .= '<h2>Fill out the form with desired service(s) and contact information</h2>';
+$show_rows .= '</div>';
 $show_rows .= '<form action="" method="post">';
 $show_rows .= '<div class="grid-box">';
 $show_rows .= '<div class="grid-wrapper">';
@@ -119,12 +122,79 @@ $show_rows .= '</div>';
 //close grid-wrapper for addons and a la carte
 $show_rows .= '</div>';
 
-$show_rows .= '<div class="grid-box">
+$show_rows .= '<div class="grid-box w3-padding-large">
 <p>Contact Information</p>
-<input class="w3-input w3-border" type="text" placeholder="Email*" required></br>
-<input class="w3-input w3-border" type="text" placeholder="Phone #*" required></br>
-<input class="w3-input w3-border" type="date" placeholder="Date" required></br>
-<input class="w3-input w3-border" type="text" placeholder="Service Address*" required>
+<label for="email">Email</label>
+<input class="w3-input w3-border w3-margin" type="text" name="email" placeholder="johnapplessed@gmail.com" required>
+<label for="phone">Phone Number</label>
+<input class="w3-input w3-border w3-margin" type="tel" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+<label for="date">Prefered Service Date (subject to availability)</label>
+<input class="w3-input w3-border w3-margin" type="date" name="date" min="'.date("Y-m-d").'"placeholder="Prefered Date of service" required>
+<label for="address1">Address Line 1</label>
+<input class="w3-input w3-border w3-margin" type="text" name="address1" placeholder="Service Address line 1*" required>
+<label for="address2">Address Line 2</label>
+<input class="w3-input w3-border w3-margin" type="text" name="address2" placeholder="Service Address line 2*">
+<label for="city">City</label>
+<input class="w3-input w3-border w3-margin" type="text" name="city" placeholder="Service city*" required>
+<label for="state">State</label>
+
+<select class="w3-input w3-border w3-margin" name="state" placeholder="Service state*" required>
+    <option hidden disabled selected value> -- select an option -- </option>
+	<option value="AL">Alabama</option>
+	<option value="AK">Alaska</option>
+	<option value="AZ">Arizona</option>
+	<option value="AR">Arkansas</option>
+	<option value="CA">California</option>
+	<option value="CO">Colorado</option>
+	<option value="CT">Connecticut</option>
+	<option value="DE">Delaware</option>
+	<option value="DC">District Of Columbia</option>
+	<option value="FL">Florida</option>
+	<option value="GA">Georgia</option>
+	<option value="HI">Hawaii</option>
+	<option value="ID">Idaho</option>
+	<option value="IL">Illinois</option>
+	<option value="IN">Indiana</option>
+	<option value="IA">Iowa</option>
+	<option value="KS">Kansas</option>
+	<option value="KY">Kentucky</option>
+	<option value="LA">Louisiana</option>
+	<option value="ME">Maine</option>
+	<option value="MD">Maryland</option>
+	<option value="MA">Massachusetts</option>
+	<option value="MI">Michigan</option>
+	<option value="MN">Minnesota</option>
+	<option value="MS">Mississippi</option>
+	<option value="MO">Missouri</option>
+	<option value="MT">Montana</option>
+	<option value="NE">Nebraska</option>
+	<option value="NV">Nevada</option>
+	<option value="NH">New Hampshire</option>
+	<option value="NJ">New Jersey</option>
+	<option value="NM">New Mexico</option>
+	<option value="NY">New York</option>
+	<option value="NC">North Carolina</option>
+	<option value="ND">North Dakota</option>
+	<option value="OH">Ohio</option>
+	<option value="OK">Oklahoma</option>
+	<option value="OR">Oregon</option>
+	<option value="PA">Pennsylvania</option>
+	<option value="RI">Rhode Island</option>
+	<option value="SC">South Carolina</option>
+	<option value="SD">South Dakota</option>
+	<option value="TN">Tennessee</option>
+	<option value="TX">Texas</option>
+	<option value="UT">Utah</option>
+	<option value="VT">Vermont</option>
+	<option value="VA">Virginia</option>
+	<option value="WA">Washington</option>
+	<option value="WV">West Virginia</option>
+	<option value="WI">Wisconsin</option>
+	<option value="WY">Wyoming</option>
+</select>				
+
+<label for="zip">Zipcode</label>
+<input class="w3-input w3-border w3-margin" type="number" name="zip" placeholder="Service Zipcode*" required>
 </div>
 <input type="submit" name="submit" class="w3-button w3-block w3-dark-grey w3-padding-16 w3-section w3-right">
 <button class="w3-button w3-red w3-section" onclick="document.getElementById(\'ticketModal\').style.display=\'none\'">Cancel <i class="fa fa-remove"></i></button>

@@ -3,8 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="js/jquery-3.4.1.js"></script>
-    <script>$("#theForm").ajaxForm({url:'gallery.php',type:'post'})</script>
     <title>Yencik Photography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

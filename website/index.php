@@ -198,7 +198,6 @@
 
     <!-- The About Section -->
     <div class="w3-container w3-padding-64" id="about">
-        <h2 class="w3-center w3-border-bottom w3-border-light-grey w3-padding-16">ABOUT</h2>
         <div class="profile w3-center w3-margin-bottom">
             <img src="img/profile/joshprofile.jpg" alt="Josh">
             <h3 class="w3-center">Josh Yencik</h3>
@@ -279,7 +278,7 @@
     </footer>
 
     <script>
-        // Automatic Slideshow - change image every 4 seconds
+        // Automatic Slideshow - change image every few seconds
         var myIndex = 0;
         carousel();
         function carousel() {

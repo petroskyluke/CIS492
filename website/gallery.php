@@ -4,17 +4,24 @@ for($i=1; $i<=6; $i++){?>
     <?php $showProject='showProject'.$i;?>
     <?php $myPortfolio='myPortfolio'.$i;?>
     <div id="<?php echo $showProject?>" class="w3-modal"><?php
+        $first=1;
         $select_project='project'.$i;
         $select_pro='project'.$i;
-        echo $select_pro;
-        echo $i;
+        //echo $select_pro;
+        //echo $i;
         $files = scandir('img/portfolio/'.$select_project.'/thumbnails');
 
         echo "<div class='w3-content w3-display-container' style='max-width:800px'/>";
         foreach($files as $file) {
             if($file !== "." && $file !== ".." && $file !=="!cover.jpg") { 
-                echo "<img class='$myPortfolio' src='img/portfolio/$select_project/thumbnails/$file' onload='plusDivs(0,$i)' style='width:100%' />";
+                if($first==1){
+                    echo "<img class='$myPortfolio' src='img/portfolio/$select_project/thumbnails/$file' onload='plusDivs(0,$i)' style='width:100%; display:block' />";
+                    $first=2;
 
+                }
+                else{
+                    echo "<img class='$myPortfolio' src='img/portfolio/$select_project/thumbnails/$file' onload='plusDivs(0,$i)' style='width:100%; display:none' />";
+                }
             }
         }
         echo "<div class='w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle' style='width:100%' />";

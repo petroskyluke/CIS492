@@ -64,7 +64,7 @@ CREATE TABLE a_la_carte (
 	PRIMARY KEY (a_la_carte_ID)
 );
 
-
+/*Add in information for the customer*/
 CREATE TABLE orderform (
 	form_ID				INT			NOT NULL		AUTO_INCREMENT,
 	package_chosen		INT			NOT NULL,

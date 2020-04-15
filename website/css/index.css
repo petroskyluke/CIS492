@@ -1,6 +1,9 @@
 body {
   font-family: "Lato", sans-serif
 }
+.my-footer{
+  border-top: 1px solid grey;
+}
 .mySlides {
   display: none;
   margin-top: 3em;
@@ -16,10 +19,6 @@ body {
   font-family: 'Open Sans';
   font-size: 40px;
   text-shadow: 4px 4px #000000b5;
-}
-.text-wrap {
-  margin-left: 5em;
-  margin-right: 5em;
 }
 .text-wrap p{
   font-size: 15px;

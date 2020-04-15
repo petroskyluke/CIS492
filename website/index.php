@@ -194,15 +194,6 @@
         </div>
     </div>
 
-    <!-- The About Section -->
-    <div class="w3-container w3-padding-64" id="about">
-        <div class="profile w3-center w3-margin-bottom">
-            <img src="img/profile/joshprofile.jpg" alt="Josh">
-            <h3 class="w3-center">Josh Yencik</h3>
-            <p class=" w3-center">CEO & Founder</p>
-        </div>
-    </div>
-
     <!-- modal used to schedule a service -->
     <div id="ticketModal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
@@ -237,7 +228,12 @@
     </div>-->
 
     <!-- The Contact Section -->
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="contact">
+        <div class="profile w3-center w3-margin-bottom">
+            <img src="img/profile/joshprofile.jpg" alt="Josh">
+            <h3 class="w3-center">Josh Yencik</h3>
+            <p class=" w3-center">CEO & Founder</p>
+        </div>
         <h2 class="w3-wide w3-center">CONTACT</h2>
         <!--<p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>-->
         <div class="w3-row w3-padding-32">
@@ -271,8 +267,11 @@
     <!-- End Page Content -->
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-opacity w3-light-grey">
-    <p>This website was designed, developed, and implemented by Brian Kaufman, Luke Petrosky, and Kristopher Stewart as part of a senior project at California University of Pennsylvania </p>
+    <footer class="w3-container w3-padding-64 w3-light-grey my-footer">
+    <h3>This website was designed, developed, and implemented by Brian Kaufman, Luke Petrosky, and Kristopher Stewart
+     as part of a senior project at California University of Pennsylvania
+     </h3>
+     <p class="w3-opacity">4-20</p>
     </footer>
 
     <script>

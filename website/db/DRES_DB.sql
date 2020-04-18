@@ -2,18 +2,7 @@ DROP DATABASE IF EXISTS DRES_DB;
 CREATE DATABASE DRES_DB;
 USE DRES_DB;
 
-CREATE TABLE agent (
-  agent_ID	        INT            	NOT NULL   AUTO_INCREMENT,
-  agent_fname		VARCHAR(50)		NOT NULL,
-  agent_lname       VARCHAR(50)   	NOT NULL,
-  agent_phone		VARCHAR(10)    	NOT NULL,
-  agent_email       VARCHAR(255)    NOT NULL,
-  agent_address     VARCHAR(255)    NOT NULL,
-  PRIMARY KEY (agent_ID),
-  UNIQUE INDEX agent_ID (agent_ID)
-);
-
-
+/*
 CREATE TABLE services_provided_and_scheduled	(
 	project_ID					INT			NOT NULL AUTO_INCREMENT,
 	project_status				BOOLEAN		NOT NULL,
@@ -27,7 +16,7 @@ CREATE TABLE services_provided_and_scheduled	(
 	UNIQUE INDEX project_ID (project_ID),
 	FOREIGN KEY (agent_ID) REFERENCES agent(agent_ID)
 );
-
+*/
 CREATE TABLE login (
 	username	VARCHAR(255)	NOT NULL,
     password_	VARCHAR(255) 	NOT NULL,
@@ -68,8 +57,8 @@ CREATE TABLE a_la_carte (
 CREATE TABLE order_form (
 	order_form_ID		INT				NOT NULL		AUTO_INCREMENT,
 	package_chosen		INT				NOT NULL,
-	addon_boxes_selected	VARCHAR(255),
-	a_la_carte_boxes_selected	VARCHAR(255),
+	addon_boxes_selected	VARCHAR(1024),
+	a_la_carte_boxes_selected	VARCHAR(1024),
 	email				VARCHAR(50)		NOT NULL,
 	phone				VARCHAR(50)		NOT NULL,
 	requested_date		DATE			NOT NULL,
@@ -129,6 +118,6 @@ INSERT INTO a_la_carte (a_la_carte_name,a_la_carte_price,a_la_carte_desc) VALUES
 ('Drone Video & Interior Video','215.00','Receive video of both the outside and inside of the location'),
 ('Interior Video','100.00','Receive video of the interior of the location'),
 ('Virtual Staging','45.00','Have the interior design edited using digital editing'),
-('Sky and/or Grass Replacement','$8/picture','Have the Sky and/or Grass in the pictures replaces with pristine blues and greens using digital editing'),
-('Twilight Picture Transformation','$10/picture','Have the pictures digitally edited to look as if they were taken among a beautiful twilight'),
-('Measurements of All Rooms','$10','Receive the internal dimensions of each room');
+('Sky and/or Grass Replacement','8.00','Have the Sky and/or Grass in the pictures replaces with pristine blues and greens using digital editing'),
+('Twilight Picture Transformation','10.00','Have the pictures digitally edited to look as if they were taken among a beautiful twilight'),
+('Measurements of All Rooms','10.00','Receive the internal dimensions of each room');

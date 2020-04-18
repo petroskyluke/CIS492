@@ -57,8 +57,8 @@ CREATE TABLE a_la_carte (
 CREATE TABLE order_form (
 	order_form_ID		INT				NOT NULL		AUTO_INCREMENT,
 	package_chosen		INT				NOT NULL,
-	addon_boxes_selected	VARCHAR(255),
-	a_la_carte_boxes_selected	VARCHAR(255),
+	addon_boxes_selected	VARCHAR(1024),
+	a_la_carte_boxes_selected	VARCHAR(1024),
 	email				VARCHAR(50)		NOT NULL,
 	phone				VARCHAR(50)		NOT NULL,
 	requested_date		DATE			NOT NULL,

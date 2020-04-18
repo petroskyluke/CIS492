@@ -129,6 +129,6 @@ INSERT INTO a_la_carte (a_la_carte_name,a_la_carte_price,a_la_carte_desc) VALUES
 ('Drone Video & Interior Video','215.00','Receive video of both the outside and inside of the location'),
 ('Interior Video','100.00','Receive video of the interior of the location'),
 ('Virtual Staging','45.00','Have the interior design edited using digital editing'),
-('Sky and/or Grass Replacement','$8/picture','Have the Sky and/or Grass in the pictures replaces with pristine blues and greens using digital editing'),
-('Twilight Picture Transformation','$10/picture','Have the pictures digitally edited to look as if they were taken among a beautiful twilight'),
-('Measurements of All Rooms','$10','Receive the internal dimensions of each room');
+('Sky and/or Grass Replacement','8.00','Have the Sky and/or Grass in the pictures replaces with pristine blues and greens using digital editing'),
+('Twilight Picture Transformation','10.00','Have the pictures digitally edited to look as if they were taken among a beautiful twilight'),
+('Measurements of All Rooms','10.00','Receive the internal dimensions of each room');

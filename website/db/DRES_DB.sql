@@ -65,21 +65,23 @@ CREATE TABLE a_la_carte (
 );
 
 /*Add in information for the customer*/
-CREATE TABLE orderform (
-	form_ID				INT			NOT NULL		AUTO_INCREMENT,
-	package_chosen		INT			NOT NULL,
-	add_on1				BOOLEAN		NOT NULL,
-	add_on2				BOOLEAN		NOT NULL,
-	a_la_carte1			BOOLEAN		NOT NULL,
-	a_la_carte2			BOOLEAN		NOT NULL,
-	a_la_carte3			BOOLEAN		NOT NULL,
-	a_la_carte4			BOOLEAN		NOT NULL,
-	a_la_carte5			BOOLEAN		NOT NULL,	
-	a_la_carte6			BOOLEAN		NOT NULL,	
-	a_la_carte7			BOOLEAN		NOT NULL,
-	a_la_carte8			BOOLEAN		NOT NULL,
+CREATE TABLE order_form (
+	order_form_ID		INT				NOT NULL		AUTO_INCREMENT,
+	package_chosen		INT				NOT NULL,
+	email				VARCHAR(50)		NOT NULL,
+	phone				VARCHAR(50)		NOT NULL,
+	requested_date		DATE			NOT NULL,
+	address1 			VARCHAR(50)		NOT NULL,
+	address2			VARCHAR(50),
+	city				VARCHAR(50)		NOT NULL,
+	province_state		VARCHAR(50)		NOT NULL,
 	PRIMARY KEY (form_ID)
 );
+CREATE TABLE addon_detail (
+	addon_detail_ID		INT			NOT NULL 		AUTO_INCREMENT,
+	addon_ID			INT			NOT NULL,
+	order_form_ID		INT			NOT NULL,
+)
 INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
 

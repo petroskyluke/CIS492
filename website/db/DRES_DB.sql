@@ -2,18 +2,7 @@ DROP DATABASE IF EXISTS DRES_DB;
 CREATE DATABASE DRES_DB;
 USE DRES_DB;
 
-CREATE TABLE agent (
-  agent_ID	        INT            	NOT NULL   AUTO_INCREMENT,
-  agent_fname		VARCHAR(50)		NOT NULL,
-  agent_lname       VARCHAR(50)   	NOT NULL,
-  agent_phone		VARCHAR(10)    	NOT NULL,
-  agent_email       VARCHAR(255)    NOT NULL,
-  agent_address     VARCHAR(255)    NOT NULL,
-  PRIMARY KEY (agent_ID),
-  UNIQUE INDEX agent_ID (agent_ID)
-);
-
-
+/*
 CREATE TABLE services_provided_and_scheduled	(
 	project_ID					INT			NOT NULL AUTO_INCREMENT,
 	project_status				BOOLEAN		NOT NULL,
@@ -27,7 +16,7 @@ CREATE TABLE services_provided_and_scheduled	(
 	UNIQUE INDEX project_ID (project_ID),
 	FOREIGN KEY (agent_ID) REFERENCES agent(agent_ID)
 );
-
+*/
 CREATE TABLE login (
 	username	VARCHAR(255)	NOT NULL,
     password_	VARCHAR(255) 	NOT NULL,

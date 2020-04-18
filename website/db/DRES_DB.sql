@@ -65,21 +65,18 @@ CREATE TABLE a_la_carte (
 );
 
 /*Add in information for the customer*/
-CREATE TABLE orderform (
+CREATE TABLE order_form (
 	form_ID				INT			NOT NULL		AUTO_INCREMENT,
 	package_chosen		INT			NOT NULL,
-	add_on1				BOOLEAN		NOT NULL,
-	add_on2				BOOLEAN		NOT NULL,
-	a_la_carte1			BOOLEAN		NOT NULL,
-	a_la_carte2			BOOLEAN		NOT NULL,
-	a_la_carte3			BOOLEAN		NOT NULL,
-	a_la_carte4			BOOLEAN		NOT NULL,
-	a_la_carte5			BOOLEAN		NOT NULL,	
-	a_la_carte6			BOOLEAN		NOT NULL,	
-	a_la_carte7			BOOLEAN		NOT NULL,
-	a_la_carte8			BOOLEAN		NOT NULL,
+	addon_detail_ID
 	PRIMARY KEY (form_ID)
 );
+
+CREATE TABLE addon_detail (
+	addon_detail_ID
+	
+);
+
 INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
 

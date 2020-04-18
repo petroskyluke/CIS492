@@ -68,7 +68,7 @@ CREATE TABLE a_la_carte (
 CREATE TABLE order_form (
 	form_ID				INT			NOT NULL		AUTO_INCREMENT,
 	package_chosen		INT			NOT NULL,
-	addon_detail_ID
+	addon_boxes_selection	VARCHAR(1024)
 	PRIMARY KEY (form_ID)
 );
 

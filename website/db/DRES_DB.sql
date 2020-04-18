@@ -75,7 +75,7 @@ CREATE TABLE order_form (
 	address2			VARCHAR(50),
 	city				VARCHAR(50)		NOT NULL,
 	province_state		VARCHAR(50)		NOT NULL,
-	PRIMARY KEY (form_ID)
+	PRIMARY KEY (order_form_ID)
 );
 CREATE TABLE addon_detail (
 	addon_detail_ID		INT			NOT NULL 		AUTO_INCREMENT,

@@ -1,8 +1,6 @@
 <?php
 
 $package=filter_input(INPUT_POST,'package_sel');
-//$addons[]=filter_input_array(INPUT_POST,'addons');
-//$alacart=filter_input(INPUT_POST,'alacartez');
 $email=filter_input(INPUT_POST,'email');
 $phone=filter_input(INPUT_POST,'phone');
 $date=filter_input(INPUT_POST,'date');
@@ -22,9 +20,7 @@ foreach($_POST['alacartez'] as $ala){
 }
 
 
-//var_dump($addons[1]);echo nl2br ("\n");
 
-//echo $alacart;echo nl2br ("\n");
 
 echo $email;echo nl2br ("\n");
 

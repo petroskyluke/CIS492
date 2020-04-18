@@ -44,7 +44,7 @@ $show_rows = '<div class="wrap">';
 $show_rows .= '<div class="w3-center">';
 $show_rows .= '<h2>Fill out the form with desired service(s) and contact information</h2>';
 $show_rows .= '</div>';
-$show_rows .= '<form action="" method="post">';
+$show_rows .= '<form action="test.php" method="post">';
 $show_rows .= '<div class="grid-box">';
 $show_rows .= '<div class="grid-wrapper">';
 
@@ -68,7 +68,7 @@ if(!empty($p_rows)){
         
         $show_rows .= '<label class="btn-container">';
         $show_rows .= '<div class="">';
-        $show_rows .= '<input type="radio" name="package_sel" value="pppp">';
+        $show_rows .= '<input type="radio" name="package_sel" value="'.$p_row["package_ID"].'">';
         $show_rows .= '<span class="checkmark flex-col"></span>';
         $show_rows .= '</div>';
         $show_rows .= '</label>';
@@ -93,9 +93,11 @@ $show_rows .= '<div class="grid-box">';
 
 $show_rows .= '<table>';
 $show_rows .= '<p>Add On:</p>';
+$rv=-1;
 foreach($addon_rows as $addon_row){
+	//$rv+=1;
     $show_rows .= '<tr>';
-    $show_rows .= '<td><input type="checkbox" name="addons" value="'.$addon_row['addon_name'].'"></td>';
+    $show_rows .= '<td><input type="checkbox" name="addons[]" value="'.$addon_row['addon_name'].'"></td>';
     $show_rows .= '<td>'.$addon_row['addon_name'].'</td><td>'.$addon_row['addon_price'].'</td>';
     $show_rows .= '</tr>';
 }
@@ -110,7 +112,7 @@ $show_rows .= '<table>';
 $show_rows .= '<p>A LA Carte:</p>';
 foreach($alc_rows as $alc_row){
     $show_rows .= '<tr>';
-    $show_rows .= '<td><input type="checkbox" name="alacartez" value="'.$alc_row['a_la_carte_name'].'"></td>';
+    $show_rows .= '<td><input type="checkbox" name="alacartez[]" value="'.$alc_row['a_la_carte_name'].'"></td>';
     $show_rows .= '<td>'.$alc_row['a_la_carte_name'].'</td><td>'.$alc_row['a_la_carte_price'].'</td>';
     $show_rows .= '</tr>';
 }

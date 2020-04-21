@@ -192,6 +192,25 @@
         </div>
     </div>
 
+
+<div class="w3-content">
+        <!-- The Reviews Section -->
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
+            <h2 class="w3-wide">REVIEWS</h2>
+            <p class="w3-opacity"><i>Check out what others had to say about this business.</i></p>
+            <!-- we can put something in here if we want -->
+            <div class="w3-row w3-padding-32">
+                
+				<p style="color:red">//UNDER <p style="color:black"> CONSTRUCTION//</p>
+            </div>
+            <!-- <button class="schedulebtn w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule an appointment</button> -->
+        </div>
+    </div>
+
+
+
+
+
     <!-- modal used to schedule a service -->
     <div id="ticketModal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">

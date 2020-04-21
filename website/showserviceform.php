@@ -44,7 +44,7 @@ $show_rows = '<div class="wrap">';
 $show_rows .= '<div class="w3-center">';
 $show_rows .= '<h2>Fill out the form with desired service(s) and contact information</h2>';
 $show_rows .= '</div>';
-$show_rows .= '<form action="test.php" method="post">';
+$show_rows .= '<form action="submitorder.php" method="post">';
 $show_rows .= '<div class="grid-box">';
 $show_rows .= '<div class="grid-wrapper">';
 

@@ -11,7 +11,7 @@ $statement->closeCursor();
 
 $show_rows = '';
 //start table and add headers
-$show_rows .= '<table><tr><th>Package</th><th>Add-Ons</th><th>Cartez</th><th>Phone</th>
+$show_rows .= '<table><tr><th>Package</th><th>Add-Ons</th><th>Carte Items</th><th>Phone</th>
                 <th>Date</th><th>Address</th><th>City</th></tr>';
 $search=filter_input(INPUT_POST,'search');
 
@@ -40,10 +40,12 @@ foreach($orders as $order){
     }
 }
 
-$search ='<form action="reporting.php" method="post">
+$search ='<form method="post">
                 <input type="hidden" name="typeofservice" value="packages">
                 <input type="text" name="search" value="">
-                <input type="submit" name="submit" value="Search">
+                <input type="submit" name="submit" value="Search" formaction="">
                 </form>';
+
+
 //$form_field2="yay";
 ?>

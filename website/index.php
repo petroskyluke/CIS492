@@ -1,4 +1,4 @@
-
+<?php include_once 'inc/db_connect.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +19,17 @@
             <a href="#" class="w3-bar-item w3-button w3-padding-large">YENCIK PHOTOGRAPHY</a>
             <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">LOG IN</a>
             <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">CONTACT</a>
-            <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">PORTFOLIO</a>
             <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">SERVICES</a>
+            <a href="#pricing" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">PRICING</a>
+            <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">PORTFOLIO</a>
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">ABOUT</a>
 
         </div>
     </div>
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="#pricing" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PRICING</a>
         <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SERVICES</a>
         <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PORTFOLIO</a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
@@ -155,6 +158,66 @@
         </div>
     </div>
 
+    <div class="w3-white" id="pricing">
+    <!-- The Pricing Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px" id="services">
+            <h2 class="w3-wide">PRICING</h2>
+            <p class="w3-opacity"><i>These are some prices filler text.</i></p>
+
+                <?php
+                //query all packages
+                    $p_query = 'SELECT package_ID, package_name, package_price
+                    FROM packages';
+                    $p_statement = $db1->prepare($p_query);
+                    $p_statement->execute();
+                    $p_rows = $p_statement->fetchAll();
+                    $p_statement->closeCursor();
+                    //query all package features including their package_ID
+                    $pf_query = 'SELECT package_features.package_feature_ID, package_features.package_feature_name, 
+                    package_features.package_feature_desc, package_features.package_ID
+                    FROM packages, package_features
+                    WHERE packages.package_ID = package_features.package_ID';
+                    $pf_statement = $db1->prepare($pf_query);
+                    $pf_statement->execute();
+                    $pf_rows = $pf_statement->fetchAll();
+                    $pf_statement->closeCursor();
+                    //start html
+                    $show_rows = '<div class="wrap">';
+                    $show_rows .= '<form action="submitorder.php" method="post">';
+                    $show_rows .= '<div class="grid-wrapper">';
+                    //display all the packages and the package features pulled from the database
+                    if(!empty($p_rows)){
+                        foreach($p_rows as $p_row){
+                            $show_rows .= '<div class="grid-card flex-card">';
+                            $show_rows .= '<div class="flex-item-top">';
+                            $show_rows .= '<h1>'.$p_row[1].'</h1>';
+                            $show_rows .= '<h2>'.$p_row[2].'</h2>';
+                            $show_rows .= '</div>';
+                            $show_rows .= '<div class="flex-item">';
+                            $show_rows .= '<ul>';
+                            foreach($pf_rows as $pf_row){
+                                if($pf_row['package_ID'] === $p_row['package_ID']){
+                                    $show_rows .= '<li>'.$pf_row[1].'</li>';
+                                }
+                            }
+                            $show_rows .= '</ul>';
+                            $show_rows .= '</div>';
+                        
+
+                            //close flex card/grid card
+                            $show_rows .= '</div>';
+                        }
+                        //close grid-wrapper
+                        $show_rows .= '</div>';
+
+                        //close grid-box
+                        $show_rows .= '</div>';
+                    }echo $show_rows;
+                ?>
+            </div>
+        </div>
+    </div>
+<div class="w3-white">
     <div class="w3-content">
         <!-- The Services Section -->
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
@@ -188,8 +251,11 @@
                     </span>
                 </div>
             </div>
+            
             <button class="schedulebtn w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule an appointment</button>
+            
         </div>
+    </div>
     </div>
 
     <!-- modal used to schedule a service -->
@@ -205,25 +271,7 @@
             <?php include 'showserviceform.php';?>
         </div>
     </div>
-    
-    <!--gallery--><!--
-    <div id="showProject" class="w3-modal">-->
-        <!--<span onclick="document.getElementById('project1').style.display='none'" class="w3-display-container">
-        </span>--><!--
-        <div class="w3-content w3-display-container" style="max-width:800px">
 
-            <img class="myPortfolio" src="img/portfolio/B copy.jpeg" style="width:100%">
-            <img class="myPortfolio" src="img/portfolio/BB copy.jpeg" style="width:100%">
-            <img class="myPortfolio" src="img/portfolio/E copy.jpeg" style="width:100%">
-            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-            </div>
-        </div>
-    </div>-->
 
     <!-- The Contact Section -->
     <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="contact">

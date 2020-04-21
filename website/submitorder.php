@@ -43,27 +43,7 @@ else{
     $statement1->bindValue(':zip', $zip);
     $statement1->execute();
     $statement1->closeCursor();
-    echo "ツ";echo nl2br("\n");
 }
 
-
-
-
-echo $package;echo nl2br ("\n");
-foreach($_POST['addons'] as $item){
-    echo $item;echo nl2br("\n");
-}
-foreach($_POST['alacartez'] as $ala){
-    echo $ala;echo nl2br("\n");
-}
-echo $email;echo nl2br ("\n");
-echo $phone;echo nl2br ("\n");
-echo $requested_date;echo nl2br ("\n");
-echo $address1;echo nl2br ("\n");
-echo $address2;echo nl2br ("\n");
-echo $city;echo nl2br ("\n");
-echo $state;echo nl2br ("\n");
-echo $zip;echo nl2br ("\n");
-echo $add_on;echo nl2br("\n");
-echo $ala_carte;echo nl2br("\n");
+include "index.php";
 ?>

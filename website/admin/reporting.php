@@ -64,7 +64,7 @@ elseif($typeofreport==='Packages'){
         <h4>Please choose which type of data you would like to view.</h4>
         <?php echo $form_field1;
         //echo $form_field2;
-        echo $show_rows;
+        //echo $show_rows;
         if($typeofreport==="Packages"||$typeofreport=="City"||$typeofreport=="Phone Number"){echo $search;}
         if($typeofreport==="Phone Number"||$typeofreport==="City"||$typeofreport==="Packages"){ echo $show_rows; }?>
         </br>
@@ -74,8 +74,6 @@ elseif($typeofreport==='Packages'){
     </div>
     
 
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>
 
     <script>
         // Used to toggle the menu on small screens when clicking on the menu button

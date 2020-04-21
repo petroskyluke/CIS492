@@ -61,11 +61,11 @@
                         <label for="password"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="password" required>
 
-                        <input type="submit" name="login" value="login"/>
+                        <input type="submit" name="login" value="Login"/>
                     </div>
 
                     <div class="container">
-                        <button type="button" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="cancelbtn" formaction="index.php">Cancel</button>
                     </div>
                 </form>
 				</div>

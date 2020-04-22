@@ -94,7 +94,7 @@ include('../inc/session.php');
     }
     ?>
     <script>
-        document.getElementById("<?php echo $select_project?>").selected="true";
+        document.getElementById("<?php if(!isset($select_project)){$select_project = '';} echo $select_project?>").selected="true";
     </script>
 
 </div>

@@ -5,7 +5,7 @@ echo $select_project;
 $pathToImages='../img/portfolio/'.$select_project.'/';
 echo $pathToImages;
 $pathToThumbs='../img/portfolio/'.$select_project.'/thumbnails/';
-$thumbWidth=2256;
+$thumbWidth=1000;
 
 function createThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
 {

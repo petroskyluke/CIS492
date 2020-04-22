@@ -38,19 +38,19 @@
 	  <!-- Automatic Slideshow Images -->
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/O copy.jpg">
-		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+		<div class="w3-display-middle w3-container w3-text-white">
             <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOO copy.jpg">
-		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+		<div class="w3-display-middle w3-container w3-text-white">
             <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOOOO copy.jpg">
-		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
+		<div class="w3-display-middle w3-container w3-text-white">
 		    <h2>YENCIK PHOTOGRAPHY</h2>
 		</div>
       </div>
@@ -322,8 +322,16 @@
 
 		//figure out how to do this by class instead of id, consider loading towards beginning of page instead of end
 		function resize(){
-			var w = window.innerWidth/1.5;
-			var h = window.innerHeight/1.5;
+            if(window.innerWidth<600){
+                var scale = 1;
+                //on screen widths smaller than 600px make carousel take up whole page
+            }
+            else{
+                var scale = 1.5;
+                //on screen widths lager than 600px make carousel scale 1.5X smaller
+            }
+			var w = window.innerWidth/scale;
+			var h = window.innerHeight/scale;
 			//document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
 			var i;
             var x = document.getElementsByClassName("mySlides");

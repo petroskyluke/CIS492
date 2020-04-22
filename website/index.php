@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Yencik Photography</title>
+    <title>Hydro Hawk LLC Photography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
@@ -16,7 +16,7 @@
     <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">YENCIK PHOTOGRAPHY</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Hydro Hawk LLC</a>
             <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">LOG IN</a>
             <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">CONTACT</a>
             <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">SERVICES</a>
@@ -42,19 +42,19 @@
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/O copy.jpg">
 		<div class="w3-display-middle w3-container w3-text-white">
-            <h2>YENCIK PHOTOGRAPHY</h2>
+            <h2>HYDRO HAWK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOO copy.jpg">
 		<div class="w3-display-middle w3-container w3-text-white">
-            <h2>YENCIK PHOTOGRAPHY</h2>
+            <h2>HYDRO HAWK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOOOO copy.jpg">
 		<div class="w3-display-middle w3-container w3-text-white">
-		    <h2>YENCIK PHOTOGRAPHY</h2>
+		    <h2>HYDRO HAWK PHOTOGRAPHY</h2>
 		</div>
       </div>
       <div class="w3-center grid-wrap w3-margin">
@@ -69,12 +69,22 @@
         </div>
       </div>
     </div>
-
     <!-- The Portfolio Section -->
     <div class="w3-black" id="portfolio">
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
             <h2 class="w3-wide w3-center w3-border-bottom w3-border-light-grey">PORTFOLIO</h2>
             <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
+            
+            <!-- Youtube -->
+            <div class="w3-center w3-margin-bottom w3-padding-16">
+                <h3>Video Tour</h3>
+                <p>Watch the video to see a video tour in action!</p>
+                <div class="grid-wrapper-matt">
+                    <div class="grid-item-matt">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EcZh4zLwi94" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
 
             <!-- MATTERPORT -->
             <div class="w3-center w3-margin-bottom w3-padding-16">
@@ -286,7 +296,7 @@
             <div class="w3-col m6 w3-large w3-margin-bottom">
                 <i class="fa fa-map-marker" style="width:30px"></i> Greensburg, US<br>
                 <i class="fa fa-phone" style="width:30px"></i> Phone: (724) 970-9235<br>
-                <i class="fa fa-envelope" style="width:30px"> </i> Email: joshyencikphotography@gmail.com<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: hydrohawkllc@gmail.com<br>
             </div>
             <div class="w3-col m6">
                 <form action="/action_page.php" target="_blank">

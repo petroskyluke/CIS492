@@ -53,6 +53,7 @@
                 if(isset($msg)){echo $msg;}
                 ?>
                 <form action="inc/checklogin.php" method="post">
+                <h2 class="w3-center">Admin Login</h2>
 
                     <div class="container">
                         <label for="username"><b>Username</b></label>

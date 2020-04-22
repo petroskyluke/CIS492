@@ -63,7 +63,8 @@
 
                         <input type="submit" name="login" value="Login"/>
                     </div>
-
+                </form>
+                <form>
                     <div class="container">
                         <button type="submit" class="cancelbtn" formaction="index.php">Cancel</button>
                     </div>

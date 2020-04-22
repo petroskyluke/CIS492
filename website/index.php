@@ -298,6 +298,7 @@
                             <input class="w3-input w3-border" type="text" placeholder="Phone" required name="Phone">
                         </div>
                     </div>
+                    
                     <div class="w3-row-padding" style="margin:0 -8px 8px -8px">
                         <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                     </div>

@@ -112,8 +112,6 @@
                     <img src="img/portfolio/project1/thumbnails/!cover.jpg" alt="Project 1" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 1</b></p>
-                        <p class="w3-opacity">Fri 27 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" id="project1" onclick="document.getElementById('showProject1').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -121,8 +119,6 @@
                     <img src="img/portfolio/project2/thumbnails/!cover.jpg" alt="Project 2" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 2</b></p>
-                        <p class="w3-opacity">Sat 28 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" id="project2" onclick="document.getElementById('showProject2').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -130,8 +126,6 @@
                     <img src="img/portfolio/project3/thumbnails/!cover.jpg" alt="Project 3" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 3</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" id="project3" onclick="document.getElementById('showProject3').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -139,8 +133,6 @@
                     <img src="img/portfolio/project4/thumbnails/!cover.jpg" alt="Project 4" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 4</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" id="project4" onclick="document.getElementById('showProject4').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -148,8 +140,6 @@
                     <img src="img/portfolio/project5/thumbnails/!cover.jpg" alt="Project 5" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 5</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" id="project5" onclick="document.getElementById('showProject5').style.display='block'">View Photos</button>
                     </div>
                 </div>
@@ -157,8 +147,6 @@
                     <img src="img/portfolio/project6/thumbnails/!cover.jpg" alt="Project 6" class="proj-img w3-hover-opacity">
                     <div class="w3-container w3-white">
                         <p><b>Project 6</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>LOCATION, PA.</p>
                         <button class="w3-button w3-black w3-margin-bottom" id="project6" onclick="document.getElementById('showProject6').style.display='block'">View Photos</button>
                     </div>
                 </div>                
@@ -168,66 +156,9 @@
                 
         </div>
     </div>
+    <!--princing section-->
+    <?php include 'pricing.php';?>
 
-    <div class="w3-white" id="pricing">
-    <!-- The Pricing Section -->
-    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px">
-            <h2 class="w3-wide">PRICING</h2>
-            <p class="w3-opacity"><i>These are some prices filler text.</i></p>
-
-                <?php
-                //query all packages
-                    $p_query = 'SELECT package_ID, package_name, package_price
-                    FROM packages';
-                    $p_statement = $db1->prepare($p_query);
-                    $p_statement->execute();
-                    $p_rows = $p_statement->fetchAll();
-                    $p_statement->closeCursor();
-                    //query all package features including their package_ID
-                    $pf_query = 'SELECT package_features.package_feature_ID, package_features.package_feature_name, 
-                    package_features.package_feature_desc, package_features.package_ID
-                    FROM packages, package_features
-                    WHERE packages.package_ID = package_features.package_ID';
-                    $pf_statement = $db1->prepare($pf_query);
-                    $pf_statement->execute();
-                    $pf_rows = $pf_statement->fetchAll();
-                    $pf_statement->closeCursor();
-                    //start html
-                    $show_rows = '<div class="wrap">';
-                    $show_rows .= '<form action="submitorder.php" method="post">';
-                    $show_rows .= '<div class="grid-wrapper">';
-                    //display all the packages and the package features pulled from the database
-                    if(!empty($p_rows)){
-                        foreach($p_rows as $p_row){
-                            $show_rows .= '<div class="grid-card flex-card">';
-                            $show_rows .= '<div class="flex-item-top">';
-                            $show_rows .= '<h1>'.$p_row[1].'</h1>';
-                            $show_rows .= '<h2>'.$p_row[2].'</h2>';
-                            $show_rows .= '</div>';
-                            $show_rows .= '<div class="flex-item">';
-                            $show_rows .= '<ul>';
-                            foreach($pf_rows as $pf_row){
-                                if($pf_row['package_ID'] === $p_row['package_ID']){
-                                    $show_rows .= '<li>'.$pf_row[1].'</li>';
-                                }
-                            }
-                            $show_rows .= '</ul>';
-                            $show_rows .= '</div>';
-                        
-
-                            //close flex card/grid card
-                            $show_rows .= '</div>';
-                        }
-                        //close grid-wrapper
-                        $show_rows .= '</div>';
-
-                        //close grid-box
-                        $show_rows .= '</div>';
-                    }echo $show_rows;
-                ?>
-            </div>
-        </div>
-    </div>
 <div class="w3-white">
     <div class="w3-content">
         <!-- The Services Section -->

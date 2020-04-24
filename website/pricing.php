@@ -79,6 +79,7 @@
                     foreach($addon_rows as $addon_row){
                         //$rv+=1;
                         $show_rows .= '<tr>';
+                        $show_rows .= '<td><ul value="'.$addon_row['addon_name'].'"></td>';
                         $show_rows .= '<td>'.$addon_row['addon_name'].'</td><td>'.$addon_row['addon_price'].'</td>';
                         $show_rows .= '</tr>';
                     }

@@ -1,8 +1,8 @@
-
+<?php include_once 'inc/db_connect.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Yencik Photography</title>
+    <title>Hydro Hawk LLC Photography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
@@ -16,21 +16,23 @@
     <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">YENCIK PHOTOGRAPHY</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Hydro Hawk LLC</a>
             <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">LOG IN</a>
             <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">CONTACT</a>
-            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">ABOUT</a>
-            <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">PORTFOLIO</a>
             <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">SERVICES</a>
+            <a href="#pricing" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">PRICING</a>
+            <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">PORTFOLIO</a>
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">ABOUT</a>
 
         </div>
     </div>
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-        <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SERVICES</a>
-        <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PORTFOLIO</a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+        <a href="#pricing" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+        <a href="#pricing" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PORTFOLIO</a>
+        <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PRICING</a>
+        <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SERVICES</a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
         <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     </div>
@@ -40,20 +42,20 @@
 	  <!-- Automatic Slideshow Images -->
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/O copy.jpg">
-		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
-            <h2>YENCIK PHOTOGRAPHY</h2>
+		<div class="w3-display-middle w3-container w3-text-white">
+            <h2>HYDRO HAWK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOO copy.jpg">
-		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
-            <h2>YENCIK PHOTOGRAPHY</h2>
+		<div class="w3-display-middle w3-container w3-text-white">
+            <h2>HYDRO HAWK PHOTOGRAPHY</h2>
 		</div>
 	  </div>
 	  <div class="mySlides w3-display-container w3-center">
 		<img class="picturesizz" src="img/portfolio/OOOOOO copy.jpg">
-		<div class="w3-display-middle w3-container w3-text-white w3-hide-small">
-		    <h2>YENCIK PHOTOGRAPHY</h2>
+		<div class="w3-display-middle w3-container w3-text-white">
+		    <h2>HYDRO HAWK PHOTOGRAPHY</h2>
 		</div>
       </div>
       <div class="w3-center grid-wrap w3-margin">
@@ -68,12 +70,22 @@
         </div>
       </div>
     </div>
-
     <!-- The Portfolio Section -->
     <div class="w3-black" id="portfolio">
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
             <h2 class="w3-wide w3-center w3-border-bottom w3-border-light-grey">PORTFOLIO</h2>
             <p class="w3-opacity w3-center"><i>Check out our photography and videography services that we provide.</i></p><br>
+            
+            <!-- Youtube -->
+            <div class="w3-center w3-margin-bottom w3-padding-16">
+                <h3>Video Tour</h3>
+                <p>Watch the video to see a video tour in action!</p>
+                <div class="grid-wrapper-matt">
+                    <div class="grid-item-matt">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EcZh4zLwi94" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
 
             <!-- MATTERPORT -->
             <div class="w3-center w3-margin-bottom w3-padding-16">
@@ -157,6 +169,66 @@
         </div>
     </div>
 
+    <div class="w3-white" id="pricing">
+    <!-- The Pricing Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px">
+            <h2 class="w3-wide">PRICING</h2>
+            <p class="w3-opacity"><i>These are some prices filler text.</i></p>
+
+                <?php
+                //query all packages
+                    $p_query = 'SELECT package_ID, package_name, package_price
+                    FROM packages';
+                    $p_statement = $db1->prepare($p_query);
+                    $p_statement->execute();
+                    $p_rows = $p_statement->fetchAll();
+                    $p_statement->closeCursor();
+                    //query all package features including their package_ID
+                    $pf_query = 'SELECT package_features.package_feature_ID, package_features.package_feature_name, 
+                    package_features.package_feature_desc, package_features.package_ID
+                    FROM packages, package_features
+                    WHERE packages.package_ID = package_features.package_ID';
+                    $pf_statement = $db1->prepare($pf_query);
+                    $pf_statement->execute();
+                    $pf_rows = $pf_statement->fetchAll();
+                    $pf_statement->closeCursor();
+                    //start html
+                    $show_rows = '<div class="wrap">';
+                    $show_rows .= '<form action="submitorder.php" method="post">';
+                    $show_rows .= '<div class="grid-wrapper">';
+                    //display all the packages and the package features pulled from the database
+                    if(!empty($p_rows)){
+                        foreach($p_rows as $p_row){
+                            $show_rows .= '<div class="grid-card flex-card">';
+                            $show_rows .= '<div class="flex-item-top">';
+                            $show_rows .= '<h1>'.$p_row[1].'</h1>';
+                            $show_rows .= '<h2>'.$p_row[2].'</h2>';
+                            $show_rows .= '</div>';
+                            $show_rows .= '<div class="flex-item">';
+                            $show_rows .= '<ul>';
+                            foreach($pf_rows as $pf_row){
+                                if($pf_row['package_ID'] === $p_row['package_ID']){
+                                    $show_rows .= '<li>'.$pf_row[1].'</li>';
+                                }
+                            }
+                            $show_rows .= '</ul>';
+                            $show_rows .= '</div>';
+                        
+
+                            //close flex card/grid card
+                            $show_rows .= '</div>';
+                        }
+                        //close grid-wrapper
+                        $show_rows .= '</div>';
+
+                        //close grid-box
+                        $show_rows .= '</div>';
+                    }echo $show_rows;
+                ?>
+            </div>
+        </div>
+    </div>
+<div class="w3-white">
     <div class="w3-content">
         <!-- The Services Section -->
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
@@ -190,8 +262,11 @@
                     </span>
                 </div>
             </div>
+            
             <button class="schedulebtn w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Schedule an appointment</button>
+            
         </div>
+    </div>
     </div>
 
     <!-- modal used to schedule a service -->
@@ -207,25 +282,7 @@
             <?php include 'showserviceform.php';?>
         </div>
     </div>
-    
-    <!--gallery--><!--
-    <div id="showProject" class="w3-modal">-->
-        <!--<span onclick="document.getElementById('project1').style.display='none'" class="w3-display-container">
-        </span>--><!--
-        <div class="w3-content w3-display-container" style="max-width:800px">
 
-            <img class="myPortfolio" src="img/portfolio/B copy.jpeg" style="width:100%">
-            <img class="myPortfolio" src="img/portfolio/BB copy.jpeg" style="width:100%">
-            <img class="myPortfolio" src="img/portfolio/E copy.jpeg" style="width:100%">
-            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-            </div>
-        </div>
-    </div>-->
 
     <!-- The Contact Section -->
     <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="contact">
@@ -240,7 +297,7 @@
             <div class="w3-col m6 w3-large w3-margin-bottom">
                 <i class="fa fa-map-marker" style="width:30px"></i> Greensburg, US<br>
                 <i class="fa fa-phone" style="width:30px"></i> Phone: (724) 970-9235<br>
-                <i class="fa fa-envelope" style="width:30px"> </i> Email: joshyencikphotography@gmail.com<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: hydrohawkllc@gmail.com<br>
             </div>
             <div class="w3-col m6">
                 <form action="send_email.php" method="post" target="_blank">
@@ -252,6 +309,7 @@
                             <input class="w3-input w3-border" type="text" placeholder="Phone" required name="Phone">
                         </div>
                     </div>
+                    
                     <div class="w3-row-padding" style="margin:0 -8px 8px -8px">
                         <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                     </div>
@@ -324,8 +382,16 @@
 
 		//figure out how to do this by class instead of id, consider loading towards beginning of page instead of end
 		function resize(){
-			var w = window.innerWidth/1.5;
-			var h = window.innerHeight/1.5;
+            if(window.innerWidth<600){
+                var scale = 1;
+                //on screen widths smaller than 600px make carousel take up whole page
+            }
+            else{
+                var scale = 1.5;
+                //on screen widths lager than 600px make carousel scale 1.5X smaller
+            }
+			var w = window.innerWidth/scale;
+			var h = window.innerHeight/scale;
 			//document.getElementById("demoo").innerHTML = "Width: " + w + "<br>Height: " + h;
 			var i;
             var x = document.getElementsByClassName("mySlides");

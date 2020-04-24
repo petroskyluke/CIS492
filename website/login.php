@@ -53,6 +53,7 @@
                 if(isset($msg)){echo $msg;}
                 ?>
                 <form action="inc/checklogin.php" method="post">
+                <h2 class="w3-center">Admin Login</h2>
 
                     <div class="container">
                         <label for="username"><b>Username</b></label>
@@ -61,11 +62,12 @@
                         <label for="password"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="password" required>
 
-                        <input type="submit" name="login" value="login"/>
+                        <input type="submit" name="login" value="Login"/>
                     </div>
-
+                </form>
+                <form>
                     <div class="container">
-                        <button type="button" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="cancelbtn" formaction="index.php">Cancel</button>
                     </div>
                 </form>
 				</div>

@@ -172,7 +172,6 @@ if(($submit==='edit'||$submit==='delete'||$submit==='add'||$submit==='change nam
             $show_rows .= '<div class="pf">';
             $show_rows .= '<input type="hidden" name="typeofservice" value="packages">';
             $show_rows .= '<input type="hidden" name="package_ID" value="'.$package_ID.'">';
-            $show_rows .= '<input type="submit" name="submit" value="change">';
             $show_rows .= '</div>';
             
             //close flex card/grid card

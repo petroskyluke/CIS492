@@ -11,8 +11,8 @@ $address2=filter_input(INPUT_POST,'address2');
 $city=filter_input(INPUT_POST,'city');
 $state=filter_input(INPUT_POST,'state');
 $zip=filter_input(INPUT_POST,'zip');
-$add_on = implode(',',$_POST['addons']);
-$ala_carte = implode(',',$_POST['alacartez']);
+$add_on = implode(', ',$_POST['addons']);
+$ala_carte = implode(', ',$_POST['alacartez']);
 
 
 if($package == null || $email == null || $phone == null ||
@@ -20,6 +20,7 @@ if($package == null || $email == null || $phone == null ||
     $state == null || $zip == null){
     $error = "Invalid data. Check all fields and try again.";
     echo $error;
+    header("Location:index.php");
 }
 
 else{
@@ -45,5 +46,5 @@ else{
     $statement1->closeCursor();
 }
 
-include "index.php";
+include "confirmation.php";
 ?>

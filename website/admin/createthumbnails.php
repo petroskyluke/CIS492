@@ -23,7 +23,7 @@ function createThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
     echo $fname;
     echo "<br/>";
     $info = pathinfo($pathToImages . $fname);
-    // continue only if this is a JPEG image
+    // continue only if this is a JPEG or JPG image
     if ( (isset($info['extension'])) && (strtolower($info['extension']) == 'jpeg') || (strtolower($info['extension'])=='jpg') )
     {
       echo "Creating thumbnail for {$fname} <br />";

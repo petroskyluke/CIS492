@@ -77,6 +77,7 @@ CREATE TABLE addon_detail (
 )*/
 INSERT INTO login (username, password_) VALUES
 ('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
+('Brian', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
 
 INSERT INTO packages (package_name,package_price) VALUES
 ('1st Package','150.00'),

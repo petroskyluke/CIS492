@@ -1,5 +1,4 @@
 <?php
-
 //Get all
 
 $query = 'SELECT * FROM order_form
@@ -9,12 +8,16 @@ $statement->execute();
 $orders= $statement->fetchAll();
 $statement->closeCursor();
 
-$show_rows = '';
+$search=filter_input(INPUT_POST,'search');
+$selected_report=$_POST['report'];
+
 //start table and add headers
-$show_rows .= '<table><tr><th>Phone</th><th>Email</th><th>Address</th>
+$show_rows = '<table><tr><th>Phone</th><th>Email</th><th>Address</th>
                 <th>City</th><th>State</th><th>Zip</th></tr>';
-if(!empty($orders)){
-    foreach($orders as $order){
+
+
+foreach($orders as $order){
+    if(!empty($orders)&&($search==null || $search=='')){
         $show_rows .= '<tr><form action="" method="post">';
         $show_rows .= '<td>'.$order['phone'].'</td>
                         <td>'.$order['email'].'</td>
@@ -23,13 +26,20 @@ if(!empty($orders)){
                         <td>'.$order['province_state'].'</td>
                         <td>'.$order['zip_code'].'</td>';
         $show_rows .= '</form></tr>';
+        $show_rows .= "<input type='hidden' value='$search' name='search'/>";
+        $show_rows .= "<input type='hidden' value='$selected_report' name='reportselected'/>";
+    }
+    elseif(!empty($orders)&&($search==$order['phone'])){
+        $show_rows .= '<tr><form action="" method="post">';
+        $show_rows .= '<td>'.$order['phone'].'</td>
+                        <td>'.$order['email'].'</td>
+                        <td>'.$order['address1'].' '.$order['address2'].'</td>
+                        <td>'.$order['city'].'</td>
+                        <td>'.$order['province_state'].'</td>
+                        <td>'.$order['zip_code'].'</td>';
+        $show_rows .= '</form></tr>';
+        $show_rows .= "<input type='hidden' value='$search' name='search'/>";
+        $show_rows .= "<input type='hidden' value='$selected_report' name='reportselected'/>";
     }
 }
-
-$search ='<form action="reporting.php" method="post">
-                <input type="hidden" name="typeofservice" value="packages">
-                <input type="text" name="search" value="">
-                <input type="submit" name="submit" value="Search">
-                </form>';
-//$form_field2="yay";
-?>
+echo $show_rows;

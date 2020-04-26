@@ -4,7 +4,6 @@
 
     <div id="imageList" class="w3-row">
     <?php
-        $images_displayed=true;
         $select_project=$_POST['project'];
         $files = scandir('../img/portfolio/'.$select_project.'/thumbnails');
         foreach($files as $file) {

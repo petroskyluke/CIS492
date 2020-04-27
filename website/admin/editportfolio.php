@@ -17,11 +17,6 @@ include('../inc/session.php');
             font-family: "Lato", sans-serif
         }
 
-        .mySlides img {
-            width: auto;
-            height: 800px;
-            max-height: 800px;
-        }
     </style>
 </head>
 
@@ -34,7 +29,7 @@ include('../inc/session.php');
         <h1>Edit Portfolio</h1>
     </div>
     
-    <form action="/uploadimages.php" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
     <input type="hidden" name="action" value="submit">
 
     <h3>Select which project you would like to work on:</h3>
@@ -99,27 +94,25 @@ include('../inc/session.php');
 
 </div>
 
-
-
-
-    <script>
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function myFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
+<script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
         }
+    }
 
-        // When the user clicks anywhere outside of the modal, close it
-        var modal = document.getElementById('ticketModal');
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+    // When the user clicks anywhere outside of the modal, close it
+    var modal = document.getElementById('ticketModal');
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>

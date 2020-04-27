@@ -46,7 +46,7 @@
                             $show_rows .= '<div class="grid-card flex-card">';
                             $show_rows .= '<div class="flex-item-top">';
                             $show_rows .= '<h1>'.$p_row[1].'</h1>';
-                            $show_rows .= '<h2>'.$p_row[2].'</h2>';
+                            $show_rows .= '<h2>$'.$p_row[2].'</h2>';
                             $show_rows .= '</div>';
                             $show_rows .= '<div class="flex-item">';
                             $show_rows .= '<ul>';
@@ -80,7 +80,7 @@
                         //$rv+=1;
                         $show_rows .= '<tr>';
                         $show_rows .= '<td><ul value="'.$addon_row['addon_name'].'"></td>';
-                        $show_rows .= '<td>'.$addon_row['addon_name'].'</td><td>'.$addon_row['addon_price'].'</td>';
+                        $show_rows .= '<td>'.$addon_row['addon_name'].'</td><td>&nbsp;$'.$addon_row['addon_price'].'</td>';
                         $show_rows .= '</tr>';
                     }
                     $show_rows .= '</table>';
@@ -95,7 +95,7 @@
                     foreach($alc_rows as $alc_row){
                         $show_rows .= '<tr>';
                         $show_rows .= '<td><ul value="'.$alc_row['a_la_carte_name'].'"></td>';
-                        $show_rows .= '<td>'.$alc_row['a_la_carte_name'].'</td><td>'.$alc_row['a_la_carte_price'].'</td>';
+                        $show_rows .= '<td>'.$alc_row['a_la_carte_name'].'</td><td>&nbsp;$'.$alc_row['a_la_carte_price'].'</td>';
                         $show_rows .= '</tr>';
                     }
                     $show_rows .= '</table>';

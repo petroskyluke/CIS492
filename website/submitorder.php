@@ -11,10 +11,10 @@ $address2=filter_input(INPUT_POST,'address2');
 $city=filter_input(INPUT_POST,'city');
 $state=filter_input(INPUT_POST,'state');
 $zip=filter_input(INPUT_POST,'zip');
-$add_on = implode(',',$_POST['addons']);
-$ala_carte = implode(',',$_POST['alacartez']);
+$add_on = implode(', ',$_POST['addons']);
+$ala_carte = implode(', ',$_POST['alacartez']);
 $add_on_arr=filter_input(INPUT_POST,'addons');
-$ala_carte_arr=filter_input(INPUT_POST,'alacartez')
+$ala_carte_arr=filter_input(INPUT_POST,'alacartez');
 
 
 if($package == null || $email == null || $phone == null ||

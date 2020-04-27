@@ -48,7 +48,6 @@ else{
     $statement1->closeCursor();
 }
 
-include "confirmation.php";
 //query package and package features for email
 //query all packages
 $p_query = 'SELECT package_ID, package_name, package_price
@@ -151,5 +150,5 @@ $bodyHtml = '<h1>Hydro Hawk Service Request!</h1>
             PHPMailer</a> class.</p>';
 
 include "send_email.php";
-include "index.php";
+include "confirmation.php";
 ?>

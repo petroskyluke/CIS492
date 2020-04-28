@@ -61,12 +61,16 @@
       <div class="w3-center grid-wrap w3-margin">
         <div class="text-wrap grid-item w3-padding-16">
             <h2>About...</h2>
-            <p>This is your one stop Photography shop!</br>
-                I offer a wide variety of services including:</br>Ariel Pictures/Videos, Interior/Exterior Pictures, 
-                Virtual Tours (Matterport), videos of events, Family Portraits, Senior Pictures etc.</br>
-                You name it, and I can do it.
-            </p>
-            <p>Check out my portfolio, schedule a service, or contact me below!</p>
+            <p>This is your one stop photography shop!</br>
+                I offer a wide variety of services including:</br></br>
+                &#8226 Ariel Pictures/Videos</br>
+                &#8226 Interior/Exterior Pictures</br>
+                &#8226 Virtual Tours (Matterport)</br>
+                &#8226 Videos of Events</br>
+                &#8226 Family Portraits</br>
+                &#8226 Senior Pictures</br></br>
+                You name it, and I can do it.</br>
+            Check out my portfolio, schedule a service, or contact me below!</p>
         </div>
       </div>
     </div>

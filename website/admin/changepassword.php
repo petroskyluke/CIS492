@@ -25,7 +25,7 @@ include '../inc/session.php';
     <div class="w3-content" style="max-width:2000px; margin-top:5px">
 	
         <div class="w3-container">
-				<div class="w3-container center" m>
+				<div class="w3-container center">
                 <form action="updatepassword.php" method="post">
 
                     <div class="container">
@@ -38,10 +38,11 @@ include '../inc/session.php';
                         <input type="submit" name="changePassword" value="Change Password"/>
                     </div>
 
-                    <div class="container">
-                        <button type="button" class="cancelbtn" onClick="javascript:history.go(-1)">Cancel</button>
-                    </div>
                 </form>
+                <form action="admin.php" method="post">
+                    <div class="container"> 
+                        <button type="submit" class="cancelbtn">Cancel</button> 
+                    </div> 
 				</div>
         </div>
 	</div>

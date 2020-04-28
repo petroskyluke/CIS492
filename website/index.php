@@ -29,10 +29,10 @@
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-        <a href="#pricing" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
-        <a href="#pricing" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PORTFOLIO</a>
-        <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PRICING</a>
-        <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SERVICES</a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+        <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PORTFOLIO</a>
+        <a href="#pricing" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PRICING</a>
+        <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SERVICES</a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
         <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     </div>

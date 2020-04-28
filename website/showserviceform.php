@@ -126,6 +126,10 @@ $show_rows .= '</div>';
 
 $show_rows .= '<div class="grid-box w3-padding-large">
 <p>Contact Information</p>
+<label for="email">First Name</label>
+<input class="w3-input w3-border w3-margin" type="text" name="firstname" placeholder="John" required>
+<label for="email">Last Name</label>
+<input class="w3-input w3-border w3-margin" type="text" name="lastname" placeholder="Appleseed" required>
 <label for="email">Email</label>
 <input class="w3-input w3-border w3-margin" type="text" name="email" placeholder="johnapplessed@gmail.com" required>
 <label for="phone">Phone Number</label>

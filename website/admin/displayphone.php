@@ -12,7 +12,7 @@ $search=filter_input(INPUT_POST,'search');
 $selected_report=$_POST['report'];
 
 //start table and add headers
-$show_rows = '<table><tr><th>Phone</th><th>Email</th><th>Address</th>
+$show_rows = '<table><tr><th>Phone</th><th>Last Name</th><th>Email</th><th>Address</th>
                 <th>City</th><th>State</th><th>Zip</th></tr>';
 
 
@@ -20,6 +20,7 @@ foreach($orders as $order){
     if(!empty($orders)&&($search==null || $search=='')){
         $show_rows .= '<tr><form action="" method="post">';
         $show_rows .= '<td>'.$order['phone'].'</td>
+                        <td>'.$order['last_name'].'</td>
                         <td>'.$order['email'].'</td>
                         <td>'.$order['address1'].' '.$order['address2'].'</td>
                         <td>'.$order['city'].'</td>
@@ -32,6 +33,7 @@ foreach($orders as $order){
     elseif(!empty($orders)&&($search==$order['phone'])){
         $show_rows .= '<tr><form action="" method="post">';
         $show_rows .= '<td>'.$order['phone'].'</td>
+                        <td>'.$order['last_name'].'</td>
                         <td>'.$order['email'].'</td>
                         <td>'.$order['address1'].' '.$order['address2'].'</td>
                         <td>'.$order['city'].'</td>

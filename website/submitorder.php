@@ -3,6 +3,8 @@
 require('inc/db_connect.php');
 
 $package=filter_input(INPUT_POST,'package_sel');
+$firstname=filter_input(INPUT_POST,'firstname');
+$lastname=filter_input(INPUT_POST,'lastname');
 $email=filter_input(INPUT_POST,'email');
 $phone=filter_input(INPUT_POST,'phone');
 $requested_date=filter_input(INPUT_POST,'date');
@@ -28,12 +30,15 @@ if($package == null || $email == null || $phone == null ||
 else{
     //Add to database
     $insertOrder = 'INSERT INTO order_form
-                    (package_chosen, addon_boxes_selected, a_la_carte_boxes_selected, email, phone, 
-                    requested_date, address1, address2, city, province_state, zip_code)
+                    (package_chosen, first_name, last_name, addon_boxes_selected, a_la_carte_boxes_selected, 
+                    email, phone, requested_date, address1, address2, city, province_state, zip_code)
                     VALUES
-                    (:package, :add_on, :ala_carte, :email, :phone, :requested_date, :address1, :address2, :city, :state, :zip)';
+                    (:package, :firstname, :lastname, :add_on, :ala_carte, :email, :phone, :requested_date, 
+                    :address1, :address2, :city, :state, :zip)';
     $statement1 = $db1->prepare($insertOrder);
     $statement1->bindValue(':package', $package);
+    $statement1->bindValue(':firstname', $firstname);
+    $statement1->bindValue(':lastname', $lastname);
     $statement1->bindValue(':add_on', $add_on);
     $statement1->bindValue(':ala_carte', $ala_carte);
     $statement1->bindValue(':email', $email);
@@ -73,7 +78,7 @@ $pf_statement->closeCursor();
 //create package to be displayed
 if(!empty($p_rows)){
     foreach($p_rows as $p_row){
-        $show_package .= '<div style="
+        $show_package = '<div style="
         border-radius: 1em;
         padding: 1em;
         background-color: #f5f4f3;

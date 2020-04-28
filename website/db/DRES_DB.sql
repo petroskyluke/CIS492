@@ -56,6 +56,8 @@ CREATE TABLE a_la_carte (
 /*Add in information for the customer*/
 CREATE TABLE order_form (
 	order_form_ID		INT				NOT NULL		AUTO_INCREMENT,
+	first_name			VARCHAR(50)		NULL,
+	last_name			VARCHAR(50)		NULL,
 	package_chosen		INT				NOT NULL,
 	addon_boxes_selected	VARCHAR(1024),
 	a_la_carte_boxes_selected	VARCHAR(1024),
@@ -76,7 +78,9 @@ CREATE TABLE addon_detail (
 	order_form_ID		INT			NOT NULL,
 )*/
 INSERT INTO login (username, password_) VALUES
-('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
+('Josh', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO'),
+('Kris', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO'),
+('Luke', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO'),
 ('Brian', '$2y$10$hACDPch1eJLxB5SQf3IsfOQiNSiLgm.J6YdQMZ8LYB45I6LozpOVO');
 
 INSERT INTO packages (package_name,package_price) VALUES

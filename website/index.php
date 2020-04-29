@@ -58,21 +58,26 @@
 		    <h2>HYDRO HAWK PHOTOGRAPHY</h2>
 		</div>
       </div>
-      <div class="w3-center grid-wrap w3-margin">
-        <div class="text-wrap grid-item w3-padding-16">
-            <h2>About...</h2>
-            <p>This is your one stop photography shop!</br>
-                I offer a wide variety of services including:</br></br>
-                &#8226 Ariel Pictures/Videos</br>
+
+      
+
+    </div>
+    <!-- The About Section -->
+    <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="about">
+        <div class="profile w3-center w3-margin-bottom">
+            <h2 class="w3-center w3-border-bottom w3-border-black">ABOUT</h2></br>
+            <p class="w3-left-align">This is your one stop photography shop!</br>
+                I offer a wide variety of services including:</br></p>
+            <p class="w3-left-align">&#8226 Ariel Pictures/Videos</br>
                 &#8226 Interior/Exterior Pictures</br>
                 &#8226 Virtual Tours (Matterport)</br>
                 &#8226 Videos of Events</br>
                 &#8226 Family Portraits</br>
-                &#8226 Senior Pictures</br></br>
-                You name it, and I can do it.</br>
-            Check out my portfolio, schedule a service, or contact me below!</p>
+                &#8226 Senior Pictures</br></p>
+            <p class="w3-left-align">You name it, and I can do it.</br>
+                Check out my portfolio, schedule a service, or contact me below!</p>
         </div>
-      </div>
+        
     </div>
     <!-- The Portfolio Section -->
     <div class="w3-black" id="portfolio">
@@ -167,7 +172,7 @@
     <div class="w3-content">
         <!-- The Services Section -->
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="services">
-            <h2 class="w3-wide">SERVICES</h2>
+            <h2 class="w3-wide w3-border-bottom w3-border-black">SERVICES</h2>
             <p class="w3-opacity"><i>Select a requested service and date to set up our service.</i></p>
             <!-- we can put something in here if we want
               <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -226,7 +231,7 @@
             <h3 class="w3-center">Josh Yencik</h3>
             <p class=" w3-center">CEO & Founder</p>
         </div>
-        <h2 class="w3-wide w3-center">CONTACT</h2>
+        <h2 class="w3-wide w3-center w3-border-bottom w3-border-black">CONTACT</h2>
         <!--<p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>-->
         <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">

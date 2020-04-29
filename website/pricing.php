@@ -1,7 +1,7 @@
 <div class="w3-white" id="pricing">
     <!-- The Pricing Section -->
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px">
-            <h2 class="w3-wide">PRICING</h2>
+            <h2 class="w3-wide w3-border-bottom w3-border-black">PRICING</h2>
             <p class="w3-opacity"><i>These are some of our prices.</i></p>
 
                 <?php

@@ -2,7 +2,7 @@
     <!-- The Pricing Section -->
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px">
             <h2 class="w3-wide">PRICING</h2>
-            <p class="w3-opacity"><i>These are some prices filler text.</i></p>
+            <p class="w3-opacity"><i>These are some of our prices.</i></p>
 
                 <?php
                 //query all packages

@@ -83,7 +83,7 @@ if(!empty($p_rows)){
         padding: 1em;
         background-color: #f5f4f3;
         border: solid 2px #808080;
-        display: flex;
+        max-width: 250px;
         justify-content: center;
         flex-direction: column;">';
         $show_package .= '<div style="

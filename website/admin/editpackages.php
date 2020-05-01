@@ -1,8 +1,8 @@
 <?php
 //create a new package card!
-if($submit==='add a new card!'){
+if($submit==='add a new package!'){
     $insert = $db1->prepare('INSERT INTO packages (package_name, package_price) VALUES
-                            ("name", "price")');
+                            ("Package", "9999")');
     $insert->execute();
 }
 
@@ -118,7 +118,7 @@ if(($submit!=='edit'&&$submit!=='delete'&&$submit!=='add'&&$submit!=='change nam
     $show_rows .= '<div class="flex-item">';
     $show_rows .= '<form action="" method="post">';
     $show_rows .= '<input type="hidden" name="typeofservice" value="packages">';
-    $show_rows .= '<input type="submit" name="submit" class="add" value="add a new card!">';
+    $show_rows .= '<input type="submit" name="submit" class="add" value="add a new package!">';
     $show_rows .= '</form>';
     $show_rows .= '</div>';
     $show_rows .= '</div>';

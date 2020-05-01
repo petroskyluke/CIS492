@@ -4,7 +4,7 @@ $select_project=$_POST['project'];
 $pathToImages="../img/portfolio/".$select_project."/";
 //echo $pathToImages;
 $pathToThumbs="../img/portfolio/".$select_project."/thumbnails/";
-$thumbWidth=2256;
+$thumbWidth=1000;
 $uploadOk=1;
 $files = array_filter($_FILES['filesToUpload']['name']);
 
@@ -45,29 +45,36 @@ $dir = opendir( $pathToImages );
 //while (false !== ($fname = readdir( $dir ))) {
     // parse path for the extension
     $info = pathinfo($pathToImages . $fname);
-    // continue only if this is a JPEG image
-    if ( (isset($info['extension'])) && (strtolower($info['extension']) == 'jpeg') || (strtolower($info['extension'])=='jpg') )
-    {
-    //echo "Creating thumbnail for {$fname} <br />";
-    // load image and get image size
-    $img = imagecreatefromjpeg( "{$pathToImages}{$fname}" );
-    $width = imagesx( $img );
-    $height = imagesy( $img );
 
-    // calculate thumbnail size
-    $new_width = $thumbWidth;
-    $new_height = floor( $height * ( $thumbWidth / $width ) );
+    if ( (isset($info['extension'])) && (strtolower($info['extension']) == 'jpeg') || (strtolower($info['extension'])=='jpg')||(strtolower($info['extension'])=='png')){
+        // continue only if this is a JPEG image
+        if ( (isset($info['extension'])) && (strtolower($info['extension']) == 'jpeg') || (strtolower($info['extension'])=='jpg'))
+        {
+            //echo "Creating thumbnail for {$fname} <br />";
+            // load image and get image size
+            $img = imagecreatefromjpeg( "{$pathToImages}{$fname}" );
+        }
+        elseif((isset($info['extension'])) &&(strtolower($info['extension'])=='png')){
+            $img = imagecreatefrompng( "{$pathToImages}{$fname}" );
+        }
+        $width = imagesx( $img );
+        $height = imagesy( $img );
 
-    // create a new temporary image
-    $tmp_img = imagecreatetruecolor( $new_width, $new_height );
+        // calculate thumbnail size
+        $new_width = $thumbWidth;
+        $new_height = floor( $height * ( $thumbWidth / $width ) );
 
-    // copy and resize old image into new image
-    imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+        // create a new temporary image
+        $tmp_img = imagecreatetruecolor( $new_width, $new_height );
 
-    // save thumbnail into a file
-    $tname=$fname;
-    imagejpeg( $tmp_img, "{$pathToThumbs}{$tname}" );
+        // copy and resize old image into new image
+        imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+
+        // save thumbnail into a file
+        $tname=$fname;
+        imagejpeg( $tmp_img, "{$pathToThumbs}{$tname}" );
     }
+    
 //}
   // close the directory
   closedir( $dir );

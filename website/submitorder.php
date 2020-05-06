@@ -113,7 +113,7 @@ if(!empty($p_rows)){
 }
 
 //create variables to pass to send_email.php
-$recipient = 'pet5239@calu.edu';
+$recipient = 'hydrohawkllc@gmail.com';
 $subject = 'New Service Request From '.$email;
 $bodyText = 'Hydro Hawk Service Request!\r\nA new request for service has been submitted on hydrohawk.com with the following information\n
             package selection: '.$package.

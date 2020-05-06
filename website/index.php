@@ -270,7 +270,6 @@
     <h3>This website was designed, developed, and implemented by Brian Kaufman, Luke Petrosky, and Kristopher Stewart
      as part of a senior project at California University of Pennsylvania
      </h3>
-     <p class="w3-opacity">4-20</p>
     </footer>
 
     <script>

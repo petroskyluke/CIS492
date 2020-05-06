@@ -116,6 +116,7 @@
                 <div class="w3-center">
                     <h3>My Projects</h3>
                     <p>Check out some of my previous projects!</p>
+                    <p><i>(Images not full resolution)</i></p>
                 </div>
                 <div class="w3-third w3-margin-bottom">
                     <img src="img/portfolio/project1/thumbnails/!cover.jpg" alt="Project 1" class="proj-img w3-hover-opacity">

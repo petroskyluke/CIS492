@@ -138,10 +138,10 @@ $bodyHtml = '<h1>Hydro Hawk Service Request!</h1>
             <p>Email: '.'<a href=mailto:'.$email.'?subject="Hydro&nbspHawk">'.$email.'</a></p>
             <p>Phone number:'.$phone.'</p>
             <p>Requested/Prefered date:'.$requested_date.'</p>
-            <p>Address line 1: '.$address1.'</p>
+            <p>Address Line 1: '.$address1.'</p>
             'if(isset($address2))
             {'
-                <p>Address line 2: '.$address2.'</p>'
+                <p>Address Line 2: '.$address2.'</p>'
             }
             '<p>City: '.$city.'</p>
             <p>State: '.$state.'</p>

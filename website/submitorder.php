@@ -113,31 +113,37 @@ if(!empty($p_rows)){
 }
 
 //create variables to pass to send_email.php
-$senderName = $email;
 $recipient = 'pet5239@calu.edu';
 $subject = 'New Service Request From '.$email;
 $bodyText = 'Hydro Hawk Service Request!\r\nA new request for service has been submitted on hydrohawk.com with the following information\n
             package selection: '.$package.
-            '\nadd-on selection(s): '.$add_on.
-            '\na la carte selection(s): '.$ala_carte.
-            '\nemail address: '.$email.
-            '\nphone number: '.$phone.
-            '\nprefered/requested date: '.$requested_date.
-            '\naddress line 1: '.$address1.
-            '\naddress line 2: '.$address2.
-            '\ncity: '.$city.
-            '\nstate: '.$state.
-            '\nzip code: '.$zip.
+            '\nAdd-On Selection(s): '.$add_on.
+            '\nA La Carte Selection(s): '.$ala_carte.
+            '\nFirst Name: '.$firstname.
+            '\nLast Name: '.$lastname.
+            '\nEmail Address: '.$email.
+            '\nPhone Number: '.$phone.
+            '\nPrefered/Requested Date: '.$requested_date.
+            '\nAddress Line 1: '.$address1.
+            '\nAddress Line 2: '.$address2.
+            '\nCity: '.$city.
+            '\nState: '.$state.
+            '\nZip Code: '.$zip.
 $bodyHtml = '<h1>Hydro Hawk Service Request!</h1>
             <p>A new request for service has been submitted on hydrohawk.com with the following information</p>
             <div style="border:1px solid black;padding: 1em;margin-bottom:5px;">
             <h2>Contact Information:</h2>
-            <p>Email: '.'<a href=mailto:'.$email.'?subject="Hydro Hawk">'.$email.'</a></p>
+            <p>First Name: '.$firstname.'</p>
+            <p>Last Name: '.$lastname.'</p>
+            <p>Email: '.'<a href=mailto:'.$email.'?subject="Hydro&nbspHawk">'.$email.'</a></p>
             <p>Phone number:'.$phone.'</p>
             <p>Requested/Prefered date:'.$requested_date.'</p>
             <p>Address line 1: '.$address1.'</p>
-            <p>Address line 2: '.$address2.'</p>
-            <p>City: '.$city.'</p>
+            'if(isset($address2))
+            {'
+                <p>Address line 2: '.$address2.'</p>'
+            }
+            '<p>City: '.$city.'</p>
             <p>State: '.$state.'</p>
             <p>Zipcode: '.$zip.'</p>
             </div>

@@ -115,7 +115,7 @@ if(!empty($p_rows)){
 //create variables to pass to send_email.php
 $recipient = 'hydrohawkllc@gmail.com';
 $subject = 'New Service Request From '.$email;
-$bodyText = 'Hydro Hawk Service Request!\r\nA new request for service has been submitted on hydrohawk.com with the following information\n
+$bodyText = 'Hydro Hawk Service Request!\r\nA new request for service has been submitted on hydrohawkllc.com with the following information\n
             package selection: '.$package.
             '\nAdd-On Selection(s): '.$add_on.
             '\nA La Carte Selection(s): '.$ala_carte.
@@ -128,14 +128,14 @@ $bodyText = 'Hydro Hawk Service Request!\r\nA new request for service has been s
             '\nAddress Line 2: '.$address2.
             '\nCity: '.$city.
             '\nState: '.$state.
-            '\nZip Code: '.$zip.
+            '\nZip Code: '.$zip;
 $bodyHtml = '<h1>Hydro Hawk Service Request!</h1>
             <p>A new request for service has been submitted on hydrohawk.com with the following information</p>
             <div style="border:1px solid black;padding: 1em;margin-bottom:5px;">
             <h2>Contact Information:</h2>
             <p>First Name: '.$firstname.'</p>
             <p>Last Name: '.$lastname.'</p>
-            <p>Email: '.'<a href=mailto:'.$email.'?subject="Hydro&nbspHawk">'.$email.'</a></p>
+            <p>Email: '.'<a href=mailto:'.$email.'?subject="Hydro%20Hawk%20Photography">'.$email.'</a></p>
             <p>Phone number:'.$phone.'</p>
             <p>Requested/Prefered date:'.$requested_date.'</p>
             <p>Address Line 1: '.$address1.'</p>

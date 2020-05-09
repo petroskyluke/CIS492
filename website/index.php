@@ -241,21 +241,20 @@
                 <i class="fa fa-envelope" style="width:30px"> </i> Email: hydrohawkllc@gmail.com<br>
             </div>
             <div class="w3-col m6">
-                <form action="send_email.php" method="post" target="_blank">
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <form action="send_message.php" method="post">
+                    <div class="w3-row-padding" style="margin:0 -16px 0px -16px">
                         <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                            <input class="w3-input w3-border" style="margin: 0 16px 8px 0px;"type="text" placeholder="Name" required name="Name">
                         </div>
                         <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Phone" required name="Phone">
+                            <input class="w3-input w3-border" style="margin: 0 16px 8px 0px;" type="text" placeholder="Phone" required name="Phone">
                         </div>
                     </div>
-                    
                     <div class="w3-row-padding" style="margin:0 -8px 8px -8px">
                         <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                     </div>
                     <div class="w3-row-padding" style="margin:0 -8px 0px -8px">
-                        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                        <textarea class="w3-input w3-border"rows = "5" cols = "50" placeholder="Message" name = "Message"></textarea>
                     </div>
                     <button class="w3-button w3-black w3-section w3-right" type="submit">SEND MESSAGE</button>
                 </form>
